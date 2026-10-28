@@ -365,12 +365,99 @@ class AppLocalizationsId extends AppLocalizations {
   String get dashboardPlaceholderOutletLabel => 'Outlet';
 
   @override
-  String get dashboardPlaceholderLogout => 'Keluar';
+  String get shellTabDashboard => 'Dashboard';
 
   @override
-  String get dashboardPlaceholderLogoutConfirmTitle => 'Keluar dari akun?';
+  String get shellTabOrders => 'Order';
 
   @override
-  String get dashboardPlaceholderLogoutConfirmBody =>
+  String get shellTabSettings => 'Pengaturan';
+
+  @override
+  String get ordersPlaceholderTitle => 'Order';
+
+  @override
+  String get ordersPlaceholderMessage => 'Fitur order segera tersedia';
+
+  @override
+  String get settingsTitle => 'Pengaturan';
+
+  @override
+  String get settingsSectionAccount => 'Akun';
+
+  @override
+  String get settingsProfile => 'Profil';
+
+  @override
+  String get settingsChangePassword => 'Ubah Password';
+
+  @override
+  String get settingsSectionAppearance => 'Tampilan';
+
+  @override
+  String get settingsTheme => 'Tema';
+
+  @override
+  String get settingsLanguage => 'Bahasa';
+
+  @override
+  String get settingsSectionManage => 'Kelola';
+
+  @override
+  String get settingsManageServices => 'Layanan & Harga';
+
+  @override
+  String get settingsManageCustomers => 'Pelanggan';
+
+  @override
+  String get settingsManageStaff => 'Staff';
+
+  @override
+  String get settingsManageOutlets => 'Outlet';
+
+  @override
+  String get settingsComingSoon => 'Segera tersedia';
+
+  @override
+  String get settingsLogout => 'Keluar';
+
+  @override
+  String get settingsLogoutConfirmTitle => 'Keluar dari akun?';
+
+  @override
+  String get settingsLogoutConfirmBody =>
       'Anda perlu masuk lagi untuk memakai aplikasi.';
+
+  @override
+  String get profileTitle => 'Profil';
+
+  @override
+  String get profileRoleLabel => 'Peran';
+
+  @override
+  String get profileOutletLabel => 'Outlet';
+
+  @override
+  String get profileAllOutlets => 'Semua outlet';
+
+  @override
+  String get profileSave => 'Simpan';
+
+  @override
+  String get profileSaved => 'Profil berhasil disimpan';
+
+  @override
+  String get changePasswordTitle => 'Ubah Password';
+
+  @override
+  String get changePasswordCurrentLabel => 'Password saat ini';
+
+  @override
+  String get changePasswordSubmit => 'Ubah password';
+
+  @override
+  String get changePasswordCurrentWrong => 'Password saat ini salah';
+
+  @override
+  String get changePasswordSuccess => 'Password berhasil diubah';
 }

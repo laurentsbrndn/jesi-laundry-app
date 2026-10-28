@@ -752,23 +752,197 @@ abstract class AppLocalizations {
   /// **'Outlet'**
   String get dashboardPlaceholderOutletLabel;
 
-  /// No description provided for @dashboardPlaceholderLogout.
+  /// No description provided for @shellTabDashboard.
+  ///
+  /// In id, this message translates to:
+  /// **'Dashboard'**
+  String get shellTabDashboard;
+
+  /// No description provided for @shellTabOrders.
+  ///
+  /// In id, this message translates to:
+  /// **'Order'**
+  String get shellTabOrders;
+
+  /// No description provided for @shellTabSettings.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengaturan'**
+  String get shellTabSettings;
+
+  /// No description provided for @ordersPlaceholderTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Order'**
+  String get ordersPlaceholderTitle;
+
+  /// No description provided for @ordersPlaceholderMessage.
+  ///
+  /// In id, this message translates to:
+  /// **'Fitur order segera tersedia'**
+  String get ordersPlaceholderMessage;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengaturan'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsSectionAccount.
+  ///
+  /// In id, this message translates to:
+  /// **'Akun'**
+  String get settingsSectionAccount;
+
+  /// No description provided for @settingsProfile.
+  ///
+  /// In id, this message translates to:
+  /// **'Profil'**
+  String get settingsProfile;
+
+  /// No description provided for @settingsChangePassword.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Password'**
+  String get settingsChangePassword;
+
+  /// No description provided for @settingsSectionAppearance.
+  ///
+  /// In id, this message translates to:
+  /// **'Tampilan'**
+  String get settingsSectionAppearance;
+
+  /// No description provided for @settingsTheme.
+  ///
+  /// In id, this message translates to:
+  /// **'Tema'**
+  String get settingsTheme;
+
+  /// No description provided for @settingsLanguage.
+  ///
+  /// In id, this message translates to:
+  /// **'Bahasa'**
+  String get settingsLanguage;
+
+  /// No description provided for @settingsSectionManage.
+  ///
+  /// In id, this message translates to:
+  /// **'Kelola'**
+  String get settingsSectionManage;
+
+  /// No description provided for @settingsManageServices.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan & Harga'**
+  String get settingsManageServices;
+
+  /// No description provided for @settingsManageCustomers.
+  ///
+  /// In id, this message translates to:
+  /// **'Pelanggan'**
+  String get settingsManageCustomers;
+
+  /// No description provided for @settingsManageStaff.
+  ///
+  /// In id, this message translates to:
+  /// **'Staff'**
+  String get settingsManageStaff;
+
+  /// No description provided for @settingsManageOutlets.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet'**
+  String get settingsManageOutlets;
+
+  /// No description provided for @settingsComingSoon.
+  ///
+  /// In id, this message translates to:
+  /// **'Segera tersedia'**
+  String get settingsComingSoon;
+
+  /// No description provided for @settingsLogout.
   ///
   /// In id, this message translates to:
   /// **'Keluar'**
-  String get dashboardPlaceholderLogout;
+  String get settingsLogout;
 
-  /// No description provided for @dashboardPlaceholderLogoutConfirmTitle.
+  /// No description provided for @settingsLogoutConfirmTitle.
   ///
   /// In id, this message translates to:
   /// **'Keluar dari akun?'**
-  String get dashboardPlaceholderLogoutConfirmTitle;
+  String get settingsLogoutConfirmTitle;
 
-  /// No description provided for @dashboardPlaceholderLogoutConfirmBody.
+  /// No description provided for @settingsLogoutConfirmBody.
   ///
   /// In id, this message translates to:
   /// **'Anda perlu masuk lagi untuk memakai aplikasi.'**
-  String get dashboardPlaceholderLogoutConfirmBody;
+  String get settingsLogoutConfirmBody;
+
+  /// No description provided for @profileTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Profil'**
+  String get profileTitle;
+
+  /// No description provided for @profileRoleLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Peran'**
+  String get profileRoleLabel;
+
+  /// No description provided for @profileOutletLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet'**
+  String get profileOutletLabel;
+
+  /// No description provided for @profileAllOutlets.
+  ///
+  /// In id, this message translates to:
+  /// **'Semua outlet'**
+  String get profileAllOutlets;
+
+  /// No description provided for @profileSave.
+  ///
+  /// In id, this message translates to:
+  /// **'Simpan'**
+  String get profileSave;
+
+  /// No description provided for @profileSaved.
+  ///
+  /// In id, this message translates to:
+  /// **'Profil berhasil disimpan'**
+  String get profileSaved;
+
+  /// No description provided for @changePasswordTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Password'**
+  String get changePasswordTitle;
+
+  /// No description provided for @changePasswordCurrentLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Password saat ini'**
+  String get changePasswordCurrentLabel;
+
+  /// No description provided for @changePasswordSubmit.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah password'**
+  String get changePasswordSubmit;
+
+  /// No description provided for @changePasswordCurrentWrong.
+  ///
+  /// In id, this message translates to:
+  /// **'Password saat ini salah'**
+  String get changePasswordCurrentWrong;
+
+  /// No description provided for @changePasswordSuccess.
+  ///
+  /// In id, this message translates to:
+  /// **'Password berhasil diubah'**
+  String get changePasswordSuccess;
 }
 
 class _AppLocalizationsDelegate

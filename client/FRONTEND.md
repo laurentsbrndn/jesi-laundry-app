@@ -307,6 +307,7 @@ client/
 - `TokenStorage` menyimpan `access_token`, `refresh_token`, dan waktu kedaluwarsanya di `flutter_secure_storage`.
 - `AuthController` (`AsyncNotifier<AuthState>`):
   - `build()`: baca token; jika ada panggil `GET /me` → `Authenticated(user)`. Gagal karena auth (401/403) → hapus token → `Unauthenticated`. Gagal karena jaringan/timeout/5xx → token **tidak** dihapus; `build()` melempar error sehingga splash menampilkan `ErrorView` dengan tombol coba lagi.
+  - `applySession(AuthSession)` menyimpan token ke `TokenStorage` dan mengubah state menjadi `Authenticated`; dipakai oleh `login`, `registerOwner`, dan Ubah Password (server mencabut semua refresh token lama dan mengembalikan sesi baru).
   - `login`, `registerOwner`, `logout` (panggil `/auth/logout` lalu hapus token walau request gagal), `updateUser` (setelah edit profil).
 - Peran dan outlet user diambil dari `AppUser` (`role`, `outlet`).
 
@@ -338,12 +339,12 @@ client/
 | `/settings/outlets` | OutletsScreen | owner |
 | `/settings/outlets/new`, `/settings/outlets/:id` | OutletFormScreen | owner |
 
-- Tab utama memakai `StatefulShellRoute.indexedStack` + `MainShell` (`NavigationBar`), sehingga state tiap tab terjaga.
+- Tab utama memakai `StatefulShellRoute.indexedStack` + `MainShell` (`NavigationBar`), sehingga state tiap tab terjaga. Layar detail di atas tab (mis. `/settings/profile`, `/settings/change-password`, dan layar kelola/form order) memakai `parentNavigatorKey` = root navigator, sehingga `NavigationBar` tersembunyi saat layar itu terbuka.
 - `redirect`:
   - Auth masih loading → `/splash`.
   - Belum login & bukan rute auth → `/login`.
   - Sudah login & berada di rute auth/splash → `/dashboard`.
-  - Staff membuka rute owner → `/dashboard`.
+  - Staff membuka rute owner → `/dashboard` (daftar prefix di `AppRoutes.ownerOnlyPrefixes` + pola `/orders/:id/edit`).
 - `refreshListenable` = `RouterRefreshListenable` yang mendengarkan `authControllerProvider`.
 
 ---

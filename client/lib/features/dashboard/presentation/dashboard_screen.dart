@@ -2,43 +2,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../core/l10n/l10n_extension.dart';
-import '../../../core/widgets/confirm_dialog.dart';
-import '../../../core/widgets/loading_button.dart';
 import '../../auth/presentation/auth_controller.dart';
 import '../../auth/presentation/auth_state.dart';
 
-// PLACEHOLDER (F2): temporary screen so a signed-in user has somewhere to land
-// and a way to sign out. Replaced by the real dashboard in F3/F6.
-class DashboardScreen extends ConsumerStatefulWidget {
+// PLACEHOLDER (F2/F3): temporary marker of the signed-in user. Replaced by the
+// real dashboard in F6. Sign out lives in Settings.
+class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
 
   @override
-  ConsumerState<DashboardScreen> createState() => _DashboardScreenState();
-}
-
-class _DashboardScreenState extends ConsumerState<DashboardScreen> {
-  bool _loggingOut = false;
-
-  Future<void> _logout() async {
-    final l10n = context.l10n;
-    final confirmed = await showConfirmDialog(
-      context,
-      title: l10n.dashboardPlaceholderLogoutConfirmTitle,
-      message: l10n.dashboardPlaceholderLogoutConfirmBody,
-      confirmLabel: l10n.dashboardPlaceholderLogout,
-      destructive: true,
-    );
-    if (!confirmed || !mounted) return;
-    setState(() => _loggingOut = true);
-    try {
-      await ref.read(authControllerProvider.notifier).logout();
-    } finally {
-      if (mounted) setState(() => _loggingOut = false);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final auth = ref.watch(authControllerProvider).value;
@@ -69,12 +42,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
               Text(
                 l10n.dashboardPlaceholderNotice,
                 style: theme.textTheme.bodySmall,
-              ),
-              const Spacer(),
-              LoadingButton(
-                onPressed: _logout,
-                isLoading: _loggingOut,
-                child: Text(l10n.dashboardPlaceholderLogout),
               ),
             ],
           ),

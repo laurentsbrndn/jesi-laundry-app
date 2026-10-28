@@ -185,7 +185,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get languageSystem => 'Follow system';
 
   @override
-  String get languageIndonesian => 'Indonesian';
+  String get languageIndonesian => 'Indonesia';
 
   @override
   String get languageEnglish => 'English';
@@ -369,12 +369,99 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dashboardPlaceholderOutletLabel => 'Outlet';
 
   @override
-  String get dashboardPlaceholderLogout => 'Sign out';
+  String get shellTabDashboard => 'Dashboard';
 
   @override
-  String get dashboardPlaceholderLogoutConfirmTitle => 'Sign out?';
+  String get shellTabOrders => 'Orders';
 
   @override
-  String get dashboardPlaceholderLogoutConfirmBody =>
+  String get shellTabSettings => 'Settings';
+
+  @override
+  String get ordersPlaceholderTitle => 'Orders';
+
+  @override
+  String get ordersPlaceholderMessage => 'Orders are coming soon';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsSectionAccount => 'Account';
+
+  @override
+  String get settingsProfile => 'Profile';
+
+  @override
+  String get settingsChangePassword => 'Change password';
+
+  @override
+  String get settingsSectionAppearance => 'Appearance';
+
+  @override
+  String get settingsTheme => 'Theme';
+
+  @override
+  String get settingsLanguage => 'Language';
+
+  @override
+  String get settingsSectionManage => 'Manage';
+
+  @override
+  String get settingsManageServices => 'Services & Prices';
+
+  @override
+  String get settingsManageCustomers => 'Customers';
+
+  @override
+  String get settingsManageStaff => 'Staff';
+
+  @override
+  String get settingsManageOutlets => 'Outlets';
+
+  @override
+  String get settingsComingSoon => 'Coming soon';
+
+  @override
+  String get settingsLogout => 'Sign out';
+
+  @override
+  String get settingsLogoutConfirmTitle => 'Sign out?';
+
+  @override
+  String get settingsLogoutConfirmBody =>
       'You will need to sign in again to use the app.';
+
+  @override
+  String get profileTitle => 'Profile';
+
+  @override
+  String get profileRoleLabel => 'Role';
+
+  @override
+  String get profileOutletLabel => 'Outlet';
+
+  @override
+  String get profileAllOutlets => 'All outlets';
+
+  @override
+  String get profileSave => 'Save';
+
+  @override
+  String get profileSaved => 'Profile saved';
+
+  @override
+  String get changePasswordTitle => 'Change password';
+
+  @override
+  String get changePasswordCurrentLabel => 'Current password';
+
+  @override
+  String get changePasswordSubmit => 'Change password';
+
+  @override
+  String get changePasswordCurrentWrong => 'Current password is incorrect';
+
+  @override
+  String get changePasswordSuccess => 'Password changed';
 }

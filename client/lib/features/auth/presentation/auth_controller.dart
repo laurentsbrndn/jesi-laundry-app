@@ -51,7 +51,7 @@ class AuthController extends AsyncNotifier<AuthState> {
     final session = await ref
         .read(authRepositoryProvider)
         .login(email, password);
-    await _startSession(session);
+    await applySession(session);
   }
 
   Future<void> registerOwner({
@@ -74,7 +74,7 @@ class AuthController extends AsyncNotifier<AuthState> {
           outletAddress: outletAddress,
           outletPhone: outletPhone,
         );
-    await _startSession(session);
+    await applySession(session);
   }
 
   /// Calls `/auth/logout`, then clears the tokens even if the request failed.
@@ -97,7 +97,9 @@ class AuthController extends AsyncNotifier<AuthState> {
     if (state.value is Authenticated) state = AsyncData(Authenticated(user));
   }
 
-  Future<void> _startSession(AuthSession session) async {
+  /// Stores [session]'s tokens and makes its user the signed-in user. Used after
+  /// login, registration and change-password (which rotates all tokens).
+  Future<void> applySession(AuthSession session) async {
     await ref.read(tokenStorageProvider).save(session);
     state = AsyncData(Authenticated(session.user));
   }

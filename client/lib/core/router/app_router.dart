@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,11 +12,17 @@ import '../../features/auth/presentation/reset_password_screen.dart';
 import '../../features/auth/presentation/setup_status_provider.dart';
 import '../../features/auth/presentation/splash_screen.dart';
 import '../../features/dashboard/presentation/dashboard_screen.dart';
+import '../../features/orders/presentation/orders_list_screen.dart';
+import '../../features/settings/presentation/change_password_screen.dart';
+import '../../features/settings/presentation/profile_screen.dart';
+import '../../features/settings/presentation/settings_screen.dart';
+import '../../features/shell/main_shell.dart';
 import 'app_routes.dart';
 import 'router_refresh_listenable.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   final refresh = RouterRefreshListenable(ref);
+  final rootNavigatorKey = GlobalKey<NavigatorState>();
 
   String? redirect(_, GoRouterState state) {
     final location = state.matchedLocation;
@@ -29,10 +36,15 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 
     final isAuthRoute = AppRoutes.authRoutes.contains(location);
     switch (authState) {
-      case Authenticated():
-        return isAuthRoute || location == AppRoutes.splash
-            ? AppRoutes.dashboard
-            : null;
+      case Authenticated(:final user):
+        if (isAuthRoute || location == AppRoutes.splash) {
+          return AppRoutes.dashboard;
+        }
+        // Owner-only screens: staff go back to the dashboard.
+        if (!user.isOwner && AppRoutes.isOwnerOnly(location)) {
+          return AppRoutes.dashboard;
+        }
+        return null;
       case Unauthenticated():
         if (location == AppRoutes.splash || !isAuthRoute) {
           return AppRoutes.login;
@@ -48,6 +60,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   }
 
   final router = GoRouter(
+    navigatorKey: rootNavigatorKey,
     initialLocation: AppRoutes.splash,
     refreshListenable: refresh,
     redirect: redirect,
@@ -76,9 +89,49 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) =>
             ResetPasswordScreen(args: state.extra! as ResetPasswordArgs),
       ),
-      GoRoute(
-        path: AppRoutes.dashboard,
-        builder: (context, state) => const DashboardScreen(),
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) =>
+            MainShell(navigationShell: navigationShell),
+        branches: [
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.dashboard,
+                builder: (context, state) => const DashboardScreen(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.orders,
+                builder: (context, state) => const OrdersListScreen(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.settings,
+                builder: (context, state) => const SettingsScreen(),
+                routes: [
+                  // Detail screens use the root navigator so the bottom
+                  // navigation bar is hidden on them.
+                  GoRoute(
+                    path: 'profile',
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (context, state) => const ProfileScreen(),
+                  ),
+                  GoRoute(
+                    path: 'change-password',
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (context, state) => const ChangePasswordScreen(),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     ],
   );

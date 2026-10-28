@@ -120,6 +120,32 @@ class AuthRepository {
     );
   }
 
+  /// `PATCH /me`: changes the display name.
+  Future<AppUser> updateProfile(String name) {
+    return _call(
+      () => _dio.patch<dynamic>('/me', data: {'name': name.trim()}),
+      (data) => AppUser.fromJson(data as Map<String, dynamic>),
+    );
+  }
+
+  /// `POST /me/change-password`. The server revokes every refresh token and
+  /// returns a new session, which the caller must store.
+  Future<AuthSession> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  }) {
+    return _call(
+      () => _dio.post<dynamic>(
+        '/me/change-password',
+        data: {
+          'current_password': currentPassword,
+          'new_password': newPassword,
+        },
+      ),
+      _session,
+    );
+  }
+
   static String _normalizeEmail(String email) => email.trim().toLowerCase();
 
   static AuthSession _session(dynamic data) =>
