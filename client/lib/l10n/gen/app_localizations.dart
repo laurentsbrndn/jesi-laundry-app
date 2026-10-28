@@ -728,30 +728,6 @@ abstract class AppLocalizations {
   /// **'Isian tidak valid'**
   String get validationServerInvalid;
 
-  /// No description provided for @dashboardPlaceholderTitle.
-  ///
-  /// In id, this message translates to:
-  /// **'Dashboard'**
-  String get dashboardPlaceholderTitle;
-
-  /// No description provided for @dashboardPlaceholderNotice.
-  ///
-  /// In id, this message translates to:
-  /// **'Layar sementara. Dashboard lengkap menyusul.'**
-  String get dashboardPlaceholderNotice;
-
-  /// No description provided for @dashboardPlaceholderRoleLabel.
-  ///
-  /// In id, this message translates to:
-  /// **'Peran'**
-  String get dashboardPlaceholderRoleLabel;
-
-  /// No description provided for @dashboardPlaceholderOutletLabel.
-  ///
-  /// In id, this message translates to:
-  /// **'Outlet'**
-  String get dashboardPlaceholderOutletLabel;
-
   /// No description provided for @shellTabDashboard.
   ///
   /// In id, this message translates to:
@@ -1909,6 +1885,180 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Koneksi terputus. Order mungkin sudah tersimpan. Periksa daftar order sebelum mencoba lagi agar tidak dobel.'**
   String get orderFormCreateUnknownBody;
+
+  /// No description provided for @dashboardTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Dashboard'**
+  String get dashboardTitle;
+
+  /// No description provided for @dashboardRange1h.
+  ///
+  /// In id, this message translates to:
+  /// **'1J'**
+  String get dashboardRange1h;
+
+  /// No description provided for @dashboardRange24h.
+  ///
+  /// In id, this message translates to:
+  /// **'24J'**
+  String get dashboardRange24h;
+
+  /// No description provided for @dashboardRange7d.
+  ///
+  /// In id, this message translates to:
+  /// **'7H'**
+  String get dashboardRange7d;
+
+  /// No description provided for @dashboardRange30d.
+  ///
+  /// In id, this message translates to:
+  /// **'30H'**
+  String get dashboardRange30d;
+
+  /// No description provided for @dashboardRange1y.
+  ///
+  /// In id, this message translates to:
+  /// **'1T'**
+  String get dashboardRange1y;
+
+  /// No description provided for @dashboardRangeAll.
+  ///
+  /// In id, this message translates to:
+  /// **'Semua'**
+  String get dashboardRangeAll;
+
+  /// No description provided for @dashboardPeriod.
+  ///
+  /// In id, this message translates to:
+  /// **'Periode: {from} – {to}'**
+  String dashboardPeriod(String from, String to);
+
+  /// No description provided for @dashboardOperationalNow.
+  ///
+  /// In id, this message translates to:
+  /// **'Kondisi saat ini'**
+  String get dashboardOperationalNow;
+
+  /// No description provided for @dashboardInProgress.
+  ///
+  /// In id, this message translates to:
+  /// **'Sedang diproses'**
+  String get dashboardInProgress;
+
+  /// No description provided for @dashboardReadyForPickup.
+  ///
+  /// In id, this message translates to:
+  /// **'Siap diambil'**
+  String get dashboardReadyForPickup;
+
+  /// No description provided for @dashboardUnpaid.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum lunas'**
+  String get dashboardUnpaid;
+
+  /// No description provided for @dashboardSummary.
+  ///
+  /// In id, this message translates to:
+  /// **'Ringkasan periode'**
+  String get dashboardSummary;
+
+  /// No description provided for @dashboardTotalOrders.
+  ///
+  /// In id, this message translates to:
+  /// **'Jumlah order'**
+  String get dashboardTotalOrders;
+
+  /// No description provided for @dashboardTotalKg.
+  ///
+  /// In id, this message translates to:
+  /// **'Total kg'**
+  String get dashboardTotalKg;
+
+  /// No description provided for @dashboardTotalPcs.
+  ///
+  /// In id, this message translates to:
+  /// **'Total pcs'**
+  String get dashboardTotalPcs;
+
+  /// No description provided for @dashboardTotalSqm.
+  ///
+  /// In id, this message translates to:
+  /// **'Total m²'**
+  String get dashboardTotalSqm;
+
+  /// No description provided for @dashboardRevenue.
+  ///
+  /// In id, this message translates to:
+  /// **'Pendapatan'**
+  String get dashboardRevenue;
+
+  /// No description provided for @dashboardRevenuePaid.
+  ///
+  /// In id, this message translates to:
+  /// **'Lunas'**
+  String get dashboardRevenuePaid;
+
+  /// No description provided for @dashboardRevenueUnpaid.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum lunas'**
+  String get dashboardRevenueUnpaid;
+
+  /// No description provided for @dashboardOrdersCount.
+  ///
+  /// In id, this message translates to:
+  /// **'{count} order'**
+  String dashboardOrdersCount(int count);
+
+  /// No description provided for @dashboardChartTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Grafik'**
+  String get dashboardChartTitle;
+
+  /// No description provided for @dashboardMetricOrders.
+  ///
+  /// In id, this message translates to:
+  /// **'Order'**
+  String get dashboardMetricOrders;
+
+  /// No description provided for @dashboardMetricWeight.
+  ///
+  /// In id, this message translates to:
+  /// **'Kg'**
+  String get dashboardMetricWeight;
+
+  /// No description provided for @dashboardMetricRevenue.
+  ///
+  /// In id, this message translates to:
+  /// **'Pendapatan'**
+  String get dashboardMetricRevenue;
+
+  /// No description provided for @dashboardByCategory.
+  ///
+  /// In id, this message translates to:
+  /// **'Per kategori'**
+  String get dashboardByCategory;
+
+  /// No description provided for @dashboardByUnitService.
+  ///
+  /// In id, this message translates to:
+  /// **'Per jenis satuan'**
+  String get dashboardByUnitService;
+
+  /// No description provided for @dashboardByStatus.
+  ///
+  /// In id, this message translates to:
+  /// **'Per status'**
+  String get dashboardByStatus;
+
+  /// No description provided for @dashboardEmpty.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum ada order pada periode ini'**
+  String get dashboardEmpty;
 }
 
 class _AppLocalizationsDelegate

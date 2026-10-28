@@ -105,10 +105,6 @@
   "validationOtpLength": "The code must be 6 digits",
   "validationOutletCode": "Outlet code must be 2–5 letters or digits",
   "validationServerInvalid": "Invalid value",
-  "dashboardPlaceholderTitle": "Dashboard",
-  "dashboardPlaceholderNotice": "Temporary screen. The full dashboard comes later.",
-  "dashboardPlaceholderRoleLabel": "Role",
-  "dashboardPlaceholderOutletLabel": "Outlet",
   "shellTabDashboard": "Dashboard",
   "shellTabOrders": "Orders",
   "shellTabSettings": "Settings",
@@ -302,6 +298,35 @@
   "orderFormSaved": "Order saved",
   "orderFormCreateUnknownTitle": "Result unknown",
   "orderFormCreateUnknownBody": "The connection dropped. The order may already have been saved. Check the order list before trying again to avoid a duplicate.",
+  "dashboardTitle": "Dashboard",
+  "dashboardRange1h": "1h",
+  "dashboardRange24h": "24h",
+  "dashboardRange7d": "7d",
+  "dashboardRange30d": "30d",
+  "dashboardRange1y": "1y",
+  "dashboardRangeAll": "All",
+  "dashboardPeriod": "Period: {from} – {to}",
+  "dashboardOperationalNow": "Current status",
+  "dashboardInProgress": "In progress",
+  "dashboardReadyForPickup": "Ready for pickup",
+  "dashboardUnpaid": "Unpaid",
+  "dashboardSummary": "Period summary",
+  "dashboardTotalOrders": "Orders",
+  "dashboardTotalKg": "Total kg",
+  "dashboardTotalPcs": "Total pcs",
+  "dashboardTotalSqm": "Total m²",
+  "dashboardRevenue": "Revenue",
+  "dashboardRevenuePaid": "Paid",
+  "dashboardRevenueUnpaid": "Unpaid",
+  "dashboardOrdersCount": "{count, plural, =1{1 order} other{{count} orders}}",
+  "dashboardChartTitle": "Chart",
+  "dashboardMetricOrders": "Orders",
+  "dashboardMetricWeight": "Kg",
+  "dashboardMetricRevenue": "Revenue",
+  "dashboardByCategory": "By category",
+  "dashboardByUnitService": "By unit item",
+  "dashboardByStatus": "By status",
+  "dashboardEmpty": "No orders in this period",
   "@resetPasswordBody": {
     "placeholders": {
       "email": {
@@ -475,6 +500,23 @@
     "placeholders": {
       "number": {
         "type": "String"
+      }
+    }
+  },
+  "@dashboardPeriod": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   }

@@ -436,6 +436,8 @@ Validasi password di client sama dengan server: minimal 8 karakter, ada huruf da
 - Pull-to-refresh. Kondisi kosong yang jelas jika tidak ada order dalam rentang.
 - Untuk staff, UI tidak boleh menampilkan placeholder pendapatan; field memang tidak dikirim server.
 
+Penyimpangan F6: label sumbu X diselang-seling dengan langkah `ceil(jumlah titik / 8)` bila titik > 12 (bukan selalu setiap 2), agar tidak bertumpuk pada 31 titik. `bucket_start` dibaca langsung dari komponen string (tanpa konversi zona waktu). Pilihan range dan outlet disimpan di notifier non-autoDispose dan direset saat user berganti; data lama tetap tampil saat memuat pilihan baru.
+
 ### 11.4 Daftar Order
 
 - Kolom pencarian (debounce 400 ms) untuk nomor order / nama pelanggan.

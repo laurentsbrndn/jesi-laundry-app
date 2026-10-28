@@ -105,10 +105,6 @@
   "validationOtpLength": "Kode harus 6 digit",
   "validationOutletCode": "Kode outlet 2–5 huruf atau angka",
   "validationServerInvalid": "Isian tidak valid",
-  "dashboardPlaceholderTitle": "Dashboard",
-  "dashboardPlaceholderNotice": "Layar sementara. Dashboard lengkap menyusul.",
-  "dashboardPlaceholderRoleLabel": "Peran",
-  "dashboardPlaceholderOutletLabel": "Outlet",
   "shellTabDashboard": "Dashboard",
   "shellTabOrders": "Order",
   "shellTabSettings": "Pengaturan",
@@ -302,6 +298,35 @@
   "orderFormSaved": "Order disimpan",
   "orderFormCreateUnknownTitle": "Hasil belum pasti",
   "orderFormCreateUnknownBody": "Koneksi terputus. Order mungkin sudah tersimpan. Periksa daftar order sebelum mencoba lagi agar tidak dobel.",
+  "dashboardTitle": "Dashboard",
+  "dashboardRange1h": "1J",
+  "dashboardRange24h": "24J",
+  "dashboardRange7d": "7H",
+  "dashboardRange30d": "30H",
+  "dashboardRange1y": "1T",
+  "dashboardRangeAll": "Semua",
+  "dashboardPeriod": "Periode: {from} – {to}",
+  "dashboardOperationalNow": "Kondisi saat ini",
+  "dashboardInProgress": "Sedang diproses",
+  "dashboardReadyForPickup": "Siap diambil",
+  "dashboardUnpaid": "Belum lunas",
+  "dashboardSummary": "Ringkasan periode",
+  "dashboardTotalOrders": "Jumlah order",
+  "dashboardTotalKg": "Total kg",
+  "dashboardTotalPcs": "Total pcs",
+  "dashboardTotalSqm": "Total m²",
+  "dashboardRevenue": "Pendapatan",
+  "dashboardRevenuePaid": "Lunas",
+  "dashboardRevenueUnpaid": "Belum lunas",
+  "dashboardOrdersCount": "{count} order",
+  "dashboardChartTitle": "Grafik",
+  "dashboardMetricOrders": "Order",
+  "dashboardMetricWeight": "Kg",
+  "dashboardMetricRevenue": "Pendapatan",
+  "dashboardByCategory": "Per kategori",
+  "dashboardByUnitService": "Per jenis satuan",
+  "dashboardByStatus": "Per status",
+  "dashboardEmpty": "Belum ada order pada periode ini",
   "@validationMinLength": {
     "placeholders": {
       "min": {
@@ -475,6 +500,23 @@
     "placeholders": {
       "number": {
         "type": "String"
+      }
+    }
+  },
+  "@dashboardPeriod": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   }

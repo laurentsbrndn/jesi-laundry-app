@@ -356,19 +356,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get validationServerInvalid => 'Invalid value';
 
   @override
-  String get dashboardPlaceholderTitle => 'Dashboard';
-
-  @override
-  String get dashboardPlaceholderNotice =>
-      'Temporary screen. The full dashboard comes later.';
-
-  @override
-  String get dashboardPlaceholderRoleLabel => 'Role';
-
-  @override
-  String get dashboardPlaceholderOutletLabel => 'Outlet';
-
-  @override
   String get shellTabDashboard => 'Dashboard';
 
   @override
@@ -1024,4 +1011,101 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get orderFormCreateUnknownBody =>
       'The connection dropped. The order may already have been saved. Check the order list before trying again to avoid a duplicate.';
+
+  @override
+  String get dashboardTitle => 'Dashboard';
+
+  @override
+  String get dashboardRange1h => '1h';
+
+  @override
+  String get dashboardRange24h => '24h';
+
+  @override
+  String get dashboardRange7d => '7d';
+
+  @override
+  String get dashboardRange30d => '30d';
+
+  @override
+  String get dashboardRange1y => '1y';
+
+  @override
+  String get dashboardRangeAll => 'All';
+
+  @override
+  String dashboardPeriod(String from, String to) {
+    return 'Period: $from – $to';
+  }
+
+  @override
+  String get dashboardOperationalNow => 'Current status';
+
+  @override
+  String get dashboardInProgress => 'In progress';
+
+  @override
+  String get dashboardReadyForPickup => 'Ready for pickup';
+
+  @override
+  String get dashboardUnpaid => 'Unpaid';
+
+  @override
+  String get dashboardSummary => 'Period summary';
+
+  @override
+  String get dashboardTotalOrders => 'Orders';
+
+  @override
+  String get dashboardTotalKg => 'Total kg';
+
+  @override
+  String get dashboardTotalPcs => 'Total pcs';
+
+  @override
+  String get dashboardTotalSqm => 'Total m²';
+
+  @override
+  String get dashboardRevenue => 'Revenue';
+
+  @override
+  String get dashboardRevenuePaid => 'Paid';
+
+  @override
+  String get dashboardRevenueUnpaid => 'Unpaid';
+
+  @override
+  String dashboardOrdersCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count orders',
+      one: '1 order',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dashboardChartTitle => 'Chart';
+
+  @override
+  String get dashboardMetricOrders => 'Orders';
+
+  @override
+  String get dashboardMetricWeight => 'Kg';
+
+  @override
+  String get dashboardMetricRevenue => 'Revenue';
+
+  @override
+  String get dashboardByCategory => 'By category';
+
+  @override
+  String get dashboardByUnitService => 'By unit item';
+
+  @override
+  String get dashboardByStatus => 'By status';
+
+  @override
+  String get dashboardEmpty => 'No orders in this period';
 }

@@ -352,19 +352,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get validationServerInvalid => 'Isian tidak valid';
 
   @override
-  String get dashboardPlaceholderTitle => 'Dashboard';
-
-  @override
-  String get dashboardPlaceholderNotice =>
-      'Layar sementara. Dashboard lengkap menyusul.';
-
-  @override
-  String get dashboardPlaceholderRoleLabel => 'Peran';
-
-  @override
-  String get dashboardPlaceholderOutletLabel => 'Outlet';
-
-  @override
   String get shellTabDashboard => 'Dashboard';
 
   @override
@@ -997,4 +984,95 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get orderFormCreateUnknownBody =>
       'Koneksi terputus. Order mungkin sudah tersimpan. Periksa daftar order sebelum mencoba lagi agar tidak dobel.';
+
+  @override
+  String get dashboardTitle => 'Dashboard';
+
+  @override
+  String get dashboardRange1h => '1J';
+
+  @override
+  String get dashboardRange24h => '24J';
+
+  @override
+  String get dashboardRange7d => '7H';
+
+  @override
+  String get dashboardRange30d => '30H';
+
+  @override
+  String get dashboardRange1y => '1T';
+
+  @override
+  String get dashboardRangeAll => 'Semua';
+
+  @override
+  String dashboardPeriod(String from, String to) {
+    return 'Periode: $from – $to';
+  }
+
+  @override
+  String get dashboardOperationalNow => 'Kondisi saat ini';
+
+  @override
+  String get dashboardInProgress => 'Sedang diproses';
+
+  @override
+  String get dashboardReadyForPickup => 'Siap diambil';
+
+  @override
+  String get dashboardUnpaid => 'Belum lunas';
+
+  @override
+  String get dashboardSummary => 'Ringkasan periode';
+
+  @override
+  String get dashboardTotalOrders => 'Jumlah order';
+
+  @override
+  String get dashboardTotalKg => 'Total kg';
+
+  @override
+  String get dashboardTotalPcs => 'Total pcs';
+
+  @override
+  String get dashboardTotalSqm => 'Total m²';
+
+  @override
+  String get dashboardRevenue => 'Pendapatan';
+
+  @override
+  String get dashboardRevenuePaid => 'Lunas';
+
+  @override
+  String get dashboardRevenueUnpaid => 'Belum lunas';
+
+  @override
+  String dashboardOrdersCount(int count) {
+    return '$count order';
+  }
+
+  @override
+  String get dashboardChartTitle => 'Grafik';
+
+  @override
+  String get dashboardMetricOrders => 'Order';
+
+  @override
+  String get dashboardMetricWeight => 'Kg';
+
+  @override
+  String get dashboardMetricRevenue => 'Pendapatan';
+
+  @override
+  String get dashboardByCategory => 'Per kategori';
+
+  @override
+  String get dashboardByUnitService => 'Per jenis satuan';
+
+  @override
+  String get dashboardByStatus => 'Per status';
+
+  @override
+  String get dashboardEmpty => 'Belum ada order pada periode ini';
 }
