@@ -1,0 +1,135 @@
+import 'dart:convert';
+
+import 'package:material_ui/material_ui.dart';
+
+import '../../l10n/gen/app_localizations.dart';
+import 'decimal_input.dart';
+
+/// Form validators mirroring the server rules. Each takes the localizations
+/// so error text follows the app language.
+abstract final class FormValidators {
+  static final RegExp _email = RegExp(r'^[^\s@]+@[^\s@]+\.[^\s@]+$');
+
+  static FormFieldValidator<String> required(AppLocalizations l10n) {
+    return (value) =>
+        (value ?? '').trim().isEmpty ? l10n.validationRequired : null;
+  }
+
+  static FormFieldValidator<String> email(AppLocalizations l10n) {
+    return (value) {
+      final text = (value ?? '').trim();
+      if (text.isEmpty) return l10n.validationRequired;
+      return _email.hasMatch(text) ? null : l10n.validationInvalidEmail;
+    };
+  }
+
+  /// At least 8 characters with a letter and a digit, at most 72 bytes (UTF-8,
+  /// the bcrypt limit).
+  static FormFieldValidator<String> password(AppLocalizations l10n) {
+    return (value) {
+      final text = value ?? '';
+      if (text.isEmpty) return l10n.validationRequired;
+      if (text.length < 8) return l10n.validationPasswordTooShort;
+      if (utf8.encode(text).length > 72) return l10n.validationPasswordTooLong;
+      if (!text.contains(RegExp(r'[A-Za-z]')) ||
+          !text.contains(RegExp(r'\d'))) {
+        return l10n.validationPasswordNeedsLetterAndDigit;
+      }
+      return null;
+    };
+  }
+
+  static FormFieldValidator<String> confirmPassword(
+    AppLocalizations l10n,
+    String Function() original,
+  ) {
+    return (value) {
+      if ((value ?? '').isEmpty) return l10n.validationRequired;
+      return value == original() ? null : l10n.validationPasswordMismatch;
+    };
+  }
+
+  static FormFieldValidator<String> minLength(AppLocalizations l10n, int min) {
+    return (value) {
+      final text = (value ?? '').trim();
+      if (text.isEmpty) return l10n.validationRequired;
+      return text.length < min ? l10n.validationMinLength(min) : null;
+    };
+  }
+
+  static FormFieldValidator<String> maxLength(AppLocalizations l10n, int max) {
+    return (value) =>
+        (value ?? '').length > max ? l10n.validationMaxLength(max) : null;
+  }
+
+  /// A decimal number greater than zero.
+  static FormFieldValidator<String> positiveNumber(AppLocalizations l10n) {
+    return (value) {
+      if ((value ?? '').trim().isEmpty) return l10n.validationRequired;
+      final number = parseDecimal(value!);
+      return number == null || number <= 0
+          ? l10n.validationInvalidNumber
+          : null;
+    };
+  }
+
+  /// Runs [validators] in order and returns the first error.
+  static FormFieldValidator<String> all(
+    List<FormFieldValidator<String>> validators,
+  ) {
+    return (value) {
+      for (final validator in validators) {
+        final error = validator(value);
+        if (error != null) return error;
+      }
+      return null;
+    };
+  }
+
+  /// 2-5 letters or digits.
+  static FormFieldValidator<String> outletCode(AppLocalizations l10n) {
+    return (value) {
+      final text = (value ?? '').trim();
+      if (text.isEmpty) return l10n.validationRequired;
+      return RegExp(r'^[A-Za-z0-9]{2,5}$').hasMatch(text)
+          ? null
+          : l10n.validationOutletCode;
+    };
+  }
+
+  /// Exactly six digits.
+  static FormFieldValidator<String> otp(AppLocalizations l10n) {
+    return (value) {
+      final text = value ?? '';
+      if (text.isEmpty) return l10n.validationRequired;
+      return RegExp(r'^\d{6}$').hasMatch(text)
+          ? null
+          : l10n.validationOtpLength;
+    };
+  }
+
+  /// A whole number from [min] to [max].
+  static FormFieldValidator<String> integerInRange(
+    AppLocalizations l10n,
+    int min,
+    int max,
+  ) {
+    return (value) {
+      final text = (value ?? '').trim();
+      if (text.isEmpty) return l10n.validationRequired;
+      final number = int.tryParse(text);
+      return number == null || number < min || number > max
+          ? l10n.validationRange(min, max)
+          : null;
+    };
+  }
+
+  /// A decimal number of zero or more.
+  static FormFieldValidator<String> nonNegativeNumber(AppLocalizations l10n) {
+    return (value) {
+      if ((value ?? '').trim().isEmpty) return l10n.validationRequired;
+      final number = parseDecimal(value!);
+      return number == null || number < 0 ? l10n.validationInvalidNumber : null;
+    };
+  }
+}

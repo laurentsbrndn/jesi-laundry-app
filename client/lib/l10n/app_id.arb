@@ -1,0 +1,520 @@
+{
+  "@@locale": "id",
+  "appName": "Jesi Laundry",
+  "configErrorTitle": "Konfigurasi belum lengkap",
+  "configErrorBody": "API_BASE_URL belum diatur. Jalankan aplikasi dengan --dart-define=API_BASE_URL=<alamat server>.",
+  "errorBadRequest": "Permintaan tidak dapat diproses.",
+  "errorValidationError": "Data yang dimasukkan belum valid. Periksa kembali isian Anda.",
+  "errorUnauthorized": "Sesi tidak valid. Silakan masuk kembali.",
+  "errorTokenExpired": "Sesi telah berakhir. Silakan masuk kembali.",
+  "errorInvalidRefreshToken": "Sesi telah berakhir. Silakan masuk kembali.",
+  "errorInvalidCredentials": "Email atau password salah.",
+  "errorAccountInactive": "Akun Anda dinonaktifkan. Hubungi owner.",
+  "errorForbidden": "Anda tidak memiliki akses untuk tindakan ini.",
+  "errorNotFound": "Data tidak ditemukan.",
+  "errorEmailTaken": "Email sudah digunakan.",
+  "errorOwnerAlreadyExists": "Owner sudah terdaftar.",
+  "errorOutletCodeTaken": "Kode outlet sudah digunakan.",
+  "errorServiceNameTaken": "Nama layanan sudah ada di outlet ini.",
+  "errorOutletInactive": "Outlet nonaktif dan tidak dapat menerima order.",
+  "errorServiceInactive": "Layanan nonaktif, dihapus, atau bukan milik outlet order.",
+  "errorDuplicateKiloService": "Layanan kiloan yang sama tidak boleh muncul lebih dari sekali dalam satu order.",
+  "errorInvalidStatusTransition": "Perpindahan status tidak diizinkan.",
+  "errorPaymentRequired": "Order harus lunas sebelum ditandai diambil.",
+  "errorOrderNotEditable": "Order yang sudah lunas atau diambil tidak dapat diedit.",
+  "errorSystemServiceNotDeletable": "Layanan kiloan bawaan tidak dapat dihapus.",
+  "errorOtpInvalid": "Kode OTP salah.",
+  "errorOtpExpired": "Kode OTP sudah kedaluwarsa. Minta kode baru.",
+  "errorOtpTooManyAttempts": "Terlalu banyak percobaan. Minta kode baru.",
+  "errorRateLimited": "Terlalu banyak permintaan. Coba lagi sebentar lagi.",
+  "errorInternalError": "Terjadi kesalahan pada server. Coba lagi nanti.",
+  "errorNetworkError": "Tidak dapat terhubung ke server. Periksa koneksi internet Anda.",
+  "errorUnknown": "Terjadi kesalahan yang tidak diketahui.",
+  "serviceCategoryWashIron": "Cuci Setrika",
+  "serviceCategoryIronOnly": "Setrika",
+  "serviceCategoryWashFold": "Cuci Lipat",
+  "serviceCategoryUnit": "Satuan",
+  "serviceSpeedRegular": "Reguler",
+  "serviceSpeedExpress": "Express",
+  "orderStatusReceived": "Diterima",
+  "orderStatusProcessing": "Diproses",
+  "orderStatusDone": "Selesai",
+  "orderStatusPickedUp": "Diambil",
+  "paymentStatusUnpaid": "Belum Lunas",
+  "paymentStatusPaid": "Lunas",
+  "unitKg": "kg",
+  "unitPcs": "pcs",
+  "unitSqm": "m²",
+  "themeSystem": "Ikuti sistem",
+  "themeLight": "Terang",
+  "themeDark": "Gelap",
+  "languageSystem": "Ikuti sistem",
+  "languageIndonesian": "Indonesia",
+  "languageEnglish": "English",
+  "commonRetry": "Coba lagi",
+  "commonCancel": "Batal",
+  "commonConfirm": "Ya",
+  "commonEmptyTitle": "Belum ada data",
+  "validationRequired": "Wajib diisi",
+  "validationInvalidEmail": "Format email tidak valid",
+  "validationPasswordTooShort": "Password minimal 8 karakter",
+  "validationPasswordNeedsLetterAndDigit": "Password harus mengandung huruf dan angka",
+  "validationPasswordMismatch": "Konfirmasi password tidak sama",
+  "validationInvalidNumber": "Angka tidak valid",
+  "validationMinLength": "Minimal {min} karakter",
+  "validationMaxLength": "Maksimal {max} karakter",
+  "splashSlowHint": "Server mungkin sedang bangun. Mohon tunggu sebentar…",
+  "authEmailLabel": "Email",
+  "authPasswordLabel": "Password",
+  "authConfirmPasswordLabel": "Konfirmasi password",
+  "authNewPasswordLabel": "Password baru",
+  "authNameLabel": "Nama",
+  "authShowPassword": "Tampilkan password",
+  "authHidePassword": "Sembunyikan password",
+  "loginSubmit": "Masuk",
+  "loginForgotPassword": "Lupa password?",
+  "loginRegisterOwner": "Daftar sebagai Owner",
+  "loginSessionExpired": "Sesi berakhir, silakan masuk lagi",
+  "registerOwnerTitle": "Daftar sebagai Owner",
+  "registerOwnerAccountSection": "Akun owner",
+  "registerOwnerOutletSection": "Outlet pertama",
+  "registerOwnerOutletNameLabel": "Nama outlet",
+  "registerOwnerOutletCodeLabel": "Kode outlet",
+  "registerOwnerOutletCodeHelper": "2–5 huruf atau angka",
+  "registerOwnerOutletAddressLabel": "Alamat outlet (opsional)",
+  "registerOwnerOutletPhoneLabel": "Telepon outlet (opsional)",
+  "registerOwnerSubmit": "Daftar",
+  "forgotPasswordTitle": "Lupa password",
+  "forgotPasswordBody": "Masukkan email akun Anda. Jika terdaftar, kami akan mengirim kode verifikasi 6 digit.",
+  "forgotPasswordSubmit": "Kirim kode",
+  "resetPasswordTitle": "Reset password",
+  "resetPasswordBody": "Masukkan kode 6 digit yang dikirim ke {email} dan password baru Anda.",
+  "resetPasswordOtpLabel": "Kode OTP",
+  "resetPasswordResend": "Kirim ulang kode",
+  "resetPasswordResendIn": "Kirim ulang kode dalam {seconds} dtk",
+  "resetPasswordResent": "Jika email terdaftar, kode baru telah dikirim.",
+  "resetPasswordSubmit": "Reset password",
+  "resetPasswordSuccess": "Password berhasil diubah. Silakan masuk.",
+  "userRoleOwner": "Owner",
+  "userRoleStaff": "Staff",
+  "validationPasswordTooLong": "Password terlalu panjang (maksimal 72 byte)",
+  "validationOtpLength": "Kode harus 6 digit",
+  "validationOutletCode": "Kode outlet 2–5 huruf atau angka",
+  "validationServerInvalid": "Isian tidak valid",
+  "shellTabDashboard": "Dashboard",
+  "shellTabOrders": "Order",
+  "shellTabSettings": "Pengaturan",
+  "settingsTitle": "Pengaturan",
+  "settingsSectionAccount": "Akun",
+  "settingsProfile": "Profil",
+  "settingsChangePassword": "Ubah Password",
+  "settingsSectionAppearance": "Tampilan",
+  "settingsTheme": "Tema",
+  "settingsLanguage": "Bahasa",
+  "settingsSectionManage": "Kelola",
+  "settingsManageServices": "Layanan & Harga",
+  "settingsManageCustomers": "Pelanggan",
+  "settingsManageStaff": "Staff",
+  "settingsManageOutlets": "Outlet",
+  "settingsLogout": "Keluar",
+  "settingsLogoutConfirmTitle": "Keluar dari akun?",
+  "settingsLogoutConfirmBody": "Anda perlu masuk lagi untuk memakai aplikasi.",
+  "profileTitle": "Profil",
+  "profileRoleLabel": "Peran",
+  "profileOutletLabel": "Outlet",
+  "profileAllOutlets": "Semua outlet",
+  "profileSave": "Simpan",
+  "profileSaved": "Profil berhasil disimpan",
+  "changePasswordTitle": "Ubah Password",
+  "changePasswordCurrentLabel": "Password saat ini",
+  "changePasswordSubmit": "Ubah password",
+  "changePasswordCurrentWrong": "Password saat ini salah",
+  "changePasswordSuccess": "Password berhasil diubah",
+  "commonSearch": "Cari",
+  "commonClear": "Hapus teks",
+  "commonActive": "Aktif",
+  "commonInactive": "Nonaktif",
+  "commonSave": "Simpan",
+  "commonDelete": "Hapus",
+  "commonContinue": "Lanjutkan",
+  "commonDays": "{days} hari",
+  "validationRange": "Isi angka {min}–{max}",
+  "timeAgoJustNow": "Baru saja",
+  "timeAgoMinutes": "{minutes} menit lalu",
+  "timeAgoHours": "{hours} jam lalu",
+  "timeAgoDays": "{days} hari lalu",
+  "outletsTitle": "Outlet",
+  "outletsAdd": "Tambah outlet",
+  "outletsEmpty": "Belum ada outlet",
+  "outletFormAddTitle": "Tambah Outlet",
+  "outletFormEditTitle": "Ubah Outlet",
+  "outletFormAddressLabel": "Alamat (opsional)",
+  "outletFormPhoneLabel": "Telepon (opsional)",
+  "outletFormCodeLocked": "Kode tidak dapat diubah",
+  "outletFormCreated": "Outlet dibuat. Katalog layanan default dibuat otomatis.",
+  "outletFormSaved": "Outlet disimpan",
+  "outletDeactivateTitle": "Nonaktifkan outlet?",
+  "outletDeactivateBody": "Outlet nonaktif tidak dapat menerima order baru.",
+  "outletDeactivateConfirm": "Nonaktifkan",
+  "outletFilterAll": "Semua outlet",
+  "outletFilterTooltip": "Pilih outlet",
+  "outletPickerLabel": "Outlet",
+  "outletPickerTitle": "Pilih outlet",
+  "servicesTitle": "Layanan & Harga",
+  "servicesAddUnit": "Tambah satuan",
+  "servicesSectionKilo": "Kiloan",
+  "servicesSectionUnit": "Satuan",
+  "servicesUnitEmpty": "Belum ada layanan satuan",
+  "servicesBadgeSystem": "Sistem",
+  "servicesDeleteTitle": "Hapus layanan?",
+  "servicesDeleteBody": "Layanan \"{name}\" akan dihapus. Order lama tidak terpengaruh.",
+  "servicesDeleted": "Layanan dihapus",
+  "serviceFormAddTitle": "Tambah Layanan Satuan",
+  "serviceFormEditTitle": "Ubah Layanan",
+  "serviceFormNameLabel": "Nama layanan",
+  "serviceFormUnitLabel": "Satuan",
+  "serviceFormUnitLocked": "Satuan tidak dapat diubah",
+  "serviceFormRegularPriceLabel": "Harga reguler (per {unit})",
+  "serviceFormExpressPriceLabel": "Harga express (per {unit})",
+  "serviceFormRegularDaysLabel": "Durasi reguler (hari)",
+  "serviceFormExpressDaysLabel": "Durasi express (hari)",
+  "serviceFormMinQuantityLabel": "Minimal kuantitas (kg)",
+  "serviceFormMinQuantityHelper": "0 = tanpa minimum",
+  "serviceFormCreated": "Layanan ditambahkan",
+  "serviceFormSaved": "Layanan disimpan",
+  "serviceFormDeactivateKiloTitle": "Nonaktifkan layanan?",
+  "serviceFormDeactivateKiloBody": "Layanan nonaktif tidak dapat dipilih saat membuat order baru.",
+  "serviceFormDeactivateConfirm": "Nonaktifkan",
+  "staffTitle": "Staff",
+  "staffAdd": "Tambah staff",
+  "staffSearchHint": "Cari nama atau email",
+  "staffEmpty": "Belum ada staff",
+  "staffFormAddTitle": "Tambah Staff",
+  "staffFormEditTitle": "Ubah Staff",
+  "staffFormCreated": "Staff ditambahkan",
+  "staffFormSaved": "Staff disimpan",
+  "staffSessionEndsTitle": "Akhiri sesi staff?",
+  "staffSessionEndsBody": "Sesi staff ini akan berakhir dan ia harus masuk lagi.",
+  "staffResetPassword": "Reset password",
+  "staffResetPasswordTitle": "Reset password staff",
+  "staffResetPasswordBody": "Masukkan password baru. Semua sesi staff ini akan berakhir.",
+  "staffResetPasswordDone": "Password staff direset",
+  "customersTitle": "Pelanggan",
+  "customersSearchHint": "Cari nama atau nomor HP",
+  "customersEmptyTitle": "Belum ada pelanggan",
+  "customersEmptyMessage": "Pelanggan muncul otomatis saat order dibuat.",
+  "customersLastOrder": "Order terakhir: {when}",
+  "customerEditTitle": "Ubah Pelanggan",
+  "customerEditSaved": "Pelanggan disimpan",
+  "customerEditPhoneLabel": "Nomor HP (opsional)",
+  "commonBack": "Kembali",
+  "commonOk": "OK",
+  "ordersTitle": "Order",
+  "ordersNew": "Order Baru",
+  "ordersSearchHint": "Cari nomor order atau pelanggan",
+  "ordersFilterAll": "Semua",
+  "ordersEmptyTitle": "Belum ada order",
+  "ordersEmptyMessage": "Ketuk Order Baru untuk membuat order pertama.",
+  "ordersEstimatedDone": "Estimasi selesai: {date}",
+  "orderActionStart": "Mulai Proses",
+  "orderActionFinish": "Tandai Selesai",
+  "orderActionPickUp": "Tandai Diambil",
+  "orderActionMarkPaid": "Tandai Lunas",
+  "orderActionsMenu": "Menu order",
+  "orderActionEdit": "Edit",
+  "orderActionChangeStatus": "Ubah status",
+  "orderActionUnpay": "Batalkan Lunas",
+  "orderActionDelete": "Hapus",
+  "orderPaidQuestionTitle": "Pelanggan sudah membayar?",
+  "orderPaidQuestionBody": "Order harus lunas sebelum ditandai diambil.",
+  "orderPaidQuestionConfirm": "Ya, sudah lunas",
+  "orderPaidButNotPickedUp": "Order sudah ditandai lunas, tetapi belum ditandai diambil.",
+  "orderUnpayTitle": "Batalkan status lunas?",
+  "orderUnpayBody": "Order akan kembali menjadi belum lunas.",
+  "orderDeleteTitle": "Hapus order?",
+  "orderDeleteBody": "Order {number} akan dihapus dan tidak muncul lagi di daftar.",
+  "orderDeleted": "Order dihapus",
+  "orderDetailTitle": "Detail Order",
+  "orderDetailOutlet": "Outlet",
+  "orderDetailReceivedAt": "Waktu masuk",
+  "orderDetailSpeed": "Kecepatan",
+  "orderDetailCreatedBy": "Dibuat oleh",
+  "orderDetailCustomer": "Pelanggan",
+  "orderDetailProgress": "Progres",
+  "orderDetailItems": "Item",
+  "orderDetailTotal": "Total",
+  "orderDetailPayment": "Pembayaran",
+  "orderDetailPaidAt": "Lunas pada",
+  "orderDetailNotes": "Catatan",
+  "orderItemDimensions": "{length} × {width} m = {area} m²",
+  "orderItemBilled": "ditagih {quantity} {unit}",
+  "orderFormNewTitle": "Order Baru",
+  "orderFormEditTitle": "Edit Order",
+  "orderFormEditNote": "Harga dihitung ulang dengan harga terbaru saat disimpan.",
+  "orderFormCustomerSection": "Pelanggan",
+  "orderFormCustomerLabel": "Nama pelanggan",
+  "orderFormCustomerPhoneLabel": "No. HP (opsional)",
+  "orderFormCustomerAddNew": "Tambah pelanggan baru: {name}",
+  "orderFormCustomerChange": "Ganti",
+  "orderFormCustomerSearchFailed": "Tidak dapat mencari pelanggan. Anda tetap bisa menambah pelanggan baru.",
+  "orderFormSpeedSection": "Kecepatan",
+  "orderFormEstimatedDone": "Perkiraan selesai: {date}",
+  "orderFormPickOutlet": "Pilih outlet terlebih dahulu.",
+  "orderFormKiloSection": "Kiloan",
+  "orderFormNoKiloServices": "Tidak ada layanan kiloan aktif.",
+  "orderFormBilledAs": "Ditagih {min} kg",
+  "orderFormUnitSection": "Satuan",
+  "orderFormAddUnitItem": "Tambah item satuan",
+  "orderFormUnitPickerTitle": "Pilih layanan satuan",
+  "orderFormUnitPickerEmpty": "Tidak ada layanan satuan aktif.",
+  "orderFormUnitAdd": "Tambah",
+  "orderFormLengthLabel": "Panjang (m)",
+  "orderFormWidthLabel": "Lebar (m)",
+  "orderFormArea": "Luas: {area} {unit}",
+  "orderFormDecrease": "Kurangi",
+  "orderFormIncrease": "Tambah",
+  "orderFormRemoveItem": "Hapus item",
+  "orderFormInactiveWarning": "Layanan berikut sudah tidak aktif. Hapus sebelum menyimpan.",
+  "orderFormNotesSection": "Catatan",
+  "orderFormNotesHint": "Catatan untuk order ini (opsional)",
+  "orderFormPaidSwitch": "Sudah Lunas",
+  "orderFormEstimatedTotal": "Perkiraan total",
+  "orderFormOutletRequired": "Pilih outlet terlebih dahulu.",
+  "orderFormItemsRequired": "Tambahkan minimal satu item.",
+  "orderFormItemsInvalid": "Periksa kuantitas item. Isi dengan angka yang valid.",
+  "orderFormRemoveInactive": "Hapus layanan yang sudah tidak aktif sebelum menyimpan.",
+  "orderFormTooManyItems": "Satu order maksimal 50 item.",
+  "orderFormItemError": "Item \"{name}\" tidak valid. Periksa kuantitasnya.",
+  "orderFormChangeOutletTitle": "Ganti outlet?",
+  "orderFormChangeOutletBody": "Layanan berbeda di tiap outlet, jadi semua item akan dikosongkan.",
+  "orderFormDiscardTitle": "Buang perubahan?",
+  "orderFormDiscardBody": "Data yang sudah diisi akan hilang.",
+  "orderFormDiscardConfirm": "Buang",
+  "orderFormCreated": "Order {number} dibuat",
+  "orderFormSaved": "Order disimpan",
+  "orderFormCreateUnknownTitle": "Hasil belum pasti",
+  "orderFormCreateUnknownBody": "Koneksi terputus. Order mungkin sudah tersimpan. Periksa daftar order sebelum mencoba lagi agar tidak dobel.",
+  "dashboardTitle": "Dashboard",
+  "dashboardRange1h": "1J",
+  "dashboardRange24h": "24J",
+  "dashboardRange7d": "7H",
+  "dashboardRange30d": "30H",
+  "dashboardRange1y": "1T",
+  "dashboardRangeAll": "Semua",
+  "dashboardPeriod": "Periode: {from} – {to}",
+  "dashboardOperationalNow": "Kondisi saat ini",
+  "dashboardInProgress": "Sedang diproses",
+  "dashboardReadyForPickup": "Siap diambil",
+  "dashboardUnpaid": "Belum lunas",
+  "dashboardSummary": "Ringkasan periode",
+  "dashboardTotalOrders": "Jumlah order",
+  "dashboardTotalKg": "Total kg",
+  "dashboardTotalPcs": "Total pcs",
+  "dashboardTotalSqm": "Total m²",
+  "dashboardRevenue": "Pendapatan",
+  "dashboardRevenuePaid": "Lunas",
+  "dashboardRevenueUnpaid": "Belum lunas",
+  "dashboardOrdersCount": "{count} order",
+  "dashboardChartTitle": "Grafik",
+  "dashboardMetricOrders": "Order",
+  "dashboardMetricWeight": "Kg",
+  "dashboardMetricRevenue": "Pendapatan",
+  "dashboardByCategory": "Per kategori",
+  "dashboardByUnitService": "Per jenis satuan",
+  "dashboardByStatus": "Per status",
+  "dashboardEmpty": "Belum ada order pada periode ini",
+  "configErrorHttpsBody": "Rilis hanya menerima alamat server HTTPS. Bangun ulang dengan --dart-define=API_BASE_URL=https://<alamat server>.",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "@resetPasswordBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@resetPasswordResendIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "@commonDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@servicesDeleteBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@serviceFormRegularPriceLabel": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@serviceFormExpressPriceLabel": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@customersLastOrder": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderDeleteBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderItemDimensions": {
+    "placeholders": {
+      "length": {
+        "type": "String"
+      },
+      "width": {
+        "type": "String"
+      },
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderItemBilled": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@ordersEstimatedDone": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormCustomerAddNew": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormEstimatedDone": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormBilledAs": {
+    "placeholders": {
+      "min": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormArea": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormItemError": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormCreated": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardPeriod": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

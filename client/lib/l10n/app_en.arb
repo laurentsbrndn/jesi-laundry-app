@@ -1,0 +1,520 @@
+{
+  "@@locale": "en",
+  "appName": "Jesi Laundry",
+  "configErrorTitle": "Configuration incomplete",
+  "configErrorBody": "API_BASE_URL is not set. Run the app with --dart-define=API_BASE_URL=<server address>.",
+  "errorBadRequest": "The request could not be processed.",
+  "errorValidationError": "Some of the entered data is invalid. Please check your input.",
+  "errorUnauthorized": "Invalid session. Please sign in again.",
+  "errorTokenExpired": "Your session has expired. Please sign in again.",
+  "errorInvalidRefreshToken": "Your session has ended. Please sign in again.",
+  "errorInvalidCredentials": "Incorrect email or password.",
+  "errorAccountInactive": "Your account has been deactivated. Contact the owner.",
+  "errorForbidden": "You do not have permission to do this.",
+  "errorNotFound": "The requested data was not found.",
+  "errorEmailTaken": "This email is already in use.",
+  "errorOwnerAlreadyExists": "An owner is already registered.",
+  "errorOutletCodeTaken": "This outlet code is already in use.",
+  "errorServiceNameTaken": "A service with this name already exists in this outlet.",
+  "errorOutletInactive": "This outlet is inactive and cannot accept orders.",
+  "errorServiceInactive": "The service is inactive, deleted, or does not belong to the order outlet.",
+  "errorDuplicateKiloService": "The same per-kilo service cannot appear more than once in an order.",
+  "errorInvalidStatusTransition": "This status change is not allowed.",
+  "errorPaymentRequired": "The order must be paid before it can be marked as picked up.",
+  "errorOrderNotEditable": "Paid or picked-up orders cannot be edited.",
+  "errorSystemServiceNotDeletable": "Built-in per-kilo services cannot be deleted.",
+  "errorOtpInvalid": "The OTP code is incorrect.",
+  "errorOtpExpired": "The OTP code has expired. Request a new one.",
+  "errorOtpTooManyAttempts": "Too many attempts. Request a new code.",
+  "errorRateLimited": "Too many requests. Please try again shortly.",
+  "errorInternalError": "A server error occurred. Please try again later.",
+  "errorNetworkError": "Cannot reach the server. Check your internet connection.",
+  "errorUnknown": "An unknown error occurred.",
+  "serviceCategoryWashIron": "Wash & Iron",
+  "serviceCategoryIronOnly": "Iron Only",
+  "serviceCategoryWashFold": "Wash & Fold",
+  "serviceCategoryUnit": "Unit Items",
+  "serviceSpeedRegular": "Regular",
+  "serviceSpeedExpress": "Express",
+  "orderStatusReceived": "Received",
+  "orderStatusProcessing": "Processing",
+  "orderStatusDone": "Ready",
+  "orderStatusPickedUp": "Picked Up",
+  "paymentStatusUnpaid": "Unpaid",
+  "paymentStatusPaid": "Paid",
+  "unitKg": "kg",
+  "unitPcs": "pcs",
+  "unitSqm": "m²",
+  "themeSystem": "Follow system",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "languageSystem": "Follow system",
+  "languageIndonesian": "Indonesia",
+  "languageEnglish": "English",
+  "commonRetry": "Try again",
+  "commonCancel": "Cancel",
+  "commonConfirm": "Yes",
+  "commonEmptyTitle": "Nothing here yet",
+  "validationRequired": "This field is required",
+  "validationInvalidEmail": "Invalid email format",
+  "validationPasswordTooShort": "Password must be at least 8 characters",
+  "validationPasswordNeedsLetterAndDigit": "Password must contain letters and digits",
+  "validationPasswordMismatch": "Passwords do not match",
+  "validationInvalidNumber": "Invalid number",
+  "validationMinLength": "At least {min} characters",
+  "validationMaxLength": "At most {max} characters",
+  "splashSlowHint": "The server may be waking up. Please wait a moment…",
+  "authEmailLabel": "Email",
+  "authPasswordLabel": "Password",
+  "authConfirmPasswordLabel": "Confirm password",
+  "authNewPasswordLabel": "New password",
+  "authNameLabel": "Name",
+  "authShowPassword": "Show password",
+  "authHidePassword": "Hide password",
+  "loginSubmit": "Sign in",
+  "loginForgotPassword": "Forgot password?",
+  "loginRegisterOwner": "Register as Owner",
+  "loginSessionExpired": "Session expired, please sign in again",
+  "registerOwnerTitle": "Register as Owner",
+  "registerOwnerAccountSection": "Owner account",
+  "registerOwnerOutletSection": "First outlet",
+  "registerOwnerOutletNameLabel": "Outlet name",
+  "registerOwnerOutletCodeLabel": "Outlet code",
+  "registerOwnerOutletCodeHelper": "2–5 letters or digits",
+  "registerOwnerOutletAddressLabel": "Outlet address (optional)",
+  "registerOwnerOutletPhoneLabel": "Outlet phone (optional)",
+  "registerOwnerSubmit": "Register",
+  "forgotPasswordTitle": "Forgot password",
+  "forgotPasswordBody": "Enter your account email. If it is registered, we will send a 6-digit verification code.",
+  "forgotPasswordSubmit": "Send code",
+  "resetPasswordTitle": "Reset password",
+  "resetPasswordBody": "Enter the 6-digit code sent to {email} and your new password.",
+  "resetPasswordOtpLabel": "OTP code",
+  "resetPasswordResend": "Resend code",
+  "resetPasswordResendIn": "Resend code in {seconds}s",
+  "resetPasswordResent": "If the email is registered, a new code has been sent.",
+  "resetPasswordSubmit": "Reset password",
+  "resetPasswordSuccess": "Password changed. Please sign in.",
+  "userRoleOwner": "Owner",
+  "userRoleStaff": "Staff",
+  "validationPasswordTooLong": "Password is too long (72 bytes maximum)",
+  "validationOtpLength": "The code must be 6 digits",
+  "validationOutletCode": "Outlet code must be 2–5 letters or digits",
+  "validationServerInvalid": "Invalid value",
+  "shellTabDashboard": "Dashboard",
+  "shellTabOrders": "Orders",
+  "shellTabSettings": "Settings",
+  "settingsTitle": "Settings",
+  "settingsSectionAccount": "Account",
+  "settingsProfile": "Profile",
+  "settingsChangePassword": "Change password",
+  "settingsSectionAppearance": "Appearance",
+  "settingsTheme": "Theme",
+  "settingsLanguage": "Language",
+  "settingsSectionManage": "Manage",
+  "settingsManageServices": "Services & Prices",
+  "settingsManageCustomers": "Customers",
+  "settingsManageStaff": "Staff",
+  "settingsManageOutlets": "Outlets",
+  "settingsLogout": "Sign out",
+  "settingsLogoutConfirmTitle": "Sign out?",
+  "settingsLogoutConfirmBody": "You will need to sign in again to use the app.",
+  "profileTitle": "Profile",
+  "profileRoleLabel": "Role",
+  "profileOutletLabel": "Outlet",
+  "profileAllOutlets": "All outlets",
+  "profileSave": "Save",
+  "profileSaved": "Profile saved",
+  "changePasswordTitle": "Change password",
+  "changePasswordCurrentLabel": "Current password",
+  "changePasswordSubmit": "Change password",
+  "changePasswordCurrentWrong": "Current password is incorrect",
+  "changePasswordSuccess": "Password changed",
+  "commonSearch": "Search",
+  "commonClear": "Clear",
+  "commonActive": "Active",
+  "commonInactive": "Inactive",
+  "commonSave": "Save",
+  "commonDelete": "Delete",
+  "commonContinue": "Continue",
+  "commonDays": "{days, plural, =1{1 day} other{{days} days}}",
+  "validationRange": "Enter a number from {min} to {max}",
+  "timeAgoJustNow": "Just now",
+  "timeAgoMinutes": "{minutes, plural, =1{1 minute ago} other{{minutes} minutes ago}}",
+  "timeAgoHours": "{hours, plural, =1{1 hour ago} other{{hours} hours ago}}",
+  "timeAgoDays": "{days, plural, =1{1 day ago} other{{days} days ago}}",
+  "outletsTitle": "Outlets",
+  "outletsAdd": "Add outlet",
+  "outletsEmpty": "No outlets yet",
+  "outletFormAddTitle": "Add Outlet",
+  "outletFormEditTitle": "Edit Outlet",
+  "outletFormAddressLabel": "Address (optional)",
+  "outletFormPhoneLabel": "Phone (optional)",
+  "outletFormCodeLocked": "The code cannot be changed",
+  "outletFormCreated": "Outlet created. The default service catalog was created automatically.",
+  "outletFormSaved": "Outlet saved",
+  "outletDeactivateTitle": "Deactivate outlet?",
+  "outletDeactivateBody": "An inactive outlet cannot receive new orders.",
+  "outletDeactivateConfirm": "Deactivate",
+  "outletFilterAll": "All outlets",
+  "outletFilterTooltip": "Choose outlet",
+  "outletPickerLabel": "Outlet",
+  "outletPickerTitle": "Choose outlet",
+  "servicesTitle": "Services & Prices",
+  "servicesAddUnit": "Add unit item",
+  "servicesSectionKilo": "Per kilo",
+  "servicesSectionUnit": "Unit items",
+  "servicesUnitEmpty": "No unit services yet",
+  "servicesBadgeSystem": "System",
+  "servicesDeleteTitle": "Delete service?",
+  "servicesDeleteBody": "The service \"{name}\" will be deleted. Existing orders are not affected.",
+  "servicesDeleted": "Service deleted",
+  "serviceFormAddTitle": "Add Unit Service",
+  "serviceFormEditTitle": "Edit Service",
+  "serviceFormNameLabel": "Service name",
+  "serviceFormUnitLabel": "Unit",
+  "serviceFormUnitLocked": "The unit cannot be changed",
+  "serviceFormRegularPriceLabel": "Regular price (per {unit})",
+  "serviceFormExpressPriceLabel": "Express price (per {unit})",
+  "serviceFormRegularDaysLabel": "Regular duration (days)",
+  "serviceFormExpressDaysLabel": "Express duration (days)",
+  "serviceFormMinQuantityLabel": "Minimum quantity (kg)",
+  "serviceFormMinQuantityHelper": "0 = no minimum",
+  "serviceFormCreated": "Service added",
+  "serviceFormSaved": "Service saved",
+  "serviceFormDeactivateKiloTitle": "Deactivate service?",
+  "serviceFormDeactivateKiloBody": "An inactive service cannot be chosen when creating new orders.",
+  "serviceFormDeactivateConfirm": "Deactivate",
+  "staffTitle": "Staff",
+  "staffAdd": "Add staff",
+  "staffSearchHint": "Search name or email",
+  "staffEmpty": "No staff yet",
+  "staffFormAddTitle": "Add Staff",
+  "staffFormEditTitle": "Edit Staff",
+  "staffFormCreated": "Staff added",
+  "staffFormSaved": "Staff saved",
+  "staffSessionEndsTitle": "End the staff session?",
+  "staffSessionEndsBody": "This staff member will be signed out and must sign in again.",
+  "staffResetPassword": "Reset password",
+  "staffResetPasswordTitle": "Reset staff password",
+  "staffResetPasswordBody": "Enter a new password. All sessions of this staff member will end.",
+  "staffResetPasswordDone": "Staff password reset",
+  "customersTitle": "Customers",
+  "customersSearchHint": "Search name or phone",
+  "customersEmptyTitle": "No customers yet",
+  "customersEmptyMessage": "Customers appear automatically when orders are created.",
+  "customersLastOrder": "Last order: {when}",
+  "customerEditTitle": "Edit Customer",
+  "customerEditSaved": "Customer saved",
+  "customerEditPhoneLabel": "Phone (optional)",
+  "commonBack": "Back",
+  "commonOk": "OK",
+  "ordersTitle": "Orders",
+  "ordersNew": "New Order",
+  "ordersSearchHint": "Search order number or customer",
+  "ordersFilterAll": "All",
+  "ordersEmptyTitle": "No orders yet",
+  "ordersEmptyMessage": "Tap New Order to create the first one.",
+  "ordersEstimatedDone": "Estimated done: {date}",
+  "orderActionStart": "Start Processing",
+  "orderActionFinish": "Mark Ready",
+  "orderActionPickUp": "Mark Picked Up",
+  "orderActionMarkPaid": "Mark Paid",
+  "orderActionsMenu": "Order menu",
+  "orderActionEdit": "Edit",
+  "orderActionChangeStatus": "Change status",
+  "orderActionUnpay": "Cancel payment",
+  "orderActionDelete": "Delete",
+  "orderPaidQuestionTitle": "Has the customer paid?",
+  "orderPaidQuestionBody": "The order must be paid before it is marked picked up.",
+  "orderPaidQuestionConfirm": "Yes, paid",
+  "orderPaidButNotPickedUp": "The order was marked paid, but not yet marked picked up.",
+  "orderUnpayTitle": "Cancel paid status?",
+  "orderUnpayBody": "The order will become unpaid again.",
+  "orderDeleteTitle": "Delete order?",
+  "orderDeleteBody": "Order {number} will be deleted and will no longer appear in the list.",
+  "orderDeleted": "Order deleted",
+  "orderDetailTitle": "Order Details",
+  "orderDetailOutlet": "Outlet",
+  "orderDetailReceivedAt": "Received at",
+  "orderDetailSpeed": "Speed",
+  "orderDetailCreatedBy": "Created by",
+  "orderDetailCustomer": "Customer",
+  "orderDetailProgress": "Progress",
+  "orderDetailItems": "Items",
+  "orderDetailTotal": "Total",
+  "orderDetailPayment": "Payment",
+  "orderDetailPaidAt": "Paid on",
+  "orderDetailNotes": "Notes",
+  "orderItemDimensions": "{length} × {width} m = {area} m²",
+  "orderItemBilled": "billed {quantity} {unit}",
+  "orderFormNewTitle": "New Order",
+  "orderFormEditTitle": "Edit Order",
+  "orderFormEditNote": "Prices are recalculated with the latest prices when saved.",
+  "orderFormCustomerSection": "Customer",
+  "orderFormCustomerLabel": "Customer name",
+  "orderFormCustomerPhoneLabel": "Phone (optional)",
+  "orderFormCustomerAddNew": "Add new customer: {name}",
+  "orderFormCustomerChange": "Change",
+  "orderFormCustomerSearchFailed": "Could not search customers. You can still add a new customer.",
+  "orderFormSpeedSection": "Speed",
+  "orderFormEstimatedDone": "Estimated done: {date}",
+  "orderFormPickOutlet": "Choose an outlet first.",
+  "orderFormKiloSection": "Per kilo",
+  "orderFormNoKiloServices": "No active per-kilo services.",
+  "orderFormBilledAs": "Billed as {min} kg",
+  "orderFormUnitSection": "Unit items",
+  "orderFormAddUnitItem": "Add unit item",
+  "orderFormUnitPickerTitle": "Choose a unit service",
+  "orderFormUnitPickerEmpty": "No active unit services.",
+  "orderFormUnitAdd": "Add",
+  "orderFormLengthLabel": "Length (m)",
+  "orderFormWidthLabel": "Width (m)",
+  "orderFormArea": "Area: {area} {unit}",
+  "orderFormDecrease": "Decrease",
+  "orderFormIncrease": "Increase",
+  "orderFormRemoveItem": "Remove item",
+  "orderFormInactiveWarning": "These services are no longer active. Remove them before saving.",
+  "orderFormNotesSection": "Notes",
+  "orderFormNotesHint": "Notes for this order (optional)",
+  "orderFormPaidSwitch": "Already paid",
+  "orderFormEstimatedTotal": "Estimated total",
+  "orderFormOutletRequired": "Choose an outlet first.",
+  "orderFormItemsRequired": "Add at least one item.",
+  "orderFormItemsInvalid": "Check the item quantities. Enter valid numbers.",
+  "orderFormRemoveInactive": "Remove inactive services before saving.",
+  "orderFormTooManyItems": "An order can have at most 50 items.",
+  "orderFormItemError": "Item \"{name}\" is not valid. Check its quantity.",
+  "orderFormChangeOutletTitle": "Change outlet?",
+  "orderFormChangeOutletBody": "Services differ per outlet, so all items will be cleared.",
+  "orderFormDiscardTitle": "Discard changes?",
+  "orderFormDiscardBody": "What you entered will be lost.",
+  "orderFormDiscardConfirm": "Discard",
+  "orderFormCreated": "Order {number} created",
+  "orderFormSaved": "Order saved",
+  "orderFormCreateUnknownTitle": "Result unknown",
+  "orderFormCreateUnknownBody": "The connection dropped. The order may already have been saved. Check the order list before trying again to avoid a duplicate.",
+  "dashboardTitle": "Dashboard",
+  "dashboardRange1h": "1h",
+  "dashboardRange24h": "24h",
+  "dashboardRange7d": "7d",
+  "dashboardRange30d": "30d",
+  "dashboardRange1y": "1y",
+  "dashboardRangeAll": "All",
+  "dashboardPeriod": "Period: {from} – {to}",
+  "dashboardOperationalNow": "Current status",
+  "dashboardInProgress": "In progress",
+  "dashboardReadyForPickup": "Ready for pickup",
+  "dashboardUnpaid": "Unpaid",
+  "dashboardSummary": "Period summary",
+  "dashboardTotalOrders": "Orders",
+  "dashboardTotalKg": "Total kg",
+  "dashboardTotalPcs": "Total pcs",
+  "dashboardTotalSqm": "Total m²",
+  "dashboardRevenue": "Revenue",
+  "dashboardRevenuePaid": "Paid",
+  "dashboardRevenueUnpaid": "Unpaid",
+  "dashboardOrdersCount": "{count, plural, =1{1 order} other{{count} orders}}",
+  "dashboardChartTitle": "Chart",
+  "dashboardMetricOrders": "Orders",
+  "dashboardMetricWeight": "Kg",
+  "dashboardMetricRevenue": "Revenue",
+  "dashboardByCategory": "By category",
+  "dashboardByUnitService": "By unit item",
+  "dashboardByStatus": "By status",
+  "dashboardEmpty": "No orders in this period",
+  "configErrorHttpsBody": "Release builds only accept an HTTPS server address. Rebuild with --dart-define=API_BASE_URL=https://<server address>.",
+  "@resetPasswordBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@resetPasswordResendIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "@commonDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@servicesDeleteBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@serviceFormRegularPriceLabel": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@serviceFormExpressPriceLabel": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@customersLastOrder": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderDeleteBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderItemDimensions": {
+    "placeholders": {
+      "length": {
+        "type": "String"
+      },
+      "width": {
+        "type": "String"
+      },
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderItemBilled": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@ordersEstimatedDone": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormCustomerAddNew": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormEstimatedDone": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormBilledAs": {
+    "placeholders": {
+      "min": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormArea": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormItemError": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormCreated": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardPeriod": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

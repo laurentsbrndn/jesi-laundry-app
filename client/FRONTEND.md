@@ -35,7 +35,7 @@ Setelah itu ubah identifier agar persis `com.jesilaundry.app`:
 Android:
 
 - `android/app/src/main/AndroidManifest.xml`: permission `android.permission.INTERNET`, `android:label="Jesi Laundry"`.
-- `android/app/src/debug/AndroidManifest.xml`: `android:usesCleartextTraffic="true"` (hanya debug, untuk server lokal HTTP).
+- `android/app/src/debug/AndroidManifest.xml`: `android:usesCleartextTraffic="true"` dengan `tools:replace="android:usesCleartextTraffic"` (deklarasi `xmlns:tools`), agar menimpa nilai `false` di manifest utama (hanya debug, untuk server lokal HTTP).
 
 iOS (`ios/Runner/Info.plist`):
 
@@ -298,14 +298,16 @@ client/
 
 - `AppConfig.apiBaseUrl` = `String.fromEnvironment('API_BASE_URL')`; base URL Dio = `$apiBaseUrl/api/v1`. Timeout connect 15 detik, receive 20 detik.
 - `LocaleInterceptor` menambahkan `Accept-Language` sesuai locale aplikasi aktif (`id`/`en`).
-- `AuthInterceptor` (`QueuedInterceptor`):
+- Endpoint publik (`/auth/setup-status`, `/auth/register-owner`, `/auth/login`, `/auth/refresh`, `/auth/forgot-password`, `/auth/reset-password`, `/auth/logout`) tidak memakai `AuthInterceptor`: tanpa header Bearer dan tanpa logika refresh.
+- `AuthInterceptor` (`QueuedInterceptor`, untuk endpoint selain di atas):
   1. Tambahkan `Authorization: Bearer <access_token>` jika ada.
   2. Pada respons `401` dengan `code = TOKEN_EXPIRED`: jalankan **satu** proses refresh (gunakan satu `Future` bersama agar request paralel tidak memicu refresh ganda) memakai Dio polos tanpa interceptor ke `POST /auth/refresh`.
   3. Berhasil → simpan token baru, ulangi request asli sekali.
   4. Gagal (`INVALID_REFRESH_TOKEN`, `ACCOUNT_INACTIVE`, dll) → hapus token, set auth state `Unauthenticated` (router otomatis ke login).
 - `TokenStorage` menyimpan `access_token`, `refresh_token`, dan waktu kedaluwarsanya di `flutter_secure_storage`.
 - `AuthController` (`AsyncNotifier<AuthState>`):
-  - `build()`: baca token; jika ada panggil `GET /me` → `Authenticated(user)`, jika gagal → `Unauthenticated`.
+  - `build()`: baca token; jika ada panggil `GET /me` → `Authenticated(user)`. Gagal karena auth (401/403) → hapus token → `Unauthenticated`. Gagal karena jaringan/timeout/5xx → token **tidak** dihapus; `build()` melempar error sehingga splash menampilkan `ErrorView` dengan tombol coba lagi.
+  - `applySession(AuthSession)` menyimpan token ke `TokenStorage` dan mengubah state menjadi `Authenticated`; dipakai oleh `login`, `registerOwner`, dan Ubah Password (server mencabut semua refresh token lama dan mengembalikan sesi baru).
   - `login`, `registerOwner`, `logout` (panggil `/auth/logout` lalu hapus token walau request gagal), `updateUser` (setelah edit profil).
 - Peran dan outlet user diambil dari `AppUser` (`role`, `outlet`).
 
@@ -337,12 +339,12 @@ client/
 | `/settings/outlets` | OutletsScreen | owner |
 | `/settings/outlets/new`, `/settings/outlets/:id` | OutletFormScreen | owner |
 
-- Tab utama memakai `StatefulShellRoute.indexedStack` + `MainShell` (`NavigationBar`), sehingga state tiap tab terjaga.
+- Tab utama memakai `StatefulShellRoute.indexedStack` + `MainShell` (`NavigationBar`), sehingga state tiap tab terjaga. Layar detail di atas tab (mis. `/settings/profile`, `/settings/change-password`, dan layar kelola/form order) memakai `parentNavigatorKey` = root navigator, sehingga `NavigationBar` tersembunyi saat layar itu terbuka.
 - `redirect`:
   - Auth masih loading → `/splash`.
   - Belum login & bukan rute auth → `/login`.
   - Sudah login & berada di rute auth/splash → `/dashboard`.
-  - Staff membuka rute owner → `/dashboard`.
+  - Staff membuka rute owner → `/dashboard` (daftar prefix di `AppRoutes.ownerOnlyPrefixes` + pola `/orders/:id/edit`).
 - `refreshListenable` = `RouterRefreshListenable` yang mendengarkan `authControllerProvider`.
 
 ---
@@ -434,6 +436,8 @@ Validasi password di client sama dengan server: minimal 8 karakter, ada huruf da
 - Pull-to-refresh. Kondisi kosong yang jelas jika tidak ada order dalam rentang.
 - Untuk staff, UI tidak boleh menampilkan placeholder pendapatan; field memang tidak dikirim server.
 
+Penyimpangan F6: label sumbu X diselang-seling dengan langkah `ceil(jumlah titik / 8)` bila titik > 12 (bukan selalu setiap 2), agar tidak bertumpuk pada 31 titik. `bucket_start` dibaca langsung dari komponen string (tanpa konversi zona waktu). Pilihan range dan outlet disimpan di notifier non-autoDispose dan direset saat user berganti; data lama tetap tampil saat memuat pilihan baru.
+
 ### 11.4 Daftar Order
 
 - Kolom pencarian (debounce 400 ms) untuk nomor order / nama pelanggan.
@@ -475,6 +479,8 @@ Validasi: nama pelanggan wajib; minimal 1 item dengan kuantitas > 0. Sukses buat
   - Menu owner (⋮): Edit (hanya jika belum lunas & belum diambil), Ubah status (pilih status sebelumnya), Batalkan Lunas, Hapus (dengan konfirmasi).
 - Setiap aksi menampilkan konfirmasi singkat lewat snackbar dan me-refresh data.
 
+Penyimpangan F5: `GET /orders/:id` dipegang `AsyncNotifier` (bukan `FutureProvider`) agar respons aksi (status, pembayaran, edit) langsung mengganti state detail tanpa GET tambahan; semua mutasi memanggil `invalidateOrderData`. Menu owner (⋮) berada di dalam `OrderActionsBar` di bawah layar. Pratinjau total memakai bilangan bulat seperseratus (bukan double). Saat membuat order dan koneksi terputus (`NETWORK_ERROR`), aplikasi menampilkan dialog bahwa order mungkin sudah tersimpan dan tidak mengulang request.
+
 ### 11.7 Pengaturan
 
 - **Akun**: Profil (ubah nama, tampilkan email & peran), Ubah Password.
@@ -489,6 +495,7 @@ Validasi: nama pelanggan wajib; minimal 1 item dengan kuantitas > 0. Sukses buat
 - *Kiloan*: 3 layanan sistem; tap → form edit nama, harga reguler & express, durasi reguler & express (hari), minimal kg, aktif.
 - *Satuan*: daftar dengan switch aktif; tap → edit; menu hapus (konfirmasi). FAB **Tambah satuan** → form: nama, unit (pcs / m², tidak bisa diubah setelah dibuat), harga reguler & express, durasi reguler & express, aktif.
 - Layanan nonaktif ditampilkan redup dengan label "Nonaktif".
+- Penyimpangan F4: form tambah satuan tidak memiliki switch aktif (layanan baru selalu aktif; switch hanya saat ubah). Form ubah layanan membaca layanan dari daftar `GET /services` (tidak ada `GET /services/:id`); rute ubah membawa `outletId` sebagai query parameter. Ubah/tambah mengirim hanya field yang berubah. Menonaktifkan layanan kiloan, outlet, atau staff meminta konfirmasi.
 
 **Pelanggan** — daftar + pencarian; tap → edit nama & no. HP.
 
@@ -520,7 +527,7 @@ flutter build appbundle --release --dart-define=API_BASE_URL=https://<project>.v
 flutter build ipa --release --dart-define=API_BASE_URL=https://<project>.vercel.app
 ```
 
-Jika `API_BASE_URL` kosong, tampilkan error konfigurasi yang jelas saat startup (jangan crash diam-diam).
+Jika `API_BASE_URL` kosong, tampilkan error konfigurasi yang jelas saat startup (jangan crash diam-diam). Pada build rilis (`kReleaseMode`), alamat yang bukan `https://` juga menampilkan layar error konfigurasi (`AppConfig.isUsable`). Penandatanganan Android dibaca dari `android/key.properties` (jatuh ke kunci debug dengan peringatan bila tidak ada); langkah lengkap ada di README.
 
 ---
 
@@ -565,3 +572,4 @@ Setiap fase: `dart format .` dan `flutter analyze` tanpa issue, aplikasi berjala
 - Lengkapi & samakan key ARB id/en, empty/error state di semua layar, aksesibilitas dasar (label semantik pada ikon tombol), nama & ikon aplikasi, cek layout di layar kecil.
 - Konfigurasi build release Android (signing via `key.properties` yang di-gitignore) dan catatan langkah build iOS.
 - **Selesai jika**: `flutter build appbundle --release` dan `flutter build ipa --release` berhasil.
+- Penyimpangan F7: ikon aplikasi tidak dibuat karena `assets/icon/app_icon.png` (1024×1024) belum disediakan (tambahkan lalu pasang `flutter_launcher_icons`). `flutter build ipa` memerlukan Apple Developer Team di Xcode; tanpa itu verifikasi dengan `flutter build ios --release --no-codesign`.
