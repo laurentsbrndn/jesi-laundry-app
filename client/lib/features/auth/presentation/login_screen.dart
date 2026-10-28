@@ -4,6 +4,8 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../../core/l10n/error_message.dart';
 import '../../../core/l10n/l10n_extension.dart';
+import '../../../core/network/api_error_code.dart';
+import '../../../core/network/api_exception.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/utils/form_validators.dart';
 import '../../../core/widgets/app_snack_bar.dart';
@@ -20,7 +22,8 @@ class LoginScreen extends ConsumerStatefulWidget {
   ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends ConsumerState<LoginScreen> {
+class _LoginScreenState extends ConsumerState<LoginScreen>
+    with WidgetsBindingObserver {
   final _formKey = GlobalKey<FormState>();
   final _email = TextEditingController();
   final _password = TextEditingController();
@@ -29,14 +32,34 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     WidgetsBinding.instance.addPostFrameCallback((_) => _showExpiredNotice());
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _email.dispose();
     _password.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // The owner may have been created or removed while the app was in the
+    // background, so check again when it comes back.
+    if (state == AppLifecycleState.resumed) {
+      ref.invalidate(setupStatusProvider);
+    }
+  }
+
+  Future<void> _refreshSetupStatus() async {
+    ref.invalidate(setupStatusProvider);
+    try {
+      await ref.read(setupStatusProvider.future);
+    } catch (_) {
+      // A failed check just hides the register button.
+    }
   }
 
   void _showExpiredNotice() {
@@ -53,6 +76,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           .read(authControllerProvider.notifier)
           .login(_email.text, _password.text);
     } catch (e) {
+      if (e is ApiException && e.code == ApiErrorCode.invalidCredentials) {
+        ref.invalidate(setupStatusProvider);
+      }
       if (mounted) showAppSnackBar(context, errorMessage(context, e));
     } finally {
       if (mounted) setState(() => _submitting = false);
@@ -68,78 +94,94 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     });
     // The register button needs a confirmed `owner_exists = false`; on failure
     // it stays hidden and login is not blocked.
-    final canRegister = ref.watch(setupStatusProvider).value == false;
+    final setupStatus = ref.watch(setupStatusProvider);
+    final canRegister = !setupStatus.hasError && setupStatus.value == false;
 
     return PopScope(
       canPop: !_submitting,
       child: Scaffold(
         body: SafeArea(
-          child: Center(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(24),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 420),
-                child: Form(
-                  key: _formKey,
-                  child: AutofillGroup(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Icon(
-                          Icons.local_laundry_service,
-                          size: 64,
-                          color: theme.colorScheme.primary,
-                        ),
-                        const SizedBox(height: 12),
-                        Text(
-                          l10n.appName,
-                          style: theme.textTheme.headlineMedium,
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 32),
-                        TextFormField(
-                          controller: _email,
-                          enabled: !_submitting,
-                          keyboardType: TextInputType.emailAddress,
-                          textInputAction: TextInputAction.next,
-                          autofillHints: const [AutofillHints.username],
-                          autocorrect: false,
-                          validator: FormValidators.email(l10n),
-                          decoration: InputDecoration(
-                            labelText: l10n.authEmailLabel,
+          child: RefreshIndicator(
+            onRefresh: _refreshSetupStatus,
+            child: LayoutBuilder(
+              builder: (context, constraints) => SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.all(24),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: constraints.maxHeight - 48,
+                  ),
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 420),
+                      child: Form(
+                        key: _formKey,
+                        child: AutofillGroup(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Icon(
+                                Icons.local_laundry_service,
+                                size: 64,
+                                color: theme.colorScheme.primary,
+                              ),
+                              const SizedBox(height: 12),
+                              Text(
+                                l10n.appName,
+                                style: theme.textTheme.headlineMedium,
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 32),
+                              TextFormField(
+                                controller: _email,
+                                enabled: !_submitting,
+                                keyboardType: TextInputType.emailAddress,
+                                textInputAction: TextInputAction.next,
+                                autofillHints: const [AutofillHints.username],
+                                autocorrect: false,
+                                validator: FormValidators.email(l10n),
+                                decoration: InputDecoration(
+                                  labelText: l10n.authEmailLabel,
+                                ),
+                              ),
+                              const SizedBox(height: 16),
+                              PasswordFormField(
+                                controller: _password,
+                                label: l10n.authPasswordLabel,
+                                enabled: !_submitting,
+                                textInputAction: TextInputAction.done,
+                                autofillHints: const [AutofillHints.password],
+                                onFieldSubmitted: (_) => _submit(),
+                                validator: FormValidators.required(l10n),
+                              ),
+                              const SizedBox(height: 24),
+                              LoadingButton(
+                                onPressed: _submit,
+                                isLoading: _submitting,
+                                child: Text(l10n.loginSubmit),
+                              ),
+                              const SizedBox(height: 8),
+                              TextButton(
+                                onPressed: _submitting
+                                    ? null
+                                    : () => context.push(
+                                        AppRoutes.forgotPassword,
+                                      ),
+                                child: Text(l10n.loginForgotPassword),
+                              ),
+                              if (canRegister)
+                                OutlinedButton(
+                                  onPressed: _submitting
+                                      ? null
+                                      : () => context.push(
+                                          AppRoutes.registerOwner,
+                                        ),
+                                  child: Text(l10n.loginRegisterOwner),
+                                ),
+                            ],
                           ),
                         ),
-                        const SizedBox(height: 16),
-                        PasswordFormField(
-                          controller: _password,
-                          label: l10n.authPasswordLabel,
-                          enabled: !_submitting,
-                          textInputAction: TextInputAction.done,
-                          autofillHints: const [AutofillHints.password],
-                          onFieldSubmitted: (_) => _submit(),
-                          validator: FormValidators.required(l10n),
-                        ),
-                        const SizedBox(height: 24),
-                        LoadingButton(
-                          onPressed: _submit,
-                          isLoading: _submitting,
-                          child: Text(l10n.loginSubmit),
-                        ),
-                        const SizedBox(height: 8),
-                        TextButton(
-                          onPressed: _submitting
-                              ? null
-                              : () => context.push(AppRoutes.forgotPassword),
-                          child: Text(l10n.loginForgotPassword),
-                        ),
-                        if (canRegister)
-                          OutlinedButton(
-                            onPressed: _submitting
-                                ? null
-                                : () => context.push(AppRoutes.registerOwner),
-                            child: Text(l10n.loginRegisterOwner),
-                          ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
