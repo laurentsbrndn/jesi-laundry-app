@@ -3,10 +3,10 @@
 Aplikasi mobile internal (Android & iOS) untuk mencatat cucian masuk harian di Jesi Laundry, lengkap dengan dashboard dan grafik. Monorepo ini berisi:
 
 - `server/` — backend Go (Fiber v3 + GORM + PostgreSQL). Spesifikasi: [`server/BACKEND.md`](server/BACKEND.md).
-- `client/` — aplikasi Flutter (dikerjakan setelah backend). Spesifikasi: `client/FRONTEND.md`.
+- `client/` — aplikasi Flutter (Android & iOS). Spesifikasi: [`client/FRONTEND.md`](client/FRONTEND.md).
 - [`ARCHITECTURE.md`](ARCHITECTURE.md) — dokumen induk (prinsip, kontrak API, hak akses).
 
-Dokumen ini hanya membahas **server**.
+Bagian server ada di bawah; bagian [Client (Flutter)](#client-flutter) ada di akhir dokumen.
 
 ## Prasyarat
 
@@ -132,3 +132,68 @@ Catatan operasional:
 
 Paket **Hobby (gratis) Vercel hanya untuk penggunaan pribadi non-komersial**. Aplikasi operasional usaha laundry termasuk
 penggunaan komersial dan membutuhkan paket **Pro**. Pemilik proyek bertanggung jawab memilih paket yang sesuai.
+
+## Client (Flutter)
+
+Aplikasi mobile Android & iOS di `client/`. Spesifikasi: [`client/FRONTEND.md`](client/FRONTEND.md).
+
+### Prasyarat
+
+| Kebutuhan | Versi | Untuk |
+|---|---|---|
+| Flutter | 3.47.x stable (Dart 3.13) | semua |
+| Android Studio / Android SDK | API 34+ (minSdk 34) | build & run Android |
+| Xcode | iOS 18+ SDK | build & run iOS (macOS saja) |
+| Server lokal berjalan | lihat bagian server di atas | development |
+
+### Alamat API (`API_BASE_URL`)
+
+Alamat server **hanya** dibaca dari `--dart-define=API_BASE_URL=...` dan tidak punya nilai bawaan.
+Jika kosong, aplikasi menampilkan layar error konfigurasi. Tulis tanpa `/api/v1` dan tanpa garis miring di akhir.
+Tidak ada secret yang disimpan di klien.
+
+### Menjalankan secara lokal
+
+Jalankan server lokal dulu (`docker compose up --build` di `server/`, port 8080), lalu:
+
+```bash
+cd client
+flutter pub get
+
+# Emulator Android (10.0.2.2 = localhost mesin host)
+flutter run --dart-define=API_BASE_URL=http://10.0.2.2:8080
+
+# Simulator iOS
+flutter run --dart-define=API_BASE_URL=http://localhost:8080
+
+# Perangkat fisik (Android/iOS) di jaringan Wi-Fi yang sama dengan komputer
+# Ganti 192.168.1.10 dengan IP LAN komputer Anda
+flutter run --dart-define=API_BASE_URL=http://192.168.1.10:8080
+```
+
+HTTP (tanpa TLS) hanya diizinkan pada build debug. Di iOS, `NSAllowsLocalNetworking` mengizinkan alamat jaringan lokal.
+Build release hanya menerima HTTPS.
+
+### Build rilis
+
+```bash
+cd client
+flutter build appbundle --release --dart-define=API_BASE_URL=https://<alamat-server-https>
+flutter build ipa --release --dart-define=API_BASE_URL=https://<alamat-server-https>
+```
+
+Penandatanganan Android (`key.properties`) dan langkah rilis iOS ditambahkan pada fase F7.
+
+### Pemeriksaan kode
+
+```bash
+cd client
+dart format .
+flutter analyze
+```
+
+### Catatan lingkungan (macOS)
+
+Jika `flutter create` / `flutter build` gagal dengan pesan `openssl x509 ... incorrect architecture`, ada `openssl`
+berarsitektur x86_64 (mis. milik XAMPP) yang mendahului `/opt/homebrew/bin` di `PATH`. Dahulukan
+`/opt/homebrew/bin` di `PATH` untuk sesi terminal tersebut, atau pasang Rosetta.
