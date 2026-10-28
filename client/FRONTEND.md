@@ -35,7 +35,7 @@ Setelah itu ubah identifier agar persis `com.jesilaundry.app`:
 Android:
 
 - `android/app/src/main/AndroidManifest.xml`: permission `android.permission.INTERNET`, `android:label="Jesi Laundry"`.
-- `android/app/src/debug/AndroidManifest.xml`: `android:usesCleartextTraffic="true"` (hanya debug, untuk server lokal HTTP).
+- `android/app/src/debug/AndroidManifest.xml`: `android:usesCleartextTraffic="true"` dengan `tools:replace="android:usesCleartextTraffic"` (deklarasi `xmlns:tools`), agar menimpa nilai `false` di manifest utama (hanya debug, untuk server lokal HTTP).
 
 iOS (`ios/Runner/Info.plist`):
 
@@ -298,14 +298,15 @@ client/
 
 - `AppConfig.apiBaseUrl` = `String.fromEnvironment('API_BASE_URL')`; base URL Dio = `$apiBaseUrl/api/v1`. Timeout connect 15 detik, receive 20 detik.
 - `LocaleInterceptor` menambahkan `Accept-Language` sesuai locale aplikasi aktif (`id`/`en`).
-- `AuthInterceptor` (`QueuedInterceptor`):
+- Endpoint publik (`/auth/setup-status`, `/auth/register-owner`, `/auth/login`, `/auth/refresh`, `/auth/forgot-password`, `/auth/reset-password`, `/auth/logout`) tidak memakai `AuthInterceptor`: tanpa header Bearer dan tanpa logika refresh.
+- `AuthInterceptor` (`QueuedInterceptor`, untuk endpoint selain di atas):
   1. Tambahkan `Authorization: Bearer <access_token>` jika ada.
   2. Pada respons `401` dengan `code = TOKEN_EXPIRED`: jalankan **satu** proses refresh (gunakan satu `Future` bersama agar request paralel tidak memicu refresh ganda) memakai Dio polos tanpa interceptor ke `POST /auth/refresh`.
   3. Berhasil → simpan token baru, ulangi request asli sekali.
   4. Gagal (`INVALID_REFRESH_TOKEN`, `ACCOUNT_INACTIVE`, dll) → hapus token, set auth state `Unauthenticated` (router otomatis ke login).
 - `TokenStorage` menyimpan `access_token`, `refresh_token`, dan waktu kedaluwarsanya di `flutter_secure_storage`.
 - `AuthController` (`AsyncNotifier<AuthState>`):
-  - `build()`: baca token; jika ada panggil `GET /me` → `Authenticated(user)`, jika gagal → `Unauthenticated`.
+  - `build()`: baca token; jika ada panggil `GET /me` → `Authenticated(user)`. Gagal karena auth (401/403) → hapus token → `Unauthenticated`. Gagal karena jaringan/timeout/5xx → token **tidak** dihapus; `build()` melempar error sehingga splash menampilkan `ErrorView` dengan tombol coba lagi.
   - `login`, `registerOwner`, `logout` (panggil `/auth/logout` lalu hapus token walau request gagal), `updateUser` (setelah edit profil).
 - Peran dan outlet user diambil dari `AppUser` (`role`, `outlet`).
 

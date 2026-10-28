@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:material_ui/material_ui.dart';
 
 import '../../l10n/gen/app_localizations.dart';
@@ -21,12 +23,14 @@ abstract final class FormValidators {
     };
   }
 
-  /// At least 8 characters with a letter and a digit.
+  /// At least 8 characters with a letter and a digit, at most 72 bytes (UTF-8,
+  /// the bcrypt limit).
   static FormFieldValidator<String> password(AppLocalizations l10n) {
     return (value) {
       final text = value ?? '';
       if (text.isEmpty) return l10n.validationRequired;
       if (text.length < 8) return l10n.validationPasswordTooShort;
+      if (utf8.encode(text).length > 72) return l10n.validationPasswordTooLong;
       if (!text.contains(RegExp(r'[A-Za-z]')) ||
           !text.contains(RegExp(r'\d'))) {
         return l10n.validationPasswordNeedsLetterAndDigit;
@@ -66,6 +70,41 @@ abstract final class FormValidators {
       return number == null || number <= 0
           ? l10n.validationInvalidNumber
           : null;
+    };
+  }
+
+  /// Runs [validators] in order and returns the first error.
+  static FormFieldValidator<String> all(
+    List<FormFieldValidator<String>> validators,
+  ) {
+    return (value) {
+      for (final validator in validators) {
+        final error = validator(value);
+        if (error != null) return error;
+      }
+      return null;
+    };
+  }
+
+  /// 2-5 letters or digits.
+  static FormFieldValidator<String> outletCode(AppLocalizations l10n) {
+    return (value) {
+      final text = (value ?? '').trim();
+      if (text.isEmpty) return l10n.validationRequired;
+      return RegExp(r'^[A-Za-z0-9]{2,5}$').hasMatch(text)
+          ? null
+          : l10n.validationOutletCode;
+    };
+  }
+
+  /// Exactly six digits.
+  static FormFieldValidator<String> otp(AppLocalizations l10n) {
+    return (value) {
+      final text = value ?? '';
+      if (text.isEmpty) return l10n.validationRequired;
+      return RegExp(r'^\d{6}$').hasMatch(text)
+          ? null
+          : l10n.validationOtpLength;
     };
   }
 }

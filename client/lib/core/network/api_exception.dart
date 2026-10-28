@@ -12,36 +12,50 @@ class ApiException implements Exception {
   });
 
   /// Maps a [DioException] to an [ApiException] using the server error envelope
-  /// (`{"error": {"code", "message", "details"}}`). Timeouts and connection
-  /// failures become [ApiErrorCode.networkError].
+  /// (`{"error": {"code", "message", "details"}}`).
+  ///
+  /// - No response (timeout, no connection, DNS) -> [ApiErrorCode.networkError].
+  /// - Response that is not JSON or has no envelope -> [ApiErrorCode.internalError]
+  ///   for 5xx, otherwise [ApiErrorCode.unknown]; the status code is kept.
+  /// - A DioException that already wraps an [ApiException] returns it unchanged.
   factory ApiException.fromDio(DioException e) {
-    final statusCode = e.response?.statusCode;
-    final data = e.response?.data;
-    if (data is Map<String, dynamic> && data['error'] is Map<String, dynamic>) {
-      final error = data['error'] as Map<String, dynamic>;
-      final rawDetails = error['details'];
-      return ApiException(
-        code: error['code'] as String? ?? ApiErrorCode.internalError,
-        message: error['message'] as String? ?? '',
-        statusCode: statusCode,
-        details: rawDetails is List
-            ? rawDetails
-                  .whereType<Map<String, dynamic>>()
-                  .map(FieldError.fromJson)
-                  .toList()
-            : const [],
-      );
-    }
-    if (e.response == null) {
+    final inner = e.error;
+    if (inner is ApiException) return inner;
+
+    final response = e.response;
+    if (response == null) {
       return ApiException(
         code: ApiErrorCode.networkError,
         message: e.message ?? '',
       );
     }
+
+    final statusCode = response.statusCode;
+    final isServerError = statusCode != null && statusCode >= 500;
+    final data = response.data;
+    if (data is Map && data['error'] is Map) {
+      final error = data['error'] as Map;
+      final rawCode = error['code'];
+      final rawMessage = error['message'];
+      final rawDetails = error['details'];
+      return ApiException(
+        code: rawCode is String && rawCode.isNotEmpty
+            ? rawCode
+            : (isServerError
+                  ? ApiErrorCode.internalError
+                  : ApiErrorCode.unknown),
+        message: rawMessage is String ? rawMessage : '',
+        statusCode: statusCode,
+        details: rawDetails is List
+            ? rawDetails
+                  .whereType<Map>()
+                  .map((m) => FieldError.fromJson(Map<String, dynamic>.from(m)))
+                  .toList()
+            : const [],
+      );
+    }
     return ApiException(
-      code: statusCode != null && statusCode >= 500
-          ? ApiErrorCode.internalError
-          : ApiErrorCode.badRequest,
+      code: isServerError ? ApiErrorCode.internalError : ApiErrorCode.unknown,
       statusCode: statusCode,
     );
   }
@@ -52,6 +66,8 @@ class ApiException implements Exception {
   final String message;
   final int? statusCode;
   final List<FieldError> details;
+
+  bool get isNetworkError => code == ApiErrorCode.networkError;
 
   @override
   String toString() =>

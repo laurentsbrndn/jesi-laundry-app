@@ -27,6 +27,13 @@ abstract final class ApiErrorCode {
   static const String rateLimited = 'RATE_LIMITED';
   static const String internalError = 'INTERNAL_ERROR';
 
-  /// Client-only: timeout, no connection, or an unreadable response.
+  /// Client-only: timeout, no connection, or DNS failure.
   static const String networkError = 'NETWORK_ERROR';
+
+  /// Client-only: an error response without a readable envelope (e.g. an HTML
+  /// error page from the hosting platform).
+  static const String unknown = 'UNKNOWN';
+
+  /// Client-only: a success response whose body did not have the expected shape.
+  static const String invalidResponse = 'INVALID_RESPONSE';
 }

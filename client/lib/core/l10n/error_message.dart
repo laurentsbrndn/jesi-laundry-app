@@ -39,3 +39,32 @@ String errorMessage(BuildContext context, Object error) {
     _ => l10n.errorUnknown,
   };
 }
+
+/// Maps the `field` of a VALIDATION_ERROR detail to a form field key by
+/// ignoring case and underscores, so `outlet_code` and `OutletCode` match.
+String normalizeFieldName(String field) =>
+    field.toLowerCase().replaceAll('_', '').replaceAll('.', '');
+
+/// Server-side validation errors by normalized field name. Unknown rules fall
+/// back to a generic message.
+Map<String, String> fieldErrorMessages(BuildContext context, Object error) {
+  if (error is! ApiException || error.code != ApiErrorCode.validationError) {
+    return const {};
+  }
+  final l10n = context.l10n;
+  final result = <String, String>{};
+  for (final detail in error.details) {
+    final param = int.tryParse(detail.param ?? '');
+    result.putIfAbsent(
+      normalizeFieldName(detail.field),
+      () => switch (detail.rule) {
+        'required' => l10n.validationRequired,
+        'email' => l10n.validationInvalidEmail,
+        'min' when param != null => l10n.validationMinLength(param),
+        'max' when param != null => l10n.validationMaxLength(param),
+        _ => l10n.validationServerInvalid,
+      },
+    );
+  }
+  return result;
+}

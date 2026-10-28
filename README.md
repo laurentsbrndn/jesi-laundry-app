@@ -174,6 +174,34 @@ flutter run --dart-define=API_BASE_URL=http://192.168.1.10:8080
 HTTP (tanpa TLS) hanya diizinkan pada build debug. Di iOS, `NSAllowsLocalNetworking` mengizinkan alamat jaringan lokal.
 Build release hanya menerima HTTPS.
 
+### Menjalankan terhadap server hosting
+
+Server sudah live di Vercel. Alamat server **tidak** ada di kode; berikan lewat `--dart-define`:
+
+```bash
+cd client
+flutter run -d <id-perangkat> --dart-define=API_BASE_URL=https://jesi-laundry-app-server.vercel.app
+```
+
+Cari `<id-perangkat>` dengan `flutter devices`.
+
+Android Studio: **Run > Edit Configurations... > Flutter > main.dart**, lalu isi kolom **Additional run args** dengan:
+
+```
+--dart-define=API_BASE_URL=https://jesi-laundry-app-server.vercel.app
+```
+
+Aturan penulisan URL: skema + host saja (`https://...`), **tanpa** `/api/v1` dan **tanpa** garis miring di akhir.
+Aplikasi menambahkan `/api/v1` sendiri.
+
+Catatan penting:
+
+- Server hosting berisi data nyata. Data uji yang dibuat saat pengembangan harus dibersihkan sebelum go-live.
+- Owner sudah terdaftar di server hosting, jadi tombol dan layar **Daftar sebagai Owner** tidak akan muncul
+  (layar itu hanya tampil selama `GET /auth/setup-status` mengembalikan `owner_exists = false`).
+- **Lupa password** benar-benar mengirim email OTP dan **reset password mengubah password akun nyata**.
+  Jangan dicoba pada akun yang masih dipakai.
+
 ### Build rilis
 
 ```bash

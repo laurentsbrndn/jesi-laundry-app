@@ -3,7 +3,6 @@
   "appName": "Jesi Laundry",
   "splashLoading": "Memuat…",
   "loginTitle": "Masuk",
-  "loginPlaceholderBody": "Layar masuk akan tersedia pada pembaruan berikutnya.",
   "configErrorTitle": "Konfigurasi belum lengkap",
   "configErrorBody": "API_BASE_URL belum diatur. Jalankan aplikasi dengan --dart-define=API_BASE_URL=<alamat server>.",
   "errorBadRequest": "Permintaan tidak dapat diproses.",
@@ -68,6 +67,51 @@
   "validationInvalidNumber": "Angka tidak valid",
   "validationMinLength": "Minimal {min} karakter",
   "validationMaxLength": "Maksimal {max} karakter",
+  "splashSlowHint": "Server mungkin sedang bangun. Mohon tunggu sebentar…",
+  "authEmailLabel": "Email",
+  "authPasswordLabel": "Password",
+  "authConfirmPasswordLabel": "Konfirmasi password",
+  "authNewPasswordLabel": "Password baru",
+  "authNameLabel": "Nama",
+  "authShowPassword": "Tampilkan password",
+  "authHidePassword": "Sembunyikan password",
+  "loginSubmit": "Masuk",
+  "loginForgotPassword": "Lupa password?",
+  "loginRegisterOwner": "Daftar sebagai Owner",
+  "loginSessionExpired": "Sesi berakhir, silakan masuk lagi",
+  "registerOwnerTitle": "Daftar sebagai Owner",
+  "registerOwnerAccountSection": "Akun owner",
+  "registerOwnerOutletSection": "Outlet pertama",
+  "registerOwnerOutletNameLabel": "Nama outlet",
+  "registerOwnerOutletCodeLabel": "Kode outlet",
+  "registerOwnerOutletCodeHelper": "2–5 huruf atau angka",
+  "registerOwnerOutletAddressLabel": "Alamat outlet (opsional)",
+  "registerOwnerOutletPhoneLabel": "Telepon outlet (opsional)",
+  "registerOwnerSubmit": "Daftar",
+  "forgotPasswordTitle": "Lupa password",
+  "forgotPasswordBody": "Masukkan email akun Anda. Jika terdaftar, kami akan mengirim kode verifikasi 6 digit.",
+  "forgotPasswordSubmit": "Kirim kode",
+  "resetPasswordTitle": "Reset password",
+  "resetPasswordBody": "Masukkan kode 6 digit yang dikirim ke {email} dan password baru Anda.",
+  "resetPasswordOtpLabel": "Kode OTP",
+  "resetPasswordResend": "Kirim ulang kode",
+  "resetPasswordResendIn": "Kirim ulang kode dalam {seconds} dtk",
+  "resetPasswordResent": "Jika email terdaftar, kode baru telah dikirim.",
+  "resetPasswordSubmit": "Reset password",
+  "resetPasswordSuccess": "Password berhasil diubah. Silakan masuk.",
+  "userRoleOwner": "Owner",
+  "userRoleStaff": "Staff",
+  "validationPasswordTooLong": "Password terlalu panjang (maksimal 72 byte)",
+  "validationOtpLength": "Kode harus 6 digit",
+  "validationOutletCode": "Kode outlet 2–5 huruf atau angka",
+  "validationServerInvalid": "Isian tidak valid",
+  "dashboardPlaceholderTitle": "Dashboard",
+  "dashboardPlaceholderNotice": "Layar sementara. Dashboard lengkap menyusul.",
+  "dashboardPlaceholderRoleLabel": "Peran",
+  "dashboardPlaceholderOutletLabel": "Outlet",
+  "dashboardPlaceholderLogout": "Keluar",
+  "dashboardPlaceholderLogoutConfirmTitle": "Keluar dari akun?",
+  "dashboardPlaceholderLogoutConfirmBody": "Anda perlu masuk lagi untuk memakai aplikasi.",
   "@validationMinLength": {
     "placeholders": {
       "min": {
@@ -78,6 +122,20 @@
   "@validationMaxLength": {
     "placeholders": {
       "max": {
+        "type": "int"
+      }
+    }
+  },
+  "@resetPasswordBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@resetPasswordResendIn": {
+    "placeholders": {
+      "seconds": {
         "type": "int"
       }
     }

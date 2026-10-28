@@ -116,12 +116,6 @@ abstract class AppLocalizations {
   /// **'Masuk'**
   String get loginTitle;
 
-  /// No description provided for @loginPlaceholderBody.
-  ///
-  /// In id, this message translates to:
-  /// **'Layar masuk akan tersedia pada pembaruan berikutnya.'**
-  String get loginPlaceholderBody;
-
   /// No description provided for @configErrorTitle.
   ///
   /// In id, this message translates to:
@@ -505,6 +499,276 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Maksimal {max} karakter'**
   String validationMaxLength(int max);
+
+  /// No description provided for @splashSlowHint.
+  ///
+  /// In id, this message translates to:
+  /// **'Server mungkin sedang bangun. Mohon tunggu sebentar…'**
+  String get splashSlowHint;
+
+  /// No description provided for @authEmailLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Email'**
+  String get authEmailLabel;
+
+  /// No description provided for @authPasswordLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Password'**
+  String get authPasswordLabel;
+
+  /// No description provided for @authConfirmPasswordLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Konfirmasi password'**
+  String get authConfirmPasswordLabel;
+
+  /// No description provided for @authNewPasswordLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Password baru'**
+  String get authNewPasswordLabel;
+
+  /// No description provided for @authNameLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama'**
+  String get authNameLabel;
+
+  /// No description provided for @authShowPassword.
+  ///
+  /// In id, this message translates to:
+  /// **'Tampilkan password'**
+  String get authShowPassword;
+
+  /// No description provided for @authHidePassword.
+  ///
+  /// In id, this message translates to:
+  /// **'Sembunyikan password'**
+  String get authHidePassword;
+
+  /// No description provided for @loginSubmit.
+  ///
+  /// In id, this message translates to:
+  /// **'Masuk'**
+  String get loginSubmit;
+
+  /// No description provided for @loginForgotPassword.
+  ///
+  /// In id, this message translates to:
+  /// **'Lupa password?'**
+  String get loginForgotPassword;
+
+  /// No description provided for @loginRegisterOwner.
+  ///
+  /// In id, this message translates to:
+  /// **'Daftar sebagai Owner'**
+  String get loginRegisterOwner;
+
+  /// No description provided for @loginSessionExpired.
+  ///
+  /// In id, this message translates to:
+  /// **'Sesi berakhir, silakan masuk lagi'**
+  String get loginSessionExpired;
+
+  /// No description provided for @registerOwnerTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Daftar sebagai Owner'**
+  String get registerOwnerTitle;
+
+  /// No description provided for @registerOwnerAccountSection.
+  ///
+  /// In id, this message translates to:
+  /// **'Akun owner'**
+  String get registerOwnerAccountSection;
+
+  /// No description provided for @registerOwnerOutletSection.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet pertama'**
+  String get registerOwnerOutletSection;
+
+  /// No description provided for @registerOwnerOutletNameLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama outlet'**
+  String get registerOwnerOutletNameLabel;
+
+  /// No description provided for @registerOwnerOutletCodeLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Kode outlet'**
+  String get registerOwnerOutletCodeLabel;
+
+  /// No description provided for @registerOwnerOutletCodeHelper.
+  ///
+  /// In id, this message translates to:
+  /// **'2–5 huruf atau angka'**
+  String get registerOwnerOutletCodeHelper;
+
+  /// No description provided for @registerOwnerOutletAddressLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Alamat outlet (opsional)'**
+  String get registerOwnerOutletAddressLabel;
+
+  /// No description provided for @registerOwnerOutletPhoneLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Telepon outlet (opsional)'**
+  String get registerOwnerOutletPhoneLabel;
+
+  /// No description provided for @registerOwnerSubmit.
+  ///
+  /// In id, this message translates to:
+  /// **'Daftar'**
+  String get registerOwnerSubmit;
+
+  /// No description provided for @forgotPasswordTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Lupa password'**
+  String get forgotPasswordTitle;
+
+  /// No description provided for @forgotPasswordBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Masukkan email akun Anda. Jika terdaftar, kami akan mengirim kode verifikasi 6 digit.'**
+  String get forgotPasswordBody;
+
+  /// No description provided for @forgotPasswordSubmit.
+  ///
+  /// In id, this message translates to:
+  /// **'Kirim kode'**
+  String get forgotPasswordSubmit;
+
+  /// No description provided for @resetPasswordTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Reset password'**
+  String get resetPasswordTitle;
+
+  /// No description provided for @resetPasswordBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Masukkan kode 6 digit yang dikirim ke {email} dan password baru Anda.'**
+  String resetPasswordBody(String email);
+
+  /// No description provided for @resetPasswordOtpLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Kode OTP'**
+  String get resetPasswordOtpLabel;
+
+  /// No description provided for @resetPasswordResend.
+  ///
+  /// In id, this message translates to:
+  /// **'Kirim ulang kode'**
+  String get resetPasswordResend;
+
+  /// No description provided for @resetPasswordResendIn.
+  ///
+  /// In id, this message translates to:
+  /// **'Kirim ulang kode dalam {seconds} dtk'**
+  String resetPasswordResendIn(int seconds);
+
+  /// No description provided for @resetPasswordResent.
+  ///
+  /// In id, this message translates to:
+  /// **'Jika email terdaftar, kode baru telah dikirim.'**
+  String get resetPasswordResent;
+
+  /// No description provided for @resetPasswordSubmit.
+  ///
+  /// In id, this message translates to:
+  /// **'Reset password'**
+  String get resetPasswordSubmit;
+
+  /// No description provided for @resetPasswordSuccess.
+  ///
+  /// In id, this message translates to:
+  /// **'Password berhasil diubah. Silakan masuk.'**
+  String get resetPasswordSuccess;
+
+  /// No description provided for @userRoleOwner.
+  ///
+  /// In id, this message translates to:
+  /// **'Owner'**
+  String get userRoleOwner;
+
+  /// No description provided for @userRoleStaff.
+  ///
+  /// In id, this message translates to:
+  /// **'Staff'**
+  String get userRoleStaff;
+
+  /// No description provided for @validationPasswordTooLong.
+  ///
+  /// In id, this message translates to:
+  /// **'Password terlalu panjang (maksimal 72 byte)'**
+  String get validationPasswordTooLong;
+
+  /// No description provided for @validationOtpLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Kode harus 6 digit'**
+  String get validationOtpLength;
+
+  /// No description provided for @validationOutletCode.
+  ///
+  /// In id, this message translates to:
+  /// **'Kode outlet 2–5 huruf atau angka'**
+  String get validationOutletCode;
+
+  /// No description provided for @validationServerInvalid.
+  ///
+  /// In id, this message translates to:
+  /// **'Isian tidak valid'**
+  String get validationServerInvalid;
+
+  /// No description provided for @dashboardPlaceholderTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Dashboard'**
+  String get dashboardPlaceholderTitle;
+
+  /// No description provided for @dashboardPlaceholderNotice.
+  ///
+  /// In id, this message translates to:
+  /// **'Layar sementara. Dashboard lengkap menyusul.'**
+  String get dashboardPlaceholderNotice;
+
+  /// No description provided for @dashboardPlaceholderRoleLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Peran'**
+  String get dashboardPlaceholderRoleLabel;
+
+  /// No description provided for @dashboardPlaceholderOutletLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet'**
+  String get dashboardPlaceholderOutletLabel;
+
+  /// No description provided for @dashboardPlaceholderLogout.
+  ///
+  /// In id, this message translates to:
+  /// **'Keluar'**
+  String get dashboardPlaceholderLogout;
+
+  /// No description provided for @dashboardPlaceholderLogoutConfirmTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Keluar dari akun?'**
+  String get dashboardPlaceholderLogoutConfirmTitle;
+
+  /// No description provided for @dashboardPlaceholderLogoutConfirmBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Anda perlu masuk lagi untuk memakai aplikasi.'**
+  String get dashboardPlaceholderLogoutConfirmBody;
 }
 
 class _AppLocalizationsDelegate

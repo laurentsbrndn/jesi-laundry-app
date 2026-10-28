@@ -19,10 +19,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get loginTitle => 'Masuk';
 
   @override
-  String get loginPlaceholderBody =>
-      'Layar masuk akan tersedia pada pembaruan berikutnya.';
-
-  @override
   String get configErrorTitle => 'Konfigurasi belum lengkap';
 
   @override
@@ -232,4 +228,149 @@ class AppLocalizationsId extends AppLocalizations {
   String validationMaxLength(int max) {
     return 'Maksimal $max karakter';
   }
+
+  @override
+  String get splashSlowHint =>
+      'Server mungkin sedang bangun. Mohon tunggu sebentar…';
+
+  @override
+  String get authEmailLabel => 'Email';
+
+  @override
+  String get authPasswordLabel => 'Password';
+
+  @override
+  String get authConfirmPasswordLabel => 'Konfirmasi password';
+
+  @override
+  String get authNewPasswordLabel => 'Password baru';
+
+  @override
+  String get authNameLabel => 'Nama';
+
+  @override
+  String get authShowPassword => 'Tampilkan password';
+
+  @override
+  String get authHidePassword => 'Sembunyikan password';
+
+  @override
+  String get loginSubmit => 'Masuk';
+
+  @override
+  String get loginForgotPassword => 'Lupa password?';
+
+  @override
+  String get loginRegisterOwner => 'Daftar sebagai Owner';
+
+  @override
+  String get loginSessionExpired => 'Sesi berakhir, silakan masuk lagi';
+
+  @override
+  String get registerOwnerTitle => 'Daftar sebagai Owner';
+
+  @override
+  String get registerOwnerAccountSection => 'Akun owner';
+
+  @override
+  String get registerOwnerOutletSection => 'Outlet pertama';
+
+  @override
+  String get registerOwnerOutletNameLabel => 'Nama outlet';
+
+  @override
+  String get registerOwnerOutletCodeLabel => 'Kode outlet';
+
+  @override
+  String get registerOwnerOutletCodeHelper => '2–5 huruf atau angka';
+
+  @override
+  String get registerOwnerOutletAddressLabel => 'Alamat outlet (opsional)';
+
+  @override
+  String get registerOwnerOutletPhoneLabel => 'Telepon outlet (opsional)';
+
+  @override
+  String get registerOwnerSubmit => 'Daftar';
+
+  @override
+  String get forgotPasswordTitle => 'Lupa password';
+
+  @override
+  String get forgotPasswordBody =>
+      'Masukkan email akun Anda. Jika terdaftar, kami akan mengirim kode verifikasi 6 digit.';
+
+  @override
+  String get forgotPasswordSubmit => 'Kirim kode';
+
+  @override
+  String get resetPasswordTitle => 'Reset password';
+
+  @override
+  String resetPasswordBody(String email) {
+    return 'Masukkan kode 6 digit yang dikirim ke $email dan password baru Anda.';
+  }
+
+  @override
+  String get resetPasswordOtpLabel => 'Kode OTP';
+
+  @override
+  String get resetPasswordResend => 'Kirim ulang kode';
+
+  @override
+  String resetPasswordResendIn(int seconds) {
+    return 'Kirim ulang kode dalam $seconds dtk';
+  }
+
+  @override
+  String get resetPasswordResent =>
+      'Jika email terdaftar, kode baru telah dikirim.';
+
+  @override
+  String get resetPasswordSubmit => 'Reset password';
+
+  @override
+  String get resetPasswordSuccess => 'Password berhasil diubah. Silakan masuk.';
+
+  @override
+  String get userRoleOwner => 'Owner';
+
+  @override
+  String get userRoleStaff => 'Staff';
+
+  @override
+  String get validationPasswordTooLong =>
+      'Password terlalu panjang (maksimal 72 byte)';
+
+  @override
+  String get validationOtpLength => 'Kode harus 6 digit';
+
+  @override
+  String get validationOutletCode => 'Kode outlet 2–5 huruf atau angka';
+
+  @override
+  String get validationServerInvalid => 'Isian tidak valid';
+
+  @override
+  String get dashboardPlaceholderTitle => 'Dashboard';
+
+  @override
+  String get dashboardPlaceholderNotice =>
+      'Layar sementara. Dashboard lengkap menyusul.';
+
+  @override
+  String get dashboardPlaceholderRoleLabel => 'Peran';
+
+  @override
+  String get dashboardPlaceholderOutletLabel => 'Outlet';
+
+  @override
+  String get dashboardPlaceholderLogout => 'Keluar';
+
+  @override
+  String get dashboardPlaceholderLogoutConfirmTitle => 'Keluar dari akun?';
+
+  @override
+  String get dashboardPlaceholderLogoutConfirmBody =>
+      'Anda perlu masuk lagi untuk memakai aplikasi.';
 }

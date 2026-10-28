@@ -3,7 +3,6 @@
   "appName": "Jesi Laundry",
   "splashLoading": "Loading…",
   "loginTitle": "Sign in",
-  "loginPlaceholderBody": "The sign-in screen will be available in an upcoming update.",
   "configErrorTitle": "Configuration incomplete",
   "configErrorBody": "API_BASE_URL is not set. Run the app with --dart-define=API_BASE_URL=<server address>.",
   "errorBadRequest": "The request could not be processed.",
@@ -67,5 +66,78 @@
   "validationPasswordMismatch": "Passwords do not match",
   "validationInvalidNumber": "Invalid number",
   "validationMinLength": "At least {min} characters",
-  "validationMaxLength": "At most {max} characters"
+  "validationMaxLength": "At most {max} characters",
+  "splashSlowHint": "The server may be waking up. Please wait a moment…",
+  "authEmailLabel": "Email",
+  "authPasswordLabel": "Password",
+  "authConfirmPasswordLabel": "Confirm password",
+  "authNewPasswordLabel": "New password",
+  "authNameLabel": "Name",
+  "authShowPassword": "Show password",
+  "authHidePassword": "Hide password",
+  "loginSubmit": "Sign in",
+  "loginForgotPassword": "Forgot password?",
+  "loginRegisterOwner": "Register as Owner",
+  "loginSessionExpired": "Session expired, please sign in again",
+  "registerOwnerTitle": "Register as Owner",
+  "registerOwnerAccountSection": "Owner account",
+  "registerOwnerOutletSection": "First outlet",
+  "registerOwnerOutletNameLabel": "Outlet name",
+  "registerOwnerOutletCodeLabel": "Outlet code",
+  "registerOwnerOutletCodeHelper": "2–5 letters or digits",
+  "registerOwnerOutletAddressLabel": "Outlet address (optional)",
+  "registerOwnerOutletPhoneLabel": "Outlet phone (optional)",
+  "registerOwnerSubmit": "Register",
+  "forgotPasswordTitle": "Forgot password",
+  "forgotPasswordBody": "Enter your account email. If it is registered, we will send a 6-digit verification code.",
+  "forgotPasswordSubmit": "Send code",
+  "resetPasswordTitle": "Reset password",
+  "resetPasswordBody": "Enter the 6-digit code sent to {email} and your new password.",
+  "resetPasswordOtpLabel": "OTP code",
+  "resetPasswordResend": "Resend code",
+  "resetPasswordResendIn": "Resend code in {seconds}s",
+  "resetPasswordResent": "If the email is registered, a new code has been sent.",
+  "resetPasswordSubmit": "Reset password",
+  "resetPasswordSuccess": "Password changed. Please sign in.",
+  "userRoleOwner": "Owner",
+  "userRoleStaff": "Staff",
+  "validationPasswordTooLong": "Password is too long (72 bytes maximum)",
+  "validationOtpLength": "The code must be 6 digits",
+  "validationOutletCode": "Outlet code must be 2–5 letters or digits",
+  "validationServerInvalid": "Invalid value",
+  "dashboardPlaceholderTitle": "Dashboard",
+  "dashboardPlaceholderNotice": "Temporary screen. The full dashboard comes later.",
+  "dashboardPlaceholderRoleLabel": "Role",
+  "dashboardPlaceholderOutletLabel": "Outlet",
+  "dashboardPlaceholderLogout": "Sign out",
+  "dashboardPlaceholderLogoutConfirmTitle": "Sign out?",
+  "dashboardPlaceholderLogoutConfirmBody": "You will need to sign in again to use the app.",
+  "@resetPasswordBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@resetPasswordResendIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  }
 }
