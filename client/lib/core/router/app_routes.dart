@@ -6,6 +6,7 @@ abstract final class AppRoutes {
   static const String resetPassword = '/reset-password';
   static const String dashboard = '/dashboard';
   static const String orders = '/orders';
+  static const String orderNew = '/orders/new';
   static const String settings = '/settings';
   static const String settingsProfile = '/settings/profile';
   static const String settingsChangePassword = '/settings/change-password';
@@ -16,6 +17,9 @@ abstract final class AppRoutes {
   static const String staff = '/settings/staff';
   static const String staffNew = '/settings/staff/new';
   static const String customers = '/settings/customers';
+
+  static String orderDetail(String id) => '$orders/$id';
+  static String orderEdit(String id) => '$orders/$id/edit';
 
   static String outletEdit(String id) => '$outlets/$id';
   static String staffEdit(String id) => '$staff/$id';

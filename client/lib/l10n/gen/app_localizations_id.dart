@@ -374,12 +374,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get shellTabSettings => 'Pengaturan';
 
   @override
-  String get ordersPlaceholderTitle => 'Order';
-
-  @override
-  String get ordersPlaceholderMessage => 'Fitur order segera tersedia';
-
-  @override
   String get settingsTitle => 'Pengaturan';
 
   @override
@@ -712,4 +706,295 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get customerEditPhoneLabel => 'Nomor HP (opsional)';
+
+  @override
+  String get commonBack => 'Kembali';
+
+  @override
+  String get commonOk => 'OK';
+
+  @override
+  String get ordersTitle => 'Order';
+
+  @override
+  String get ordersNew => 'Order Baru';
+
+  @override
+  String get ordersSearchHint => 'Cari nomor order atau pelanggan';
+
+  @override
+  String get ordersFilterAll => 'Semua';
+
+  @override
+  String get ordersEmptyTitle => 'Belum ada order';
+
+  @override
+  String get ordersEmptyMessage =>
+      'Ketuk Order Baru untuk membuat order pertama.';
+
+  @override
+  String ordersEstimatedDone(String date) {
+    return 'Estimasi selesai: $date';
+  }
+
+  @override
+  String get orderActionStart => 'Mulai Proses';
+
+  @override
+  String get orderActionFinish => 'Tandai Selesai';
+
+  @override
+  String get orderActionPickUp => 'Tandai Diambil';
+
+  @override
+  String get orderActionMarkPaid => 'Tandai Lunas';
+
+  @override
+  String get orderActionsMenu => 'Menu order';
+
+  @override
+  String get orderActionEdit => 'Edit';
+
+  @override
+  String get orderActionChangeStatus => 'Ubah status';
+
+  @override
+  String get orderActionUnpay => 'Batalkan Lunas';
+
+  @override
+  String get orderActionDelete => 'Hapus';
+
+  @override
+  String get orderPaidQuestionTitle => 'Pelanggan sudah membayar?';
+
+  @override
+  String get orderPaidQuestionBody =>
+      'Order harus lunas sebelum ditandai diambil.';
+
+  @override
+  String get orderPaidQuestionConfirm => 'Ya, sudah lunas';
+
+  @override
+  String get orderPaidButNotPickedUp =>
+      'Order sudah ditandai lunas, tetapi belum ditandai diambil.';
+
+  @override
+  String get orderUnpayTitle => 'Batalkan status lunas?';
+
+  @override
+  String get orderUnpayBody => 'Order akan kembali menjadi belum lunas.';
+
+  @override
+  String get orderDeleteTitle => 'Hapus order?';
+
+  @override
+  String orderDeleteBody(String number) {
+    return 'Order $number akan dihapus dan tidak muncul lagi di daftar.';
+  }
+
+  @override
+  String get orderDeleted => 'Order dihapus';
+
+  @override
+  String get orderDetailTitle => 'Detail Order';
+
+  @override
+  String get orderDetailOutlet => 'Outlet';
+
+  @override
+  String get orderDetailReceivedAt => 'Masuk';
+
+  @override
+  String get orderDetailSpeed => 'Kecepatan';
+
+  @override
+  String get orderDetailCreatedBy => 'Dibuat oleh';
+
+  @override
+  String get orderDetailCustomer => 'Pelanggan';
+
+  @override
+  String get orderDetailProgress => 'Progres';
+
+  @override
+  String get orderDetailItems => 'Item';
+
+  @override
+  String get orderDetailTotal => 'Total';
+
+  @override
+  String get orderDetailPayment => 'Pembayaran';
+
+  @override
+  String get orderDetailPaidAt => 'Lunas pada';
+
+  @override
+  String get orderDetailNotes => 'Catatan';
+
+  @override
+  String orderItemDimensions(String length, String width, String area) {
+    return '$length × $width m = $area m²';
+  }
+
+  @override
+  String orderItemBilled(String quantity, String unit) {
+    return 'ditagih $quantity $unit';
+  }
+
+  @override
+  String get orderFormNewTitle => 'Order Baru';
+
+  @override
+  String get orderFormEditTitle => 'Edit Order';
+
+  @override
+  String get orderFormEditNote =>
+      'Harga dihitung ulang dengan harga terbaru saat disimpan.';
+
+  @override
+  String get orderFormCustomerSection => 'Pelanggan';
+
+  @override
+  String get orderFormCustomerLabel => 'Nama pelanggan';
+
+  @override
+  String get orderFormCustomerPhoneLabel => 'No. HP (opsional)';
+
+  @override
+  String orderFormCustomerAddNew(String name) {
+    return 'Tambah pelanggan baru: $name';
+  }
+
+  @override
+  String get orderFormCustomerChange => 'Ganti';
+
+  @override
+  String get orderFormCustomerSearchFailed =>
+      'Tidak dapat mencari pelanggan. Anda tetap bisa menambah pelanggan baru.';
+
+  @override
+  String get orderFormSpeedSection => 'Kecepatan';
+
+  @override
+  String orderFormEstimatedDone(String date) {
+    return 'Perkiraan selesai: $date';
+  }
+
+  @override
+  String get orderFormPickOutlet => 'Pilih outlet terlebih dahulu.';
+
+  @override
+  String get orderFormKiloSection => 'Kiloan';
+
+  @override
+  String get orderFormNoKiloServices => 'Tidak ada layanan kiloan aktif.';
+
+  @override
+  String orderFormBilledAs(String min) {
+    return 'Ditagih $min kg';
+  }
+
+  @override
+  String get orderFormUnitSection => 'Satuan';
+
+  @override
+  String get orderFormAddUnitItem => 'Tambah item satuan';
+
+  @override
+  String get orderFormUnitPickerTitle => 'Pilih layanan satuan';
+
+  @override
+  String get orderFormUnitPickerEmpty => 'Tidak ada layanan satuan aktif.';
+
+  @override
+  String get orderFormUnitAdd => 'Tambah';
+
+  @override
+  String get orderFormLengthLabel => 'Panjang (m)';
+
+  @override
+  String get orderFormWidthLabel => 'Lebar (m)';
+
+  @override
+  String orderFormArea(String area, String unit) {
+    return 'Luas: $area $unit';
+  }
+
+  @override
+  String get orderFormDecrease => 'Kurangi';
+
+  @override
+  String get orderFormIncrease => 'Tambah';
+
+  @override
+  String get orderFormRemoveItem => 'Hapus item';
+
+  @override
+  String get orderFormInactiveWarning =>
+      'Layanan berikut sudah tidak aktif. Hapus sebelum menyimpan.';
+
+  @override
+  String get orderFormNotesSection => 'Catatan';
+
+  @override
+  String get orderFormNotesHint => 'Catatan untuk order ini (opsional)';
+
+  @override
+  String get orderFormPaidSwitch => 'Sudah Lunas';
+
+  @override
+  String get orderFormEstimatedTotal => 'Perkiraan total';
+
+  @override
+  String get orderFormOutletRequired => 'Pilih outlet terlebih dahulu.';
+
+  @override
+  String get orderFormItemsRequired => 'Tambahkan minimal satu item.';
+
+  @override
+  String get orderFormItemsInvalid =>
+      'Periksa kuantitas item. Isi dengan angka yang valid.';
+
+  @override
+  String get orderFormRemoveInactive =>
+      'Hapus layanan yang sudah tidak aktif sebelum menyimpan.';
+
+  @override
+  String get orderFormTooManyItems => 'Satu order maksimal 50 item.';
+
+  @override
+  String orderFormItemError(String name) {
+    return 'Item \"$name\" tidak valid. Periksa kuantitasnya.';
+  }
+
+  @override
+  String get orderFormChangeOutletTitle => 'Ganti outlet?';
+
+  @override
+  String get orderFormChangeOutletBody =>
+      'Layanan berbeda di tiap outlet, jadi semua item akan dikosongkan.';
+
+  @override
+  String get orderFormDiscardTitle => 'Buang perubahan?';
+
+  @override
+  String get orderFormDiscardBody => 'Data yang sudah diisi akan hilang.';
+
+  @override
+  String get orderFormDiscardConfirm => 'Buang';
+
+  @override
+  String orderFormCreated(String number) {
+    return 'Order $number dibuat';
+  }
+
+  @override
+  String get orderFormSaved => 'Order disimpan';
+
+  @override
+  String get orderFormCreateUnknownTitle => 'Hasil belum pasti';
+
+  @override
+  String get orderFormCreateUnknownBody =>
+      'Koneksi terputus. Order mungkin sudah tersimpan. Periksa daftar order sebelum mencoba lagi agar tidak dobel.';
 }

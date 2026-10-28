@@ -770,18 +770,6 @@ abstract class AppLocalizations {
   /// **'Pengaturan'**
   String get shellTabSettings;
 
-  /// No description provided for @ordersPlaceholderTitle.
-  ///
-  /// In id, this message translates to:
-  /// **'Order'**
-  String get ordersPlaceholderTitle;
-
-  /// No description provided for @ordersPlaceholderMessage.
-  ///
-  /// In id, this message translates to:
-  /// **'Fitur order segera tersedia'**
-  String get ordersPlaceholderMessage;
-
   /// No description provided for @settingsTitle.
   ///
   /// In id, this message translates to:
@@ -1399,6 +1387,528 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Nomor HP (opsional)'**
   String get customerEditPhoneLabel;
+
+  /// No description provided for @commonBack.
+  ///
+  /// In id, this message translates to:
+  /// **'Kembali'**
+  String get commonBack;
+
+  /// No description provided for @commonOk.
+  ///
+  /// In id, this message translates to:
+  /// **'OK'**
+  String get commonOk;
+
+  /// No description provided for @ordersTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Order'**
+  String get ordersTitle;
+
+  /// No description provided for @ordersNew.
+  ///
+  /// In id, this message translates to:
+  /// **'Order Baru'**
+  String get ordersNew;
+
+  /// No description provided for @ordersSearchHint.
+  ///
+  /// In id, this message translates to:
+  /// **'Cari nomor order atau pelanggan'**
+  String get ordersSearchHint;
+
+  /// No description provided for @ordersFilterAll.
+  ///
+  /// In id, this message translates to:
+  /// **'Semua'**
+  String get ordersFilterAll;
+
+  /// No description provided for @ordersEmptyTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum ada order'**
+  String get ordersEmptyTitle;
+
+  /// No description provided for @ordersEmptyMessage.
+  ///
+  /// In id, this message translates to:
+  /// **'Ketuk Order Baru untuk membuat order pertama.'**
+  String get ordersEmptyMessage;
+
+  /// No description provided for @ordersEstimatedDone.
+  ///
+  /// In id, this message translates to:
+  /// **'Estimasi selesai: {date}'**
+  String ordersEstimatedDone(String date);
+
+  /// No description provided for @orderActionStart.
+  ///
+  /// In id, this message translates to:
+  /// **'Mulai Proses'**
+  String get orderActionStart;
+
+  /// No description provided for @orderActionFinish.
+  ///
+  /// In id, this message translates to:
+  /// **'Tandai Selesai'**
+  String get orderActionFinish;
+
+  /// No description provided for @orderActionPickUp.
+  ///
+  /// In id, this message translates to:
+  /// **'Tandai Diambil'**
+  String get orderActionPickUp;
+
+  /// No description provided for @orderActionMarkPaid.
+  ///
+  /// In id, this message translates to:
+  /// **'Tandai Lunas'**
+  String get orderActionMarkPaid;
+
+  /// No description provided for @orderActionsMenu.
+  ///
+  /// In id, this message translates to:
+  /// **'Menu order'**
+  String get orderActionsMenu;
+
+  /// No description provided for @orderActionEdit.
+  ///
+  /// In id, this message translates to:
+  /// **'Edit'**
+  String get orderActionEdit;
+
+  /// No description provided for @orderActionChangeStatus.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah status'**
+  String get orderActionChangeStatus;
+
+  /// No description provided for @orderActionUnpay.
+  ///
+  /// In id, this message translates to:
+  /// **'Batalkan Lunas'**
+  String get orderActionUnpay;
+
+  /// No description provided for @orderActionDelete.
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus'**
+  String get orderActionDelete;
+
+  /// No description provided for @orderPaidQuestionTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Pelanggan sudah membayar?'**
+  String get orderPaidQuestionTitle;
+
+  /// No description provided for @orderPaidQuestionBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Order harus lunas sebelum ditandai diambil.'**
+  String get orderPaidQuestionBody;
+
+  /// No description provided for @orderPaidQuestionConfirm.
+  ///
+  /// In id, this message translates to:
+  /// **'Ya, sudah lunas'**
+  String get orderPaidQuestionConfirm;
+
+  /// No description provided for @orderPaidButNotPickedUp.
+  ///
+  /// In id, this message translates to:
+  /// **'Order sudah ditandai lunas, tetapi belum ditandai diambil.'**
+  String get orderPaidButNotPickedUp;
+
+  /// No description provided for @orderUnpayTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Batalkan status lunas?'**
+  String get orderUnpayTitle;
+
+  /// No description provided for @orderUnpayBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Order akan kembali menjadi belum lunas.'**
+  String get orderUnpayBody;
+
+  /// No description provided for @orderDeleteTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus order?'**
+  String get orderDeleteTitle;
+
+  /// No description provided for @orderDeleteBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Order {number} akan dihapus dan tidak muncul lagi di daftar.'**
+  String orderDeleteBody(String number);
+
+  /// No description provided for @orderDeleted.
+  ///
+  /// In id, this message translates to:
+  /// **'Order dihapus'**
+  String get orderDeleted;
+
+  /// No description provided for @orderDetailTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Detail Order'**
+  String get orderDetailTitle;
+
+  /// No description provided for @orderDetailOutlet.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet'**
+  String get orderDetailOutlet;
+
+  /// No description provided for @orderDetailReceivedAt.
+  ///
+  /// In id, this message translates to:
+  /// **'Masuk'**
+  String get orderDetailReceivedAt;
+
+  /// No description provided for @orderDetailSpeed.
+  ///
+  /// In id, this message translates to:
+  /// **'Kecepatan'**
+  String get orderDetailSpeed;
+
+  /// No description provided for @orderDetailCreatedBy.
+  ///
+  /// In id, this message translates to:
+  /// **'Dibuat oleh'**
+  String get orderDetailCreatedBy;
+
+  /// No description provided for @orderDetailCustomer.
+  ///
+  /// In id, this message translates to:
+  /// **'Pelanggan'**
+  String get orderDetailCustomer;
+
+  /// No description provided for @orderDetailProgress.
+  ///
+  /// In id, this message translates to:
+  /// **'Progres'**
+  String get orderDetailProgress;
+
+  /// No description provided for @orderDetailItems.
+  ///
+  /// In id, this message translates to:
+  /// **'Item'**
+  String get orderDetailItems;
+
+  /// No description provided for @orderDetailTotal.
+  ///
+  /// In id, this message translates to:
+  /// **'Total'**
+  String get orderDetailTotal;
+
+  /// No description provided for @orderDetailPayment.
+  ///
+  /// In id, this message translates to:
+  /// **'Pembayaran'**
+  String get orderDetailPayment;
+
+  /// No description provided for @orderDetailPaidAt.
+  ///
+  /// In id, this message translates to:
+  /// **'Lunas pada'**
+  String get orderDetailPaidAt;
+
+  /// No description provided for @orderDetailNotes.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan'**
+  String get orderDetailNotes;
+
+  /// No description provided for @orderItemDimensions.
+  ///
+  /// In id, this message translates to:
+  /// **'{length} × {width} m = {area} m²'**
+  String orderItemDimensions(String length, String width, String area);
+
+  /// No description provided for @orderItemBilled.
+  ///
+  /// In id, this message translates to:
+  /// **'ditagih {quantity} {unit}'**
+  String orderItemBilled(String quantity, String unit);
+
+  /// No description provided for @orderFormNewTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Order Baru'**
+  String get orderFormNewTitle;
+
+  /// No description provided for @orderFormEditTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Edit Order'**
+  String get orderFormEditTitle;
+
+  /// No description provided for @orderFormEditNote.
+  ///
+  /// In id, this message translates to:
+  /// **'Harga dihitung ulang dengan harga terbaru saat disimpan.'**
+  String get orderFormEditNote;
+
+  /// No description provided for @orderFormCustomerSection.
+  ///
+  /// In id, this message translates to:
+  /// **'Pelanggan'**
+  String get orderFormCustomerSection;
+
+  /// No description provided for @orderFormCustomerLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama pelanggan'**
+  String get orderFormCustomerLabel;
+
+  /// No description provided for @orderFormCustomerPhoneLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'No. HP (opsional)'**
+  String get orderFormCustomerPhoneLabel;
+
+  /// No description provided for @orderFormCustomerAddNew.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah pelanggan baru: {name}'**
+  String orderFormCustomerAddNew(String name);
+
+  /// No description provided for @orderFormCustomerChange.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti'**
+  String get orderFormCustomerChange;
+
+  /// No description provided for @orderFormCustomerSearchFailed.
+  ///
+  /// In id, this message translates to:
+  /// **'Tidak dapat mencari pelanggan. Anda tetap bisa menambah pelanggan baru.'**
+  String get orderFormCustomerSearchFailed;
+
+  /// No description provided for @orderFormSpeedSection.
+  ///
+  /// In id, this message translates to:
+  /// **'Kecepatan'**
+  String get orderFormSpeedSection;
+
+  /// No description provided for @orderFormEstimatedDone.
+  ///
+  /// In id, this message translates to:
+  /// **'Perkiraan selesai: {date}'**
+  String orderFormEstimatedDone(String date);
+
+  /// No description provided for @orderFormPickOutlet.
+  ///
+  /// In id, this message translates to:
+  /// **'Pilih outlet terlebih dahulu.'**
+  String get orderFormPickOutlet;
+
+  /// No description provided for @orderFormKiloSection.
+  ///
+  /// In id, this message translates to:
+  /// **'Kiloan'**
+  String get orderFormKiloSection;
+
+  /// No description provided for @orderFormNoKiloServices.
+  ///
+  /// In id, this message translates to:
+  /// **'Tidak ada layanan kiloan aktif.'**
+  String get orderFormNoKiloServices;
+
+  /// No description provided for @orderFormBilledAs.
+  ///
+  /// In id, this message translates to:
+  /// **'Ditagih {min} kg'**
+  String orderFormBilledAs(String min);
+
+  /// No description provided for @orderFormUnitSection.
+  ///
+  /// In id, this message translates to:
+  /// **'Satuan'**
+  String get orderFormUnitSection;
+
+  /// No description provided for @orderFormAddUnitItem.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah item satuan'**
+  String get orderFormAddUnitItem;
+
+  /// No description provided for @orderFormUnitPickerTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Pilih layanan satuan'**
+  String get orderFormUnitPickerTitle;
+
+  /// No description provided for @orderFormUnitPickerEmpty.
+  ///
+  /// In id, this message translates to:
+  /// **'Tidak ada layanan satuan aktif.'**
+  String get orderFormUnitPickerEmpty;
+
+  /// No description provided for @orderFormUnitAdd.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah'**
+  String get orderFormUnitAdd;
+
+  /// No description provided for @orderFormLengthLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Panjang (m)'**
+  String get orderFormLengthLabel;
+
+  /// No description provided for @orderFormWidthLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Lebar (m)'**
+  String get orderFormWidthLabel;
+
+  /// No description provided for @orderFormArea.
+  ///
+  /// In id, this message translates to:
+  /// **'Luas: {area} {unit}'**
+  String orderFormArea(String area, String unit);
+
+  /// No description provided for @orderFormDecrease.
+  ///
+  /// In id, this message translates to:
+  /// **'Kurangi'**
+  String get orderFormDecrease;
+
+  /// No description provided for @orderFormIncrease.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah'**
+  String get orderFormIncrease;
+
+  /// No description provided for @orderFormRemoveItem.
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus item'**
+  String get orderFormRemoveItem;
+
+  /// No description provided for @orderFormInactiveWarning.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan berikut sudah tidak aktif. Hapus sebelum menyimpan.'**
+  String get orderFormInactiveWarning;
+
+  /// No description provided for @orderFormNotesSection.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan'**
+  String get orderFormNotesSection;
+
+  /// No description provided for @orderFormNotesHint.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan untuk order ini (opsional)'**
+  String get orderFormNotesHint;
+
+  /// No description provided for @orderFormPaidSwitch.
+  ///
+  /// In id, this message translates to:
+  /// **'Sudah Lunas'**
+  String get orderFormPaidSwitch;
+
+  /// No description provided for @orderFormEstimatedTotal.
+  ///
+  /// In id, this message translates to:
+  /// **'Perkiraan total'**
+  String get orderFormEstimatedTotal;
+
+  /// No description provided for @orderFormOutletRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Pilih outlet terlebih dahulu.'**
+  String get orderFormOutletRequired;
+
+  /// No description provided for @orderFormItemsRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambahkan minimal satu item.'**
+  String get orderFormItemsRequired;
+
+  /// No description provided for @orderFormItemsInvalid.
+  ///
+  /// In id, this message translates to:
+  /// **'Periksa kuantitas item. Isi dengan angka yang valid.'**
+  String get orderFormItemsInvalid;
+
+  /// No description provided for @orderFormRemoveInactive.
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus layanan yang sudah tidak aktif sebelum menyimpan.'**
+  String get orderFormRemoveInactive;
+
+  /// No description provided for @orderFormTooManyItems.
+  ///
+  /// In id, this message translates to:
+  /// **'Satu order maksimal 50 item.'**
+  String get orderFormTooManyItems;
+
+  /// No description provided for @orderFormItemError.
+  ///
+  /// In id, this message translates to:
+  /// **'Item \"{name}\" tidak valid. Periksa kuantitasnya.'**
+  String orderFormItemError(String name);
+
+  /// No description provided for @orderFormChangeOutletTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti outlet?'**
+  String get orderFormChangeOutletTitle;
+
+  /// No description provided for @orderFormChangeOutletBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan berbeda di tiap outlet, jadi semua item akan dikosongkan.'**
+  String get orderFormChangeOutletBody;
+
+  /// No description provided for @orderFormDiscardTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Buang perubahan?'**
+  String get orderFormDiscardTitle;
+
+  /// No description provided for @orderFormDiscardBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Data yang sudah diisi akan hilang.'**
+  String get orderFormDiscardBody;
+
+  /// No description provided for @orderFormDiscardConfirm.
+  ///
+  /// In id, this message translates to:
+  /// **'Buang'**
+  String get orderFormDiscardConfirm;
+
+  /// No description provided for @orderFormCreated.
+  ///
+  /// In id, this message translates to:
+  /// **'Order {number} dibuat'**
+  String orderFormCreated(String number);
+
+  /// No description provided for @orderFormSaved.
+  ///
+  /// In id, this message translates to:
+  /// **'Order disimpan'**
+  String get orderFormSaved;
+
+  /// No description provided for @orderFormCreateUnknownTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Hasil belum pasti'**
+  String get orderFormCreateUnknownTitle;
+
+  /// No description provided for @orderFormCreateUnknownBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Koneksi terputus. Order mungkin sudah tersimpan. Periksa daftar order sebelum mencoba lagi agar tidak dobel.'**
+  String get orderFormCreateUnknownBody;
 }
 
 class _AppLocalizationsDelegate

@@ -112,8 +112,6 @@
   "shellTabDashboard": "Dashboard",
   "shellTabOrders": "Orders",
   "shellTabSettings": "Settings",
-  "ordersPlaceholderTitle": "Orders",
-  "ordersPlaceholderMessage": "Orders are coming soon",
   "settingsTitle": "Settings",
   "settingsSectionAccount": "Account",
   "settingsProfile": "Profile",
@@ -217,6 +215,93 @@
   "customerEditTitle": "Edit Customer",
   "customerEditSaved": "Customer saved",
   "customerEditPhoneLabel": "Phone (optional)",
+  "commonBack": "Back",
+  "commonOk": "OK",
+  "ordersTitle": "Orders",
+  "ordersNew": "New Order",
+  "ordersSearchHint": "Search order number or customer",
+  "ordersFilterAll": "All",
+  "ordersEmptyTitle": "No orders yet",
+  "ordersEmptyMessage": "Tap New Order to create the first one.",
+  "ordersEstimatedDone": "Estimated done: {date}",
+  "orderActionStart": "Start Processing",
+  "orderActionFinish": "Mark Ready",
+  "orderActionPickUp": "Mark Picked Up",
+  "orderActionMarkPaid": "Mark Paid",
+  "orderActionsMenu": "Order menu",
+  "orderActionEdit": "Edit",
+  "orderActionChangeStatus": "Change status",
+  "orderActionUnpay": "Cancel payment",
+  "orderActionDelete": "Delete",
+  "orderPaidQuestionTitle": "Has the customer paid?",
+  "orderPaidQuestionBody": "The order must be paid before it is marked picked up.",
+  "orderPaidQuestionConfirm": "Yes, paid",
+  "orderPaidButNotPickedUp": "The order was marked paid, but not yet marked picked up.",
+  "orderUnpayTitle": "Cancel paid status?",
+  "orderUnpayBody": "The order will become unpaid again.",
+  "orderDeleteTitle": "Delete order?",
+  "orderDeleteBody": "Order {number} will be deleted and will no longer appear in the list.",
+  "orderDeleted": "Order deleted",
+  "orderDetailTitle": "Order Details",
+  "orderDetailOutlet": "Outlet",
+  "orderDetailReceivedAt": "Received",
+  "orderDetailSpeed": "Speed",
+  "orderDetailCreatedBy": "Created by",
+  "orderDetailCustomer": "Customer",
+  "orderDetailProgress": "Progress",
+  "orderDetailItems": "Items",
+  "orderDetailTotal": "Total",
+  "orderDetailPayment": "Payment",
+  "orderDetailPaidAt": "Paid on",
+  "orderDetailNotes": "Notes",
+  "orderItemDimensions": "{length} × {width} m = {area} m²",
+  "orderItemBilled": "billed {quantity} {unit}",
+  "orderFormNewTitle": "New Order",
+  "orderFormEditTitle": "Edit Order",
+  "orderFormEditNote": "Prices are recalculated with the latest prices when saved.",
+  "orderFormCustomerSection": "Customer",
+  "orderFormCustomerLabel": "Customer name",
+  "orderFormCustomerPhoneLabel": "Phone (optional)",
+  "orderFormCustomerAddNew": "Add new customer: {name}",
+  "orderFormCustomerChange": "Change",
+  "orderFormCustomerSearchFailed": "Could not search customers. You can still add a new customer.",
+  "orderFormSpeedSection": "Speed",
+  "orderFormEstimatedDone": "Estimated done: {date}",
+  "orderFormPickOutlet": "Choose an outlet first.",
+  "orderFormKiloSection": "Per kilo",
+  "orderFormNoKiloServices": "No active per-kilo services.",
+  "orderFormBilledAs": "Billed as {min} kg",
+  "orderFormUnitSection": "Unit items",
+  "orderFormAddUnitItem": "Add unit item",
+  "orderFormUnitPickerTitle": "Choose a unit service",
+  "orderFormUnitPickerEmpty": "No active unit services.",
+  "orderFormUnitAdd": "Add",
+  "orderFormLengthLabel": "Length (m)",
+  "orderFormWidthLabel": "Width (m)",
+  "orderFormArea": "Area: {area} {unit}",
+  "orderFormDecrease": "Decrease",
+  "orderFormIncrease": "Increase",
+  "orderFormRemoveItem": "Remove item",
+  "orderFormInactiveWarning": "These services are no longer active. Remove them before saving.",
+  "orderFormNotesSection": "Notes",
+  "orderFormNotesHint": "Notes for this order (optional)",
+  "orderFormPaidSwitch": "Already paid",
+  "orderFormEstimatedTotal": "Estimated total",
+  "orderFormOutletRequired": "Choose an outlet first.",
+  "orderFormItemsRequired": "Add at least one item.",
+  "orderFormItemsInvalid": "Check the item quantities. Enter valid numbers.",
+  "orderFormRemoveInactive": "Remove inactive services before saving.",
+  "orderFormTooManyItems": "An order can have at most 50 items.",
+  "orderFormItemError": "Item \"{name}\" is not valid. Check its quantity.",
+  "orderFormChangeOutletTitle": "Change outlet?",
+  "orderFormChangeOutletBody": "Services differ per outlet, so all items will be cleared.",
+  "orderFormDiscardTitle": "Discard changes?",
+  "orderFormDiscardBody": "What you entered will be lost.",
+  "orderFormDiscardConfirm": "Discard",
+  "orderFormCreated": "Order {number} created",
+  "orderFormSaved": "Order saved",
+  "orderFormCreateUnknownTitle": "Result unknown",
+  "orderFormCreateUnknownBody": "The connection dropped. The order may already have been saved. Check the order list before trying again to avoid a duplicate.",
   "@resetPasswordBody": {
     "placeholders": {
       "email": {
@@ -307,6 +392,88 @@
   "@customersLastOrder": {
     "placeholders": {
       "when": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderDeleteBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderItemDimensions": {
+    "placeholders": {
+      "length": {
+        "type": "String"
+      },
+      "width": {
+        "type": "String"
+      },
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderItemBilled": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@ordersEstimatedDone": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormCustomerAddNew": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormEstimatedDone": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormBilledAs": {
+    "placeholders": {
+      "min": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormArea": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormItemError": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormCreated": {
+    "placeholders": {
+      "number": {
         "type": "String"
       }
     }

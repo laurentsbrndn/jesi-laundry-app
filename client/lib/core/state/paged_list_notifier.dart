@@ -47,7 +47,9 @@ abstract class PagedListNotifier<T> extends AsyncNotifier<PagedListState<T>> {
     state = next;
   }
 
-  Future<void> _reload() async {
+  /// Reloads from page 1 with a loading state. Subclasses call this after
+  /// changing their own filters.
+  Future<void> reload() async {
     final generation = ++_generation;
     state = const AsyncLoading();
     final next = await AsyncValue.guard(_loadFirst);
@@ -62,7 +64,7 @@ abstract class PagedListNotifier<T> extends AsyncNotifier<PagedListState<T>> {
     _debounce = Timer(searchDebounce, () {
       if (text == _search) return;
       _search = text;
-      _reload();
+      reload();
     });
   }
 
@@ -70,7 +72,7 @@ abstract class PagedListNotifier<T> extends AsyncNotifier<PagedListState<T>> {
     if (outletId == _outletId) return;
     _outletId = outletId;
     _debounce?.cancel();
-    _reload();
+    reload();
   }
 
   Future<void> loadMore() async {

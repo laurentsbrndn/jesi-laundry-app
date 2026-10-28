@@ -21,3 +21,26 @@ class DecimalInputFormatter extends TextInputFormatter {
     return _pattern.hasMatch(newValue.text) ? newValue : oldValue;
   }
 }
+
+/// Parses `2,5` / `2.5` into hundredths (250) without floating point. Returns
+/// null for empty or malformed input or more than 2 decimals.
+int? parseHundredths(String input) {
+  final match = RegExp(r'^(\d+)(?:[.,](\d{0,2}))?$').firstMatch(input.trim());
+  if (match == null) return null;
+  final whole = int.tryParse(match.group(1)!);
+  if (whole == null) return null;
+  final fraction = (match.group(2) ?? '').padRight(2, '0');
+  return whole * 100 + int.parse(fraction);
+}
+
+/// Hundredths back to an input string: 250 -> `2.5`, 300 -> `3`.
+String hundredthsToInput(int value100) {
+  final whole = value100 ~/ 100;
+  final fraction = value100 % 100;
+  if (fraction == 0) return '$whole';
+  final text = fraction
+      .toString()
+      .padLeft(2, '0')
+      .replaceFirst(RegExp(r'0$'), '');
+  return '$whole.$text';
+}

@@ -477,6 +477,8 @@ Validasi: nama pelanggan wajib; minimal 1 item dengan kuantitas > 0. Sukses buat
   - Menu owner (⋮): Edit (hanya jika belum lunas & belum diambil), Ubah status (pilih status sebelumnya), Batalkan Lunas, Hapus (dengan konfirmasi).
 - Setiap aksi menampilkan konfirmasi singkat lewat snackbar dan me-refresh data.
 
+Penyimpangan F5: `GET /orders/:id` dipegang `AsyncNotifier` (bukan `FutureProvider`) agar respons aksi (status, pembayaran, edit) langsung mengganti state detail tanpa GET tambahan; semua mutasi memanggil `invalidateOrderData`. Menu owner (⋮) berada di dalam `OrderActionsBar` di bawah layar. Pratinjau total memakai bilangan bulat seperseratus (bukan double). Saat membuat order dan koneksi terputus (`NETWORK_ERROR`), aplikasi menampilkan dialog bahwa order mungkin sudah tersimpan dan tidak mengulang request.
+
 ### 11.7 Pengaturan
 
 - **Akun**: Profil (ubah nama, tampilkan email & peran), Ubah Password.

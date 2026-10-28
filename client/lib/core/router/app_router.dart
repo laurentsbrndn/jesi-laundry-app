@@ -16,6 +16,8 @@ import '../../features/catalog/presentation/services_screen.dart';
 import '../../features/customers/presentation/customer_edit_screen.dart';
 import '../../features/customers/presentation/customers_screen.dart';
 import '../../features/dashboard/presentation/dashboard_screen.dart';
+import '../../features/orders/presentation/order_detail_screen.dart';
+import '../../features/orders/presentation/order_form_screen.dart';
 import '../../features/orders/presentation/orders_list_screen.dart';
 import '../../features/outlets/presentation/outlet_form_screen.dart';
 import '../../features/outlets/presentation/outlets_screen.dart';
@@ -114,6 +116,31 @@ final appRouterProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: AppRoutes.orders,
                 builder: (context, state) => const OrdersListScreen(),
+                routes: [
+                  // `new` must come before `:id`. All three hide the
+                  // navigation bar; only the edit path is owner-only
+                  // (AppRoutes.isOwnerOnly).
+                  GoRoute(
+                    path: 'new',
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (context, state) => const OrderFormScreen(),
+                  ),
+                  GoRoute(
+                    path: ':id',
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (context, state) =>
+                        OrderDetailScreen(orderId: state.pathParameters['id']!),
+                    routes: [
+                      GoRoute(
+                        path: 'edit',
+                        parentNavigatorKey: rootNavigatorKey,
+                        builder: (context, state) => OrderFormScreen(
+                          orderId: state.pathParameters['id'],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),

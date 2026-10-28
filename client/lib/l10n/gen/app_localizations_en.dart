@@ -378,12 +378,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shellTabSettings => 'Settings';
 
   @override
-  String get ordersPlaceholderTitle => 'Orders';
-
-  @override
-  String get ordersPlaceholderMessage => 'Orders are coming soon';
-
-  @override
   String get settingsTitle => 'Settings';
 
   @override
@@ -740,4 +734,294 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get customerEditPhoneLabel => 'Phone (optional)';
+
+  @override
+  String get commonBack => 'Back';
+
+  @override
+  String get commonOk => 'OK';
+
+  @override
+  String get ordersTitle => 'Orders';
+
+  @override
+  String get ordersNew => 'New Order';
+
+  @override
+  String get ordersSearchHint => 'Search order number or customer';
+
+  @override
+  String get ordersFilterAll => 'All';
+
+  @override
+  String get ordersEmptyTitle => 'No orders yet';
+
+  @override
+  String get ordersEmptyMessage => 'Tap New Order to create the first one.';
+
+  @override
+  String ordersEstimatedDone(String date) {
+    return 'Estimated done: $date';
+  }
+
+  @override
+  String get orderActionStart => 'Start Processing';
+
+  @override
+  String get orderActionFinish => 'Mark Ready';
+
+  @override
+  String get orderActionPickUp => 'Mark Picked Up';
+
+  @override
+  String get orderActionMarkPaid => 'Mark Paid';
+
+  @override
+  String get orderActionsMenu => 'Order menu';
+
+  @override
+  String get orderActionEdit => 'Edit';
+
+  @override
+  String get orderActionChangeStatus => 'Change status';
+
+  @override
+  String get orderActionUnpay => 'Cancel payment';
+
+  @override
+  String get orderActionDelete => 'Delete';
+
+  @override
+  String get orderPaidQuestionTitle => 'Has the customer paid?';
+
+  @override
+  String get orderPaidQuestionBody =>
+      'The order must be paid before it is marked picked up.';
+
+  @override
+  String get orderPaidQuestionConfirm => 'Yes, paid';
+
+  @override
+  String get orderPaidButNotPickedUp =>
+      'The order was marked paid, but not yet marked picked up.';
+
+  @override
+  String get orderUnpayTitle => 'Cancel paid status?';
+
+  @override
+  String get orderUnpayBody => 'The order will become unpaid again.';
+
+  @override
+  String get orderDeleteTitle => 'Delete order?';
+
+  @override
+  String orderDeleteBody(String number) {
+    return 'Order $number will be deleted and will no longer appear in the list.';
+  }
+
+  @override
+  String get orderDeleted => 'Order deleted';
+
+  @override
+  String get orderDetailTitle => 'Order Details';
+
+  @override
+  String get orderDetailOutlet => 'Outlet';
+
+  @override
+  String get orderDetailReceivedAt => 'Received';
+
+  @override
+  String get orderDetailSpeed => 'Speed';
+
+  @override
+  String get orderDetailCreatedBy => 'Created by';
+
+  @override
+  String get orderDetailCustomer => 'Customer';
+
+  @override
+  String get orderDetailProgress => 'Progress';
+
+  @override
+  String get orderDetailItems => 'Items';
+
+  @override
+  String get orderDetailTotal => 'Total';
+
+  @override
+  String get orderDetailPayment => 'Payment';
+
+  @override
+  String get orderDetailPaidAt => 'Paid on';
+
+  @override
+  String get orderDetailNotes => 'Notes';
+
+  @override
+  String orderItemDimensions(String length, String width, String area) {
+    return '$length × $width m = $area m²';
+  }
+
+  @override
+  String orderItemBilled(String quantity, String unit) {
+    return 'billed $quantity $unit';
+  }
+
+  @override
+  String get orderFormNewTitle => 'New Order';
+
+  @override
+  String get orderFormEditTitle => 'Edit Order';
+
+  @override
+  String get orderFormEditNote =>
+      'Prices are recalculated with the latest prices when saved.';
+
+  @override
+  String get orderFormCustomerSection => 'Customer';
+
+  @override
+  String get orderFormCustomerLabel => 'Customer name';
+
+  @override
+  String get orderFormCustomerPhoneLabel => 'Phone (optional)';
+
+  @override
+  String orderFormCustomerAddNew(String name) {
+    return 'Add new customer: $name';
+  }
+
+  @override
+  String get orderFormCustomerChange => 'Change';
+
+  @override
+  String get orderFormCustomerSearchFailed =>
+      'Could not search customers. You can still add a new customer.';
+
+  @override
+  String get orderFormSpeedSection => 'Speed';
+
+  @override
+  String orderFormEstimatedDone(String date) {
+    return 'Estimated done: $date';
+  }
+
+  @override
+  String get orderFormPickOutlet => 'Choose an outlet first.';
+
+  @override
+  String get orderFormKiloSection => 'Per kilo';
+
+  @override
+  String get orderFormNoKiloServices => 'No active per-kilo services.';
+
+  @override
+  String orderFormBilledAs(String min) {
+    return 'Billed as $min kg';
+  }
+
+  @override
+  String get orderFormUnitSection => 'Unit items';
+
+  @override
+  String get orderFormAddUnitItem => 'Add unit item';
+
+  @override
+  String get orderFormUnitPickerTitle => 'Choose a unit service';
+
+  @override
+  String get orderFormUnitPickerEmpty => 'No active unit services.';
+
+  @override
+  String get orderFormUnitAdd => 'Add';
+
+  @override
+  String get orderFormLengthLabel => 'Length (m)';
+
+  @override
+  String get orderFormWidthLabel => 'Width (m)';
+
+  @override
+  String orderFormArea(String area, String unit) {
+    return 'Area: $area $unit';
+  }
+
+  @override
+  String get orderFormDecrease => 'Decrease';
+
+  @override
+  String get orderFormIncrease => 'Increase';
+
+  @override
+  String get orderFormRemoveItem => 'Remove item';
+
+  @override
+  String get orderFormInactiveWarning =>
+      'These services are no longer active. Remove them before saving.';
+
+  @override
+  String get orderFormNotesSection => 'Notes';
+
+  @override
+  String get orderFormNotesHint => 'Notes for this order (optional)';
+
+  @override
+  String get orderFormPaidSwitch => 'Already paid';
+
+  @override
+  String get orderFormEstimatedTotal => 'Estimated total';
+
+  @override
+  String get orderFormOutletRequired => 'Choose an outlet first.';
+
+  @override
+  String get orderFormItemsRequired => 'Add at least one item.';
+
+  @override
+  String get orderFormItemsInvalid =>
+      'Check the item quantities. Enter valid numbers.';
+
+  @override
+  String get orderFormRemoveInactive =>
+      'Remove inactive services before saving.';
+
+  @override
+  String get orderFormTooManyItems => 'An order can have at most 50 items.';
+
+  @override
+  String orderFormItemError(String name) {
+    return 'Item \"$name\" is not valid. Check its quantity.';
+  }
+
+  @override
+  String get orderFormChangeOutletTitle => 'Change outlet?';
+
+  @override
+  String get orderFormChangeOutletBody =>
+      'Services differ per outlet, so all items will be cleared.';
+
+  @override
+  String get orderFormDiscardTitle => 'Discard changes?';
+
+  @override
+  String get orderFormDiscardBody => 'What you entered will be lost.';
+
+  @override
+  String get orderFormDiscardConfirm => 'Discard';
+
+  @override
+  String orderFormCreated(String number) {
+    return 'Order $number created';
+  }
+
+  @override
+  String get orderFormSaved => 'Order saved';
+
+  @override
+  String get orderFormCreateUnknownTitle => 'Result unknown';
+
+  @override
+  String get orderFormCreateUnknownBody =>
+      'The connection dropped. The order may already have been saved. Check the order list before trying again to avoid a duplicate.';
 }

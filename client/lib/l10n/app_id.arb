@@ -112,8 +112,6 @@
   "shellTabDashboard": "Dashboard",
   "shellTabOrders": "Order",
   "shellTabSettings": "Pengaturan",
-  "ordersPlaceholderTitle": "Order",
-  "ordersPlaceholderMessage": "Fitur order segera tersedia",
   "settingsTitle": "Pengaturan",
   "settingsSectionAccount": "Akun",
   "settingsProfile": "Profil",
@@ -217,6 +215,93 @@
   "customerEditTitle": "Ubah Pelanggan",
   "customerEditSaved": "Pelanggan disimpan",
   "customerEditPhoneLabel": "Nomor HP (opsional)",
+  "commonBack": "Kembali",
+  "commonOk": "OK",
+  "ordersTitle": "Order",
+  "ordersNew": "Order Baru",
+  "ordersSearchHint": "Cari nomor order atau pelanggan",
+  "ordersFilterAll": "Semua",
+  "ordersEmptyTitle": "Belum ada order",
+  "ordersEmptyMessage": "Ketuk Order Baru untuk membuat order pertama.",
+  "ordersEstimatedDone": "Estimasi selesai: {date}",
+  "orderActionStart": "Mulai Proses",
+  "orderActionFinish": "Tandai Selesai",
+  "orderActionPickUp": "Tandai Diambil",
+  "orderActionMarkPaid": "Tandai Lunas",
+  "orderActionsMenu": "Menu order",
+  "orderActionEdit": "Edit",
+  "orderActionChangeStatus": "Ubah status",
+  "orderActionUnpay": "Batalkan Lunas",
+  "orderActionDelete": "Hapus",
+  "orderPaidQuestionTitle": "Pelanggan sudah membayar?",
+  "orderPaidQuestionBody": "Order harus lunas sebelum ditandai diambil.",
+  "orderPaidQuestionConfirm": "Ya, sudah lunas",
+  "orderPaidButNotPickedUp": "Order sudah ditandai lunas, tetapi belum ditandai diambil.",
+  "orderUnpayTitle": "Batalkan status lunas?",
+  "orderUnpayBody": "Order akan kembali menjadi belum lunas.",
+  "orderDeleteTitle": "Hapus order?",
+  "orderDeleteBody": "Order {number} akan dihapus dan tidak muncul lagi di daftar.",
+  "orderDeleted": "Order dihapus",
+  "orderDetailTitle": "Detail Order",
+  "orderDetailOutlet": "Outlet",
+  "orderDetailReceivedAt": "Masuk",
+  "orderDetailSpeed": "Kecepatan",
+  "orderDetailCreatedBy": "Dibuat oleh",
+  "orderDetailCustomer": "Pelanggan",
+  "orderDetailProgress": "Progres",
+  "orderDetailItems": "Item",
+  "orderDetailTotal": "Total",
+  "orderDetailPayment": "Pembayaran",
+  "orderDetailPaidAt": "Lunas pada",
+  "orderDetailNotes": "Catatan",
+  "orderItemDimensions": "{length} × {width} m = {area} m²",
+  "orderItemBilled": "ditagih {quantity} {unit}",
+  "orderFormNewTitle": "Order Baru",
+  "orderFormEditTitle": "Edit Order",
+  "orderFormEditNote": "Harga dihitung ulang dengan harga terbaru saat disimpan.",
+  "orderFormCustomerSection": "Pelanggan",
+  "orderFormCustomerLabel": "Nama pelanggan",
+  "orderFormCustomerPhoneLabel": "No. HP (opsional)",
+  "orderFormCustomerAddNew": "Tambah pelanggan baru: {name}",
+  "orderFormCustomerChange": "Ganti",
+  "orderFormCustomerSearchFailed": "Tidak dapat mencari pelanggan. Anda tetap bisa menambah pelanggan baru.",
+  "orderFormSpeedSection": "Kecepatan",
+  "orderFormEstimatedDone": "Perkiraan selesai: {date}",
+  "orderFormPickOutlet": "Pilih outlet terlebih dahulu.",
+  "orderFormKiloSection": "Kiloan",
+  "orderFormNoKiloServices": "Tidak ada layanan kiloan aktif.",
+  "orderFormBilledAs": "Ditagih {min} kg",
+  "orderFormUnitSection": "Satuan",
+  "orderFormAddUnitItem": "Tambah item satuan",
+  "orderFormUnitPickerTitle": "Pilih layanan satuan",
+  "orderFormUnitPickerEmpty": "Tidak ada layanan satuan aktif.",
+  "orderFormUnitAdd": "Tambah",
+  "orderFormLengthLabel": "Panjang (m)",
+  "orderFormWidthLabel": "Lebar (m)",
+  "orderFormArea": "Luas: {area} {unit}",
+  "orderFormDecrease": "Kurangi",
+  "orderFormIncrease": "Tambah",
+  "orderFormRemoveItem": "Hapus item",
+  "orderFormInactiveWarning": "Layanan berikut sudah tidak aktif. Hapus sebelum menyimpan.",
+  "orderFormNotesSection": "Catatan",
+  "orderFormNotesHint": "Catatan untuk order ini (opsional)",
+  "orderFormPaidSwitch": "Sudah Lunas",
+  "orderFormEstimatedTotal": "Perkiraan total",
+  "orderFormOutletRequired": "Pilih outlet terlebih dahulu.",
+  "orderFormItemsRequired": "Tambahkan minimal satu item.",
+  "orderFormItemsInvalid": "Periksa kuantitas item. Isi dengan angka yang valid.",
+  "orderFormRemoveInactive": "Hapus layanan yang sudah tidak aktif sebelum menyimpan.",
+  "orderFormTooManyItems": "Satu order maksimal 50 item.",
+  "orderFormItemError": "Item \"{name}\" tidak valid. Periksa kuantitasnya.",
+  "orderFormChangeOutletTitle": "Ganti outlet?",
+  "orderFormChangeOutletBody": "Layanan berbeda di tiap outlet, jadi semua item akan dikosongkan.",
+  "orderFormDiscardTitle": "Buang perubahan?",
+  "orderFormDiscardBody": "Data yang sudah diisi akan hilang.",
+  "orderFormDiscardConfirm": "Buang",
+  "orderFormCreated": "Order {number} dibuat",
+  "orderFormSaved": "Order disimpan",
+  "orderFormCreateUnknownTitle": "Hasil belum pasti",
+  "orderFormCreateUnknownBody": "Koneksi terputus. Order mungkin sudah tersimpan. Periksa daftar order sebelum mencoba lagi agar tidak dobel.",
   "@validationMinLength": {
     "placeholders": {
       "min": {
@@ -307,6 +392,88 @@
   "@customersLastOrder": {
     "placeholders": {
       "when": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderDeleteBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderItemDimensions": {
+    "placeholders": {
+      "length": {
+        "type": "String"
+      },
+      "width": {
+        "type": "String"
+      },
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderItemBilled": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@ordersEstimatedDone": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormCustomerAddNew": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormEstimatedDone": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormBilledAs": {
+    "placeholders": {
+      "min": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormArea": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormItemError": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@orderFormCreated": {
+    "placeholders": {
+      "number": {
         "type": "String"
       }
     }
