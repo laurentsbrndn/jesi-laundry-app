@@ -7,7 +7,10 @@ import '../theme/app_theme.dart';
 
 /// Shown instead of the app when `API_BASE_URL` was not provided at build time.
 class ConfigErrorApp extends StatelessWidget {
-  const ConfigErrorApp({super.key});
+  const ConfigErrorApp({super.key, this.insecure = false});
+
+  /// The address is set but is not HTTPS in a release build.
+  final bool insecure;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +24,15 @@ class ConfigErrorApp extends StatelessWidget {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       localeResolutionCallback: resolveAppLocale,
-      home: const _ConfigErrorScreen(),
+      home: _ConfigErrorScreen(insecure: insecure),
     );
   }
 }
 
 class _ConfigErrorScreen extends StatelessWidget {
-  const _ConfigErrorScreen();
+  const _ConfigErrorScreen({required this.insecure});
+
+  final bool insecure;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +58,9 @@ class _ConfigErrorScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  context.l10n.configErrorBody,
+                  insecure
+                      ? context.l10n.configErrorHttpsBody
+                      : context.l10n.configErrorBody,
                   style: theme.textTheme.bodyMedium,
                   textAlign: TextAlign.center,
                 ),

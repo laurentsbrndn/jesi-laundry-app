@@ -1,8 +1,6 @@
 {
   "@@locale": "en",
   "appName": "Jesi Laundry",
-  "splashLoading": "Loading…",
-  "loginTitle": "Sign in",
   "configErrorTitle": "Configuration incomplete",
   "configErrorBody": "API_BASE_URL is not set. Run the app with --dart-define=API_BASE_URL=<server address>.",
   "errorBadRequest": "The request could not be processed.",
@@ -44,8 +42,6 @@
   "orderStatusPickedUp": "Picked Up",
   "paymentStatusUnpaid": "Unpaid",
   "paymentStatusPaid": "Paid",
-  "pricingUnitPiece": "pcs",
-  "pricingUnitSqm": "m²",
   "unitKg": "kg",
   "unitPcs": "pcs",
   "unitSqm": "m²",
@@ -240,7 +236,7 @@
   "orderDeleted": "Order deleted",
   "orderDetailTitle": "Order Details",
   "orderDetailOutlet": "Outlet",
-  "orderDetailReceivedAt": "Received",
+  "orderDetailReceivedAt": "Received at",
   "orderDetailSpeed": "Speed",
   "orderDetailCreatedBy": "Created by",
   "orderDetailCustomer": "Customer",
@@ -327,6 +323,7 @@
   "dashboardByUnitService": "By unit item",
   "dashboardByStatus": "By status",
   "dashboardEmpty": "No orders in this period",
+  "configErrorHttpsBody": "Release builds only accept an HTTPS server address. Rebuild with --dart-define=API_BASE_URL=https://<server address>.",
   "@resetPasswordBody": {
     "placeholders": {
       "email": {

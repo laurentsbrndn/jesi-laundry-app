@@ -420,6 +420,16 @@ class _OrderFormBodyState extends ConsumerState<_OrderFormBody> {
                     ),
                   ),
                 ),
+              if (!_isEdit &&
+                  isOwner &&
+                  outlets.hasError &&
+                  !outlets.hasValue) ...[
+                ErrorView(
+                  error: outlets.error!,
+                  onRetry: () => ref.invalidate(outletsProvider),
+                ),
+                const SizedBox(height: 16),
+              ],
               if (showOutletPicker) ...[
                 OutletPickerField(
                   value: draft.outletId,

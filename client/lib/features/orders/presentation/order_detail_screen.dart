@@ -197,128 +197,133 @@ class _OrderDetailScreenState extends ConsumerState<OrderDetailScreen> {
       }
     }
 
-    return Scaffold(
-      appBar: AppBar(title: Text(order?.orderNumber ?? l10n.orderDetailTitle)),
-      bottomNavigationBar:
-          order == null ||
-              (order.status.next == null &&
-                  !isOwner &&
-                  order.paymentStatus.isPaid)
-          ? null
-          : OrderActionsBar(
-              order: order,
-              isOwner: isOwner,
-              busy: _busy,
-              onAdvance: () => _advance(order),
-              onMarkPaid: () => _run(
-                () => ref
-                    .read(orderRepositoryProvider)
-                    .changePayment(order.id, PaymentStatus.paid),
+    return PopScope(
+      canPop: !_busy,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(order?.orderNumber ?? l10n.orderDetailTitle),
+        ),
+        bottomNavigationBar:
+            order == null ||
+                (order.status.next == null &&
+                    !isOwner &&
+                    order.paymentStatus.isPaid)
+            ? null
+            : OrderActionsBar(
+                order: order,
+                isOwner: isOwner,
+                busy: _busy,
+                onAdvance: () => _advance(order),
+                onMarkPaid: () => _run(
+                  () => ref
+                      .read(orderRepositoryProvider)
+                      .changePayment(order.id, PaymentStatus.paid),
+                ),
+                onEdit: () => context.push(AppRoutes.orderEdit(order.id)),
+                onChangeStatus: () => _changeStatus(order),
+                onUnpay: () => _unpay(order),
+                onDelete: () => _delete(order),
               ),
-              onEdit: () => context.push(AppRoutes.orderEdit(order.id)),
-              onChangeStatus: () => _changeStatus(order),
-              onUnpay: () => _unpay(order),
-              onDelete: () => _delete(order),
-            ),
-      body: order == null
-          ? detail.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (error, _) => ErrorView(
-                error: error,
-                onRetry: () =>
-                    ref.invalidate(orderDetailProvider(widget.orderId)),
-              ),
-              data: (_) => const SizedBox.shrink(),
-            )
-          : RefreshIndicator(
-              onRefresh: refresh,
-              child: ListView(
-                physics: const AlwaysScrollableScrollPhysics(),
-                padding: const EdgeInsets.all(16),
-                children: [
-                  SectionCard(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          order.orderNumber,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        const SizedBox(height: 8),
-                        Wrap(
-                          spacing: 6,
-                          runSpacing: 4,
-                          children: [
-                            OrderStatusChip(status: order.status),
-                            PaymentStatusChip(status: order.paymentStatus),
-                          ],
-                        ),
-                        const SizedBox(height: 12),
-                        if (order.outlet != null && isOwner)
+        body: order == null
+            ? detail.when(
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (error, _) => ErrorView(
+                  error: error,
+                  onRetry: () =>
+                      ref.invalidate(orderDetailProvider(widget.orderId)),
+                ),
+                data: (_) => const SizedBox.shrink(),
+              )
+            : RefreshIndicator(
+                onRefresh: refresh,
+                child: ListView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.all(16),
+                  children: [
+                    SectionCard(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                           Text(
-                            '${l10n.orderDetailOutlet}: ${order.outlet!.code} · ${order.outlet!.name}',
+                            order.orderNumber,
+                            style: Theme.of(context).textTheme.titleLarge,
                           ),
-                        Text(
-                          '${l10n.orderDetailReceivedAt}: ${formatDateTime(order.createdAt, locale)}',
-                        ),
-                        Text(
-                          '${l10n.orderDetailSpeed}: ${order.speed.label(context)}',
-                        ),
-                        if (order.createdByName != null)
+                          const SizedBox(height: 8),
+                          Wrap(
+                            spacing: 6,
+                            runSpacing: 4,
+                            children: [
+                              OrderStatusChip(status: order.status),
+                              PaymentStatusChip(status: order.paymentStatus),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
+                          if (order.outlet != null && isOwner)
+                            Text(
+                              '${l10n.orderDetailOutlet}: ${order.outlet!.code} · ${order.outlet!.name}',
+                            ),
                           Text(
-                            '${l10n.orderDetailCreatedBy}: ${order.createdByName}',
+                            '${l10n.orderDetailReceivedAt}: ${formatDateTime(order.createdAt, locale)}',
                           ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  SectionCard(
-                    title: l10n.orderDetailCustomer,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(order.customer.name),
-                        if ((order.customer.phone ?? '').trim().isNotEmpty)
-                          Text(order.customer.phone!),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  SectionCard(
-                    title: l10n.orderDetailProgress,
-                    child: StatusTimeline(order: order),
-                  ),
-                  const SizedBox(height: 12),
-                  SectionCard(
-                    title: l10n.orderDetailItems,
-                    child: OrderItemsTable(order: order),
-                  ),
-                  const SizedBox(height: 12),
-                  SectionCard(
-                    title: l10n.orderDetailPayment,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        PaymentStatusChip(status: order.paymentStatus),
-                        if (order.paidAt != null) ...[
-                          const SizedBox(height: 4),
                           Text(
-                            '${l10n.orderDetailPaidAt}: ${formatDateTime(order.paidAt!, locale)}',
+                            '${l10n.orderDetailSpeed}: ${order.speed.label(context)}',
                           ),
+                          if (order.createdByName != null)
+                            Text(
+                              '${l10n.orderDetailCreatedBy}: ${order.createdByName}',
+                            ),
                         ],
-                      ],
+                      ),
                     ),
-                  ),
-                  if (order.notes != null) ...[
                     const SizedBox(height: 12),
                     SectionCard(
-                      title: l10n.orderDetailNotes,
-                      child: Text(order.notes!),
+                      title: l10n.orderDetailCustomer,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(order.customer.name),
+                          if ((order.customer.phone ?? '').trim().isNotEmpty)
+                            Text(order.customer.phone!),
+                        ],
+                      ),
                     ),
+                    const SizedBox(height: 12),
+                    SectionCard(
+                      title: l10n.orderDetailProgress,
+                      child: StatusTimeline(order: order),
+                    ),
+                    const SizedBox(height: 12),
+                    SectionCard(
+                      title: l10n.orderDetailItems,
+                      child: OrderItemsTable(order: order),
+                    ),
+                    const SizedBox(height: 12),
+                    SectionCard(
+                      title: l10n.orderDetailPayment,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          PaymentStatusChip(status: order.paymentStatus),
+                          if (order.paidAt != null) ...[
+                            const SizedBox(height: 4),
+                            Text(
+                              '${l10n.orderDetailPaidAt}: ${formatDateTime(order.paidAt!, locale)}',
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                    if (order.notes != null) ...[
+                      const SizedBox(height: 12),
+                      SectionCard(
+                        title: l10n.orderDetailNotes,
+                        child: Text(order.notes!),
+                      ),
+                    ],
                   ],
-                ],
+                ),
               ),
-            ),
+      ),
     );
   }
 }

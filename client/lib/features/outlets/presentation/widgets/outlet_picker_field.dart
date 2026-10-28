@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/l10n/error_message.dart';
 import '../../../../core/l10n/l10n_extension.dart';
 import '../../../settings/presentation/widgets/choice_sheet.dart';
 import '../outlets_provider.dart';
@@ -24,7 +25,10 @@ class OutletPickerField extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
-    final outlets = ref.watch(outletsProvider).value ?? const [];
+    final outletsAsync = ref.watch(outletsProvider);
+    final outlets = outletsAsync.value ?? const [];
+    // Loading failed and nothing is cached: show the error and retry on tap.
+    final loadFailed = outletsAsync.hasError && !outletsAsync.hasValue;
     final choices = outlets
         .where((o) => o.isActive || o.id == currentOutletId)
         .toList();
@@ -41,7 +45,9 @@ class OutletPickerField extends ConsumerWidget {
       builder: (state) {
         return InkWell(
           borderRadius: BorderRadius.circular(12),
-          onTap: !enabled || choices.isEmpty
+          onTap: loadFailed
+              ? () => ref.invalidate(outletsProvider)
+              : !enabled || choices.isEmpty
               ? null
               : () async {
                   final picked = await showChoiceSheet<String>(
@@ -60,9 +66,13 @@ class OutletPickerField extends ConsumerWidget {
             isEmpty: value == null,
             decoration: InputDecoration(
               labelText: l10n.outletPickerLabel,
-              errorText: state.errorText,
+              errorText: loadFailed
+                  ? errorMessage(context, outletsAsync.error!)
+                  : state.errorText,
               enabled: enabled,
-              suffixIcon: const Icon(Icons.arrow_drop_down),
+              suffixIcon: Icon(
+                loadFailed ? Icons.refresh : Icons.arrow_drop_down,
+              ),
             ),
             child: Text(value == null ? '' : labelOf(value!)),
           ),

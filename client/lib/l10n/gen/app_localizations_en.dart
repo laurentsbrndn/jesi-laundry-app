@@ -13,12 +13,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appName => 'Jesi Laundry';
 
   @override
-  String get splashLoading => 'Loading…';
-
-  @override
-  String get loginTitle => 'Sign in';
-
-  @override
   String get configErrorTitle => 'Configuration incomplete';
 
   @override
@@ -156,12 +150,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paymentStatusPaid => 'Paid';
-
-  @override
-  String get pricingUnitPiece => 'pcs';
-
-  @override
-  String get pricingUnitSqm => 'm²';
 
   @override
   String get unitKg => 'kg';
@@ -816,7 +804,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get orderDetailOutlet => 'Outlet';
 
   @override
-  String get orderDetailReceivedAt => 'Received';
+  String get orderDetailReceivedAt => 'Received at';
 
   @override
   String get orderDetailSpeed => 'Speed';
@@ -1108,4 +1096,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dashboardEmpty => 'No orders in this period';
+
+  @override
+  String get configErrorHttpsBody =>
+      'Release builds only accept an HTTPS server address. Rebuild with --dart-define=API_BASE_URL=https://<server address>.';
 }

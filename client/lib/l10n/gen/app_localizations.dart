@@ -104,18 +104,6 @@ abstract class AppLocalizations {
   /// **'Jesi Laundry'**
   String get appName;
 
-  /// No description provided for @splashLoading.
-  ///
-  /// In id, this message translates to:
-  /// **'Memuat…'**
-  String get splashLoading;
-
-  /// No description provided for @loginTitle.
-  ///
-  /// In id, this message translates to:
-  /// **'Masuk'**
-  String get loginTitle;
-
   /// No description provided for @configErrorTitle.
   ///
   /// In id, this message translates to:
@@ -361,18 +349,6 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Lunas'**
   String get paymentStatusPaid;
-
-  /// No description provided for @pricingUnitPiece.
-  ///
-  /// In id, this message translates to:
-  /// **'pcs'**
-  String get pricingUnitPiece;
-
-  /// No description provided for @pricingUnitSqm.
-  ///
-  /// In id, this message translates to:
-  /// **'m²'**
-  String get pricingUnitSqm;
 
   /// No description provided for @unitKg.
   ///
@@ -1541,7 +1517,7 @@ abstract class AppLocalizations {
   /// No description provided for @orderDetailReceivedAt.
   ///
   /// In id, this message translates to:
-  /// **'Masuk'**
+  /// **'Waktu masuk'**
   String get orderDetailReceivedAt;
 
   /// No description provided for @orderDetailSpeed.
@@ -2059,6 +2035,12 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Belum ada order pada periode ini'**
   String get dashboardEmpty;
+
+  /// No description provided for @configErrorHttpsBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Rilis hanya menerima alamat server HTTPS. Bangun ulang dengan --dart-define=API_BASE_URL=https://<alamat server>.'**
+  String get configErrorHttpsBody;
 }
 
 class _AppLocalizationsDelegate

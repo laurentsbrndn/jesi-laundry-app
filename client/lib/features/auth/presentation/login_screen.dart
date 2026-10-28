@@ -122,6 +122,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                             children: [
                               Icon(
                                 Icons.local_laundry_service,
+                                semanticLabel: l10n.appName,
                                 size: 64,
                                 color: theme.colorScheme.primary,
                               ),

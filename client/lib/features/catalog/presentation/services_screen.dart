@@ -34,6 +34,8 @@ class _ServicesScreenState extends ConsumerState<ServicesScreen> {
       await ref.read(catalogRepositoryProvider).update(service.id, {
         'is_active': active,
       });
+      // The provider is auto-disposed with this screen, so nothing is stale.
+      if (!mounted) return;
       ref.invalidate(servicesProvider);
     } catch (e) {
       if (mounted) showAppSnackBar(context, errorMessage(context, e));
@@ -55,8 +57,9 @@ class _ServicesScreenState extends ConsumerState<ServicesScreen> {
     setState(() => _busy.add(service.id));
     try {
       await ref.read(catalogRepositoryProvider).delete(service.id);
+      if (!mounted) return;
       ref.invalidate(servicesProvider);
-      if (mounted) showAppSnackBar(context, l10n.servicesDeleted);
+      showAppSnackBar(context, l10n.servicesDeleted);
     } catch (e) {
       if (mounted) showAppSnackBar(context, errorMessage(context, e));
     } finally {

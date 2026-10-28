@@ -67,6 +67,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
             children: [
               Icon(
                 Icons.local_laundry_service,
+                semanticLabel: context.l10n.appName,
                 size: 72,
                 color: theme.colorScheme.primary,
               ),

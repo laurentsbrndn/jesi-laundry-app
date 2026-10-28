@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class AppConfigException implements Exception {
   const AppConfigException(this.message);
 
@@ -16,6 +18,13 @@ abstract final class AppConfig {
       _rawApiBaseUrl.trim().replaceAll(RegExp(r'/+$'), '');
 
   static bool get isConfigured => apiBaseUrl.isNotEmpty;
+
+  /// Release builds must use HTTPS; debug builds may use plain HTTP for a
+  /// local server.
+  static bool get isSecure => apiBaseUrl.toLowerCase().startsWith('https://');
+
+  /// Configured, and allowed for this build mode.
+  static bool get isUsable => isConfigured && (!kReleaseMode || isSecure);
 
   /// Base URL of the versioned API, e.g. `http://localhost:8080/api/v1`.
   static String get apiUrl {

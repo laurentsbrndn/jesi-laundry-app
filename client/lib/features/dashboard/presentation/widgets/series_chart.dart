@@ -107,15 +107,21 @@ class _SeriesChartState extends State<SeriesChart> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SegmentedButton<DashboardMetric>(
-          segments: [
-            for (final value in DashboardMetric.values)
-              if (value != DashboardMetric.revenue || widget.showRevenue)
-                ButtonSegment(value: value, label: Text(value.label(context))),
-          ],
-          selected: {metric},
-          onSelectionChanged: (selection) =>
-              setState(() => _metric = selection.first),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: SegmentedButton<DashboardMetric>(
+            segments: [
+              for (final value in DashboardMetric.values)
+                if (value != DashboardMetric.revenue || widget.showRevenue)
+                  ButtonSegment(
+                    value: value,
+                    label: Text(value.label(context)),
+                  ),
+            ],
+            selected: {metric},
+            onSelectionChanged: (selection) =>
+                setState(() => _metric = selection.first),
+          ),
         ),
         const SizedBox(height: 16),
         SizedBox(

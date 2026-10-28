@@ -13,12 +13,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get appName => 'Jesi Laundry';
 
   @override
-  String get splashLoading => 'Memuat…';
-
-  @override
-  String get loginTitle => 'Masuk';
-
-  @override
   String get configErrorTitle => 'Konfigurasi belum lengkap';
 
   @override
@@ -154,12 +148,6 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get paymentStatusPaid => 'Lunas';
-
-  @override
-  String get pricingUnitPiece => 'pcs';
-
-  @override
-  String get pricingUnitSqm => 'm²';
 
   @override
   String get unitKg => 'kg';
@@ -789,7 +777,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get orderDetailOutlet => 'Outlet';
 
   @override
-  String get orderDetailReceivedAt => 'Masuk';
+  String get orderDetailReceivedAt => 'Waktu masuk';
 
   @override
   String get orderDetailSpeed => 'Kecepatan';
@@ -1075,4 +1063,8 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get dashboardEmpty => 'Belum ada order pada periode ini';
+
+  @override
+  String get configErrorHttpsBody =>
+      'Rilis hanya menerima alamat server HTTPS. Bangun ulang dengan --dart-define=API_BASE_URL=https://<alamat server>.';
 }

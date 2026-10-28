@@ -1,8 +1,6 @@
 {
   "@@locale": "id",
   "appName": "Jesi Laundry",
-  "splashLoading": "Memuat…",
-  "loginTitle": "Masuk",
   "configErrorTitle": "Konfigurasi belum lengkap",
   "configErrorBody": "API_BASE_URL belum diatur. Jalankan aplikasi dengan --dart-define=API_BASE_URL=<alamat server>.",
   "errorBadRequest": "Permintaan tidak dapat diproses.",
@@ -44,8 +42,6 @@
   "orderStatusPickedUp": "Diambil",
   "paymentStatusUnpaid": "Belum Lunas",
   "paymentStatusPaid": "Lunas",
-  "pricingUnitPiece": "pcs",
-  "pricingUnitSqm": "m²",
   "unitKg": "kg",
   "unitPcs": "pcs",
   "unitSqm": "m²",
@@ -240,7 +236,7 @@
   "orderDeleted": "Order dihapus",
   "orderDetailTitle": "Detail Order",
   "orderDetailOutlet": "Outlet",
-  "orderDetailReceivedAt": "Masuk",
+  "orderDetailReceivedAt": "Waktu masuk",
   "orderDetailSpeed": "Kecepatan",
   "orderDetailCreatedBy": "Dibuat oleh",
   "orderDetailCustomer": "Pelanggan",
@@ -327,6 +323,7 @@
   "dashboardByUnitService": "Per jenis satuan",
   "dashboardByStatus": "Per status",
   "dashboardEmpty": "Belum ada order pada periode ini",
+  "configErrorHttpsBody": "Rilis hanya menerima alamat server HTTPS. Bangun ulang dengan --dart-define=API_BASE_URL=https://<alamat server>.",
   "@validationMinLength": {
     "placeholders": {
       "min": {

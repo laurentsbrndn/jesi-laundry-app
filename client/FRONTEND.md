@@ -527,7 +527,7 @@ flutter build appbundle --release --dart-define=API_BASE_URL=https://<project>.v
 flutter build ipa --release --dart-define=API_BASE_URL=https://<project>.vercel.app
 ```
 
-Jika `API_BASE_URL` kosong, tampilkan error konfigurasi yang jelas saat startup (jangan crash diam-diam).
+Jika `API_BASE_URL` kosong, tampilkan error konfigurasi yang jelas saat startup (jangan crash diam-diam). Pada build rilis (`kReleaseMode`), alamat yang bukan `https://` juga menampilkan layar error konfigurasi (`AppConfig.isUsable`). Penandatanganan Android dibaca dari `android/key.properties` (jatuh ke kunci debug dengan peringatan bila tidak ada); langkah lengkap ada di README.
 
 ---
 
@@ -572,3 +572,4 @@ Setiap fase: `dart format .` dan `flutter analyze` tanpa issue, aplikasi berjala
 - Lengkapi & samakan key ARB id/en, empty/error state di semua layar, aksesibilitas dasar (label semantik pada ikon tombol), nama & ikon aplikasi, cek layout di layar kecil.
 - Konfigurasi build release Android (signing via `key.properties` yang di-gitignore) dan catatan langkah build iOS.
 - **Selesai jika**: `flutter build appbundle --release` dan `flutter build ipa --release` berhasil.
+- Penyimpangan F7: ikon aplikasi tidak dibuat karena `assets/icon/app_icon.png` (1024×1024) belum disediakan (tambahkan lalu pasang `flutter_launcher_icons`). `flutter build ipa` memerlukan Apple Developer Team di Xcode; tanpa itu verifikasi dengan `flutter build ios --release --no-codesign`.

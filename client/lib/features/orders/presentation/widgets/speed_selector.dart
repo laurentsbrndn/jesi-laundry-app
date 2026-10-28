@@ -16,15 +16,18 @@ class SpeedSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SegmentedButton<ServiceSpeed>(
-      segments: [
-        for (final speed in ServiceSpeed.values)
-          ButtonSegment(value: speed, label: Text(speed.label(context))),
-      ],
-      selected: {value},
-      onSelectionChanged: enabled
-          ? (selection) => onChanged(selection.first)
-          : null,
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: SegmentedButton<ServiceSpeed>(
+        segments: [
+          for (final speed in ServiceSpeed.values)
+            ButtonSegment(value: speed, label: Text(speed.label(context))),
+        ],
+        selected: {value},
+        onSelectionChanged: enabled
+            ? (selection) => onChanged(selection.first)
+            : null,
+      ),
     );
   }
 }

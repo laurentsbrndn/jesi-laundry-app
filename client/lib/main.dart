@@ -15,8 +15,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  if (!AppConfig.isConfigured) {
-    runApp(const ConfigErrorApp());
+  if (!AppConfig.isUsable) {
+    runApp(ConfigErrorApp(insecure: AppConfig.isConfigured));
     return;
   }
 
