@@ -491,6 +491,7 @@ Validasi: nama pelanggan wajib; minimal 1 item dengan kuantitas > 0. Sukses buat
 - *Kiloan*: 3 layanan sistem; tap → form edit nama, harga reguler & express, durasi reguler & express (hari), minimal kg, aktif.
 - *Satuan*: daftar dengan switch aktif; tap → edit; menu hapus (konfirmasi). FAB **Tambah satuan** → form: nama, unit (pcs / m², tidak bisa diubah setelah dibuat), harga reguler & express, durasi reguler & express, aktif.
 - Layanan nonaktif ditampilkan redup dengan label "Nonaktif".
+- Penyimpangan F4: form tambah satuan tidak memiliki switch aktif (layanan baru selalu aktif; switch hanya saat ubah). Form ubah layanan membaca layanan dari daftar `GET /services` (tidak ada `GET /services/:id`); rute ubah membawa `outletId` sebagai query parameter. Ubah/tambah mengirim hanya field yang berubah. Menonaktifkan layanan kiloan, outlet, atau staff meminta konfirmasi.
 
 **Pelanggan** — daftar + pencarian; tap → edit nama & no. HP.
 

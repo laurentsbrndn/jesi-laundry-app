@@ -129,27 +129,30 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ),
           if (user != null && user.isOwner) ...[
             const SizedBox(height: 12),
-            // F4 replaces these disabled entries with real navigation.
             SectionCard(
               title: l10n.settingsSectionManage,
               padding: const EdgeInsets.fromLTRB(0, 16, 0, 8),
               child: Column(
                 children: [
-                  _ComingSoonTile(
+                  _ManageTile(
                     icon: Icons.local_laundry_service_outlined,
                     title: l10n.settingsManageServices,
+                    route: AppRoutes.services,
                   ),
-                  _ComingSoonTile(
+                  _ManageTile(
                     icon: Icons.people_outline,
                     title: l10n.settingsManageCustomers,
+                    route: AppRoutes.customers,
                   ),
-                  _ComingSoonTile(
+                  _ManageTile(
                     icon: Icons.badge_outlined,
                     title: l10n.settingsManageStaff,
+                    route: AppRoutes.staff,
                   ),
-                  _ComingSoonTile(
+                  _ManageTile(
                     icon: Icons.store_outlined,
                     title: l10n.settingsManageOutlets,
+                    route: AppRoutes.outlets,
                   ),
                 ],
               ),
@@ -183,20 +186,24 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   }
 }
 
-class _ComingSoonTile extends StatelessWidget {
-  const _ComingSoonTile({required this.icon, required this.title});
+class _ManageTile extends StatelessWidget {
+  const _ManageTile({
+    required this.icon,
+    required this.title,
+    required this.route,
+  });
 
   final IconData icon;
   final String title;
+  final String route;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      enabled: false,
       leading: Icon(icon),
       title: Text(title),
-      subtitle: Text(context.l10n.settingsComingSoon),
-      onTap: null,
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () => context.push(route),
     );
   }
 }

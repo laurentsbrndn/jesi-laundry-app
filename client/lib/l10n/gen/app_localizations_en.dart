@@ -420,9 +420,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsManageOutlets => 'Outlets';
 
   @override
-  String get settingsComingSoon => 'Coming soon';
-
-  @override
   String get settingsLogout => 'Sign out';
 
   @override
@@ -464,4 +461,283 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get changePasswordSuccess => 'Password changed';
+
+  @override
+  String get commonSearch => 'Search';
+
+  @override
+  String get commonClear => 'Clear';
+
+  @override
+  String get commonActive => 'Active';
+
+  @override
+  String get commonInactive => 'Inactive';
+
+  @override
+  String get commonSave => 'Save';
+
+  @override
+  String get commonDelete => 'Delete';
+
+  @override
+  String get commonContinue => 'Continue';
+
+  @override
+  String commonDays(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days',
+      one: '1 day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String validationRange(int min, int max) {
+    return 'Enter a number from $min to $max';
+  }
+
+  @override
+  String get timeAgoJustNow => 'Just now';
+
+  @override
+  String timeAgoMinutes(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes ago',
+      one: '1 minute ago',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeAgoHours(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours hours ago',
+      one: '1 hour ago',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeAgoDays(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days ago',
+      one: '1 day ago',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get outletsTitle => 'Outlets';
+
+  @override
+  String get outletsAdd => 'Add outlet';
+
+  @override
+  String get outletsEmpty => 'No outlets yet';
+
+  @override
+  String get outletFormAddTitle => 'Add Outlet';
+
+  @override
+  String get outletFormEditTitle => 'Edit Outlet';
+
+  @override
+  String get outletFormAddressLabel => 'Address (optional)';
+
+  @override
+  String get outletFormPhoneLabel => 'Phone (optional)';
+
+  @override
+  String get outletFormCodeLocked => 'The code cannot be changed';
+
+  @override
+  String get outletFormCreated =>
+      'Outlet created. The default service catalog was created automatically.';
+
+  @override
+  String get outletFormSaved => 'Outlet saved';
+
+  @override
+  String get outletDeactivateTitle => 'Deactivate outlet?';
+
+  @override
+  String get outletDeactivateBody =>
+      'An inactive outlet cannot receive new orders.';
+
+  @override
+  String get outletDeactivateConfirm => 'Deactivate';
+
+  @override
+  String get outletFilterAll => 'All outlets';
+
+  @override
+  String get outletFilterTooltip => 'Choose outlet';
+
+  @override
+  String get outletPickerLabel => 'Outlet';
+
+  @override
+  String get outletPickerTitle => 'Choose outlet';
+
+  @override
+  String get servicesTitle => 'Services & Prices';
+
+  @override
+  String get servicesAddUnit => 'Add unit item';
+
+  @override
+  String get servicesSectionKilo => 'Per kilo';
+
+  @override
+  String get servicesSectionUnit => 'Unit items';
+
+  @override
+  String get servicesUnitEmpty => 'No unit services yet';
+
+  @override
+  String get servicesBadgeSystem => 'System';
+
+  @override
+  String get servicesDeleteTitle => 'Delete service?';
+
+  @override
+  String servicesDeleteBody(String name) {
+    return 'The service \"$name\" will be deleted. Existing orders are not affected.';
+  }
+
+  @override
+  String get servicesDeleted => 'Service deleted';
+
+  @override
+  String get serviceFormAddTitle => 'Add Unit Service';
+
+  @override
+  String get serviceFormEditTitle => 'Edit Service';
+
+  @override
+  String get serviceFormNameLabel => 'Service name';
+
+  @override
+  String get serviceFormUnitLabel => 'Unit';
+
+  @override
+  String get serviceFormUnitLocked => 'The unit cannot be changed';
+
+  @override
+  String serviceFormRegularPriceLabel(String unit) {
+    return 'Regular price (per $unit)';
+  }
+
+  @override
+  String serviceFormExpressPriceLabel(String unit) {
+    return 'Express price (per $unit)';
+  }
+
+  @override
+  String get serviceFormRegularDaysLabel => 'Regular duration (days)';
+
+  @override
+  String get serviceFormExpressDaysLabel => 'Express duration (days)';
+
+  @override
+  String get serviceFormMinQuantityLabel => 'Minimum quantity (kg)';
+
+  @override
+  String get serviceFormMinQuantityHelper => '0 = no minimum';
+
+  @override
+  String get serviceFormCreated => 'Service added';
+
+  @override
+  String get serviceFormSaved => 'Service saved';
+
+  @override
+  String get serviceFormDeactivateKiloTitle => 'Deactivate service?';
+
+  @override
+  String get serviceFormDeactivateKiloBody =>
+      'An inactive service cannot be chosen when creating new orders.';
+
+  @override
+  String get serviceFormDeactivateConfirm => 'Deactivate';
+
+  @override
+  String get staffTitle => 'Staff';
+
+  @override
+  String get staffAdd => 'Add staff';
+
+  @override
+  String get staffSearchHint => 'Search name or email';
+
+  @override
+  String get staffEmpty => 'No staff yet';
+
+  @override
+  String get staffFormAddTitle => 'Add Staff';
+
+  @override
+  String get staffFormEditTitle => 'Edit Staff';
+
+  @override
+  String get staffFormCreated => 'Staff added';
+
+  @override
+  String get staffFormSaved => 'Staff saved';
+
+  @override
+  String get staffSessionEndsTitle => 'End the staff session?';
+
+  @override
+  String get staffSessionEndsBody =>
+      'This staff member will be signed out and must sign in again.';
+
+  @override
+  String get staffResetPassword => 'Reset password';
+
+  @override
+  String get staffResetPasswordTitle => 'Reset staff password';
+
+  @override
+  String get staffResetPasswordBody =>
+      'Enter a new password. All sessions of this staff member will end.';
+
+  @override
+  String get staffResetPasswordDone => 'Staff password reset';
+
+  @override
+  String get customersTitle => 'Customers';
+
+  @override
+  String get customersSearchHint => 'Search name or phone';
+
+  @override
+  String get customersEmptyTitle => 'No customers yet';
+
+  @override
+  String get customersEmptyMessage =>
+      'Customers appear automatically when orders are created.';
+
+  @override
+  String customersLastOrder(String when) {
+    return 'Last order: $when';
+  }
+
+  @override
+  String get customerEditTitle => 'Edit Customer';
+
+  @override
+  String get customerEditSaved => 'Customer saved';
+
+  @override
+  String get customerEditPhoneLabel => 'Phone (optional)';
 }

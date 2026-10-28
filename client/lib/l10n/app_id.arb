@@ -126,7 +126,6 @@
   "settingsManageCustomers": "Pelanggan",
   "settingsManageStaff": "Staff",
   "settingsManageOutlets": "Outlet",
-  "settingsComingSoon": "Segera tersedia",
   "settingsLogout": "Keluar",
   "settingsLogoutConfirmTitle": "Keluar dari akun?",
   "settingsLogoutConfirmBody": "Anda perlu masuk lagi untuk memakai aplikasi.",
@@ -141,6 +140,83 @@
   "changePasswordSubmit": "Ubah password",
   "changePasswordCurrentWrong": "Password saat ini salah",
   "changePasswordSuccess": "Password berhasil diubah",
+  "commonSearch": "Cari",
+  "commonClear": "Hapus teks",
+  "commonActive": "Aktif",
+  "commonInactive": "Nonaktif",
+  "commonSave": "Simpan",
+  "commonDelete": "Hapus",
+  "commonContinue": "Lanjutkan",
+  "commonDays": "{days} hari",
+  "validationRange": "Isi angka {min}–{max}",
+  "timeAgoJustNow": "Baru saja",
+  "timeAgoMinutes": "{minutes} menit lalu",
+  "timeAgoHours": "{hours} jam lalu",
+  "timeAgoDays": "{days} hari lalu",
+  "outletsTitle": "Outlet",
+  "outletsAdd": "Tambah outlet",
+  "outletsEmpty": "Belum ada outlet",
+  "outletFormAddTitle": "Tambah Outlet",
+  "outletFormEditTitle": "Ubah Outlet",
+  "outletFormAddressLabel": "Alamat (opsional)",
+  "outletFormPhoneLabel": "Telepon (opsional)",
+  "outletFormCodeLocked": "Kode tidak dapat diubah",
+  "outletFormCreated": "Outlet dibuat. Katalog layanan default dibuat otomatis.",
+  "outletFormSaved": "Outlet disimpan",
+  "outletDeactivateTitle": "Nonaktifkan outlet?",
+  "outletDeactivateBody": "Outlet nonaktif tidak dapat menerima order baru.",
+  "outletDeactivateConfirm": "Nonaktifkan",
+  "outletFilterAll": "Semua outlet",
+  "outletFilterTooltip": "Pilih outlet",
+  "outletPickerLabel": "Outlet",
+  "outletPickerTitle": "Pilih outlet",
+  "servicesTitle": "Layanan & Harga",
+  "servicesAddUnit": "Tambah satuan",
+  "servicesSectionKilo": "Kiloan",
+  "servicesSectionUnit": "Satuan",
+  "servicesUnitEmpty": "Belum ada layanan satuan",
+  "servicesBadgeSystem": "Sistem",
+  "servicesDeleteTitle": "Hapus layanan?",
+  "servicesDeleteBody": "Layanan \"{name}\" akan dihapus. Order lama tidak terpengaruh.",
+  "servicesDeleted": "Layanan dihapus",
+  "serviceFormAddTitle": "Tambah Layanan Satuan",
+  "serviceFormEditTitle": "Ubah Layanan",
+  "serviceFormNameLabel": "Nama layanan",
+  "serviceFormUnitLabel": "Satuan",
+  "serviceFormUnitLocked": "Satuan tidak dapat diubah",
+  "serviceFormRegularPriceLabel": "Harga reguler (per {unit})",
+  "serviceFormExpressPriceLabel": "Harga express (per {unit})",
+  "serviceFormRegularDaysLabel": "Durasi reguler (hari)",
+  "serviceFormExpressDaysLabel": "Durasi express (hari)",
+  "serviceFormMinQuantityLabel": "Minimal kuantitas (kg)",
+  "serviceFormMinQuantityHelper": "0 = tanpa minimum",
+  "serviceFormCreated": "Layanan ditambahkan",
+  "serviceFormSaved": "Layanan disimpan",
+  "serviceFormDeactivateKiloTitle": "Nonaktifkan layanan?",
+  "serviceFormDeactivateKiloBody": "Layanan nonaktif tidak dapat dipilih saat membuat order baru.",
+  "serviceFormDeactivateConfirm": "Nonaktifkan",
+  "staffTitle": "Staff",
+  "staffAdd": "Tambah staff",
+  "staffSearchHint": "Cari nama atau email",
+  "staffEmpty": "Belum ada staff",
+  "staffFormAddTitle": "Tambah Staff",
+  "staffFormEditTitle": "Ubah Staff",
+  "staffFormCreated": "Staff ditambahkan",
+  "staffFormSaved": "Staff disimpan",
+  "staffSessionEndsTitle": "Akhiri sesi staff?",
+  "staffSessionEndsBody": "Sesi staff ini akan berakhir dan ia harus masuk lagi.",
+  "staffResetPassword": "Reset password",
+  "staffResetPasswordTitle": "Reset password staff",
+  "staffResetPasswordBody": "Masukkan password baru. Semua sesi staff ini akan berakhir.",
+  "staffResetPasswordDone": "Password staff direset",
+  "customersTitle": "Pelanggan",
+  "customersSearchHint": "Cari nama atau nomor HP",
+  "customersEmptyTitle": "Belum ada pelanggan",
+  "customersEmptyMessage": "Pelanggan muncul otomatis saat order dibuat.",
+  "customersLastOrder": "Order terakhir: {when}",
+  "customerEditTitle": "Ubah Pelanggan",
+  "customerEditSaved": "Pelanggan disimpan",
+  "customerEditPhoneLabel": "Nomor HP (opsional)",
   "@validationMinLength": {
     "placeholders": {
       "min": {
@@ -166,6 +242,72 @@
     "placeholders": {
       "seconds": {
         "type": "int"
+      }
+    }
+  },
+  "@commonDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@servicesDeleteBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@serviceFormRegularPriceLabel": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@serviceFormExpressPriceLabel": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@customersLastOrder": {
+    "placeholders": {
+      "when": {
+        "type": "String"
       }
     }
   }

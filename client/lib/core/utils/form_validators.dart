@@ -107,4 +107,29 @@ abstract final class FormValidators {
           : l10n.validationOtpLength;
     };
   }
+
+  /// A whole number from [min] to [max].
+  static FormFieldValidator<String> integerInRange(
+    AppLocalizations l10n,
+    int min,
+    int max,
+  ) {
+    return (value) {
+      final text = (value ?? '').trim();
+      if (text.isEmpty) return l10n.validationRequired;
+      final number = int.tryParse(text);
+      return number == null || number < min || number > max
+          ? l10n.validationRange(min, max)
+          : null;
+    };
+  }
+
+  /// A decimal number of zero or more.
+  static FormFieldValidator<String> nonNegativeNumber(AppLocalizations l10n) {
+    return (value) {
+      if ((value ?? '').trim().isEmpty) return l10n.validationRequired;
+      final number = parseDecimal(value!);
+      return number == null || number < 0 ? l10n.validationInvalidNumber : null;
+    };
+  }
 }

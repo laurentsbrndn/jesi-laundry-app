@@ -416,9 +416,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsManageOutlets => 'Outlet';
 
   @override
-  String get settingsComingSoon => 'Segera tersedia';
-
-  @override
   String get settingsLogout => 'Keluar';
 
   @override
@@ -460,4 +457,259 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get changePasswordSuccess => 'Password berhasil diubah';
+
+  @override
+  String get commonSearch => 'Cari';
+
+  @override
+  String get commonClear => 'Hapus teks';
+
+  @override
+  String get commonActive => 'Aktif';
+
+  @override
+  String get commonInactive => 'Nonaktif';
+
+  @override
+  String get commonSave => 'Simpan';
+
+  @override
+  String get commonDelete => 'Hapus';
+
+  @override
+  String get commonContinue => 'Lanjutkan';
+
+  @override
+  String commonDays(int days) {
+    return '$days hari';
+  }
+
+  @override
+  String validationRange(int min, int max) {
+    return 'Isi angka $min–$max';
+  }
+
+  @override
+  String get timeAgoJustNow => 'Baru saja';
+
+  @override
+  String timeAgoMinutes(int minutes) {
+    return '$minutes menit lalu';
+  }
+
+  @override
+  String timeAgoHours(int hours) {
+    return '$hours jam lalu';
+  }
+
+  @override
+  String timeAgoDays(int days) {
+    return '$days hari lalu';
+  }
+
+  @override
+  String get outletsTitle => 'Outlet';
+
+  @override
+  String get outletsAdd => 'Tambah outlet';
+
+  @override
+  String get outletsEmpty => 'Belum ada outlet';
+
+  @override
+  String get outletFormAddTitle => 'Tambah Outlet';
+
+  @override
+  String get outletFormEditTitle => 'Ubah Outlet';
+
+  @override
+  String get outletFormAddressLabel => 'Alamat (opsional)';
+
+  @override
+  String get outletFormPhoneLabel => 'Telepon (opsional)';
+
+  @override
+  String get outletFormCodeLocked => 'Kode tidak dapat diubah';
+
+  @override
+  String get outletFormCreated =>
+      'Outlet dibuat. Katalog layanan default dibuat otomatis.';
+
+  @override
+  String get outletFormSaved => 'Outlet disimpan';
+
+  @override
+  String get outletDeactivateTitle => 'Nonaktifkan outlet?';
+
+  @override
+  String get outletDeactivateBody =>
+      'Outlet nonaktif tidak dapat menerima order baru.';
+
+  @override
+  String get outletDeactivateConfirm => 'Nonaktifkan';
+
+  @override
+  String get outletFilterAll => 'Semua outlet';
+
+  @override
+  String get outletFilterTooltip => 'Pilih outlet';
+
+  @override
+  String get outletPickerLabel => 'Outlet';
+
+  @override
+  String get outletPickerTitle => 'Pilih outlet';
+
+  @override
+  String get servicesTitle => 'Layanan & Harga';
+
+  @override
+  String get servicesAddUnit => 'Tambah satuan';
+
+  @override
+  String get servicesSectionKilo => 'Kiloan';
+
+  @override
+  String get servicesSectionUnit => 'Satuan';
+
+  @override
+  String get servicesUnitEmpty => 'Belum ada layanan satuan';
+
+  @override
+  String get servicesBadgeSystem => 'Sistem';
+
+  @override
+  String get servicesDeleteTitle => 'Hapus layanan?';
+
+  @override
+  String servicesDeleteBody(String name) {
+    return 'Layanan \"$name\" akan dihapus. Order lama tidak terpengaruh.';
+  }
+
+  @override
+  String get servicesDeleted => 'Layanan dihapus';
+
+  @override
+  String get serviceFormAddTitle => 'Tambah Layanan Satuan';
+
+  @override
+  String get serviceFormEditTitle => 'Ubah Layanan';
+
+  @override
+  String get serviceFormNameLabel => 'Nama layanan';
+
+  @override
+  String get serviceFormUnitLabel => 'Satuan';
+
+  @override
+  String get serviceFormUnitLocked => 'Satuan tidak dapat diubah';
+
+  @override
+  String serviceFormRegularPriceLabel(String unit) {
+    return 'Harga reguler (per $unit)';
+  }
+
+  @override
+  String serviceFormExpressPriceLabel(String unit) {
+    return 'Harga express (per $unit)';
+  }
+
+  @override
+  String get serviceFormRegularDaysLabel => 'Durasi reguler (hari)';
+
+  @override
+  String get serviceFormExpressDaysLabel => 'Durasi express (hari)';
+
+  @override
+  String get serviceFormMinQuantityLabel => 'Minimal kuantitas (kg)';
+
+  @override
+  String get serviceFormMinQuantityHelper => '0 = tanpa minimum';
+
+  @override
+  String get serviceFormCreated => 'Layanan ditambahkan';
+
+  @override
+  String get serviceFormSaved => 'Layanan disimpan';
+
+  @override
+  String get serviceFormDeactivateKiloTitle => 'Nonaktifkan layanan?';
+
+  @override
+  String get serviceFormDeactivateKiloBody =>
+      'Layanan nonaktif tidak dapat dipilih saat membuat order baru.';
+
+  @override
+  String get serviceFormDeactivateConfirm => 'Nonaktifkan';
+
+  @override
+  String get staffTitle => 'Staff';
+
+  @override
+  String get staffAdd => 'Tambah staff';
+
+  @override
+  String get staffSearchHint => 'Cari nama atau email';
+
+  @override
+  String get staffEmpty => 'Belum ada staff';
+
+  @override
+  String get staffFormAddTitle => 'Tambah Staff';
+
+  @override
+  String get staffFormEditTitle => 'Ubah Staff';
+
+  @override
+  String get staffFormCreated => 'Staff ditambahkan';
+
+  @override
+  String get staffFormSaved => 'Staff disimpan';
+
+  @override
+  String get staffSessionEndsTitle => 'Akhiri sesi staff?';
+
+  @override
+  String get staffSessionEndsBody =>
+      'Sesi staff ini akan berakhir dan ia harus masuk lagi.';
+
+  @override
+  String get staffResetPassword => 'Reset password';
+
+  @override
+  String get staffResetPasswordTitle => 'Reset password staff';
+
+  @override
+  String get staffResetPasswordBody =>
+      'Masukkan password baru. Semua sesi staff ini akan berakhir.';
+
+  @override
+  String get staffResetPasswordDone => 'Password staff direset';
+
+  @override
+  String get customersTitle => 'Pelanggan';
+
+  @override
+  String get customersSearchHint => 'Cari nama atau nomor HP';
+
+  @override
+  String get customersEmptyTitle => 'Belum ada pelanggan';
+
+  @override
+  String get customersEmptyMessage =>
+      'Pelanggan muncul otomatis saat order dibuat.';
+
+  @override
+  String customersLastOrder(String when) {
+    return 'Order terakhir: $when';
+  }
+
+  @override
+  String get customerEditTitle => 'Ubah Pelanggan';
+
+  @override
+  String get customerEditSaved => 'Pelanggan disimpan';
+
+  @override
+  String get customerEditPhoneLabel => 'Nomor HP (opsional)';
 }

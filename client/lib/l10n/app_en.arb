@@ -126,7 +126,6 @@
   "settingsManageCustomers": "Customers",
   "settingsManageStaff": "Staff",
   "settingsManageOutlets": "Outlets",
-  "settingsComingSoon": "Coming soon",
   "settingsLogout": "Sign out",
   "settingsLogoutConfirmTitle": "Sign out?",
   "settingsLogoutConfirmBody": "You will need to sign in again to use the app.",
@@ -141,6 +140,83 @@
   "changePasswordSubmit": "Change password",
   "changePasswordCurrentWrong": "Current password is incorrect",
   "changePasswordSuccess": "Password changed",
+  "commonSearch": "Search",
+  "commonClear": "Clear",
+  "commonActive": "Active",
+  "commonInactive": "Inactive",
+  "commonSave": "Save",
+  "commonDelete": "Delete",
+  "commonContinue": "Continue",
+  "commonDays": "{days, plural, =1{1 day} other{{days} days}}",
+  "validationRange": "Enter a number from {min} to {max}",
+  "timeAgoJustNow": "Just now",
+  "timeAgoMinutes": "{minutes, plural, =1{1 minute ago} other{{minutes} minutes ago}}",
+  "timeAgoHours": "{hours, plural, =1{1 hour ago} other{{hours} hours ago}}",
+  "timeAgoDays": "{days, plural, =1{1 day ago} other{{days} days ago}}",
+  "outletsTitle": "Outlets",
+  "outletsAdd": "Add outlet",
+  "outletsEmpty": "No outlets yet",
+  "outletFormAddTitle": "Add Outlet",
+  "outletFormEditTitle": "Edit Outlet",
+  "outletFormAddressLabel": "Address (optional)",
+  "outletFormPhoneLabel": "Phone (optional)",
+  "outletFormCodeLocked": "The code cannot be changed",
+  "outletFormCreated": "Outlet created. The default service catalog was created automatically.",
+  "outletFormSaved": "Outlet saved",
+  "outletDeactivateTitle": "Deactivate outlet?",
+  "outletDeactivateBody": "An inactive outlet cannot receive new orders.",
+  "outletDeactivateConfirm": "Deactivate",
+  "outletFilterAll": "All outlets",
+  "outletFilterTooltip": "Choose outlet",
+  "outletPickerLabel": "Outlet",
+  "outletPickerTitle": "Choose outlet",
+  "servicesTitle": "Services & Prices",
+  "servicesAddUnit": "Add unit item",
+  "servicesSectionKilo": "Per kilo",
+  "servicesSectionUnit": "Unit items",
+  "servicesUnitEmpty": "No unit services yet",
+  "servicesBadgeSystem": "System",
+  "servicesDeleteTitle": "Delete service?",
+  "servicesDeleteBody": "The service \"{name}\" will be deleted. Existing orders are not affected.",
+  "servicesDeleted": "Service deleted",
+  "serviceFormAddTitle": "Add Unit Service",
+  "serviceFormEditTitle": "Edit Service",
+  "serviceFormNameLabel": "Service name",
+  "serviceFormUnitLabel": "Unit",
+  "serviceFormUnitLocked": "The unit cannot be changed",
+  "serviceFormRegularPriceLabel": "Regular price (per {unit})",
+  "serviceFormExpressPriceLabel": "Express price (per {unit})",
+  "serviceFormRegularDaysLabel": "Regular duration (days)",
+  "serviceFormExpressDaysLabel": "Express duration (days)",
+  "serviceFormMinQuantityLabel": "Minimum quantity (kg)",
+  "serviceFormMinQuantityHelper": "0 = no minimum",
+  "serviceFormCreated": "Service added",
+  "serviceFormSaved": "Service saved",
+  "serviceFormDeactivateKiloTitle": "Deactivate service?",
+  "serviceFormDeactivateKiloBody": "An inactive service cannot be chosen when creating new orders.",
+  "serviceFormDeactivateConfirm": "Deactivate",
+  "staffTitle": "Staff",
+  "staffAdd": "Add staff",
+  "staffSearchHint": "Search name or email",
+  "staffEmpty": "No staff yet",
+  "staffFormAddTitle": "Add Staff",
+  "staffFormEditTitle": "Edit Staff",
+  "staffFormCreated": "Staff added",
+  "staffFormSaved": "Staff saved",
+  "staffSessionEndsTitle": "End the staff session?",
+  "staffSessionEndsBody": "This staff member will be signed out and must sign in again.",
+  "staffResetPassword": "Reset password",
+  "staffResetPasswordTitle": "Reset staff password",
+  "staffResetPasswordBody": "Enter a new password. All sessions of this staff member will end.",
+  "staffResetPasswordDone": "Staff password reset",
+  "customersTitle": "Customers",
+  "customersSearchHint": "Search name or phone",
+  "customersEmptyTitle": "No customers yet",
+  "customersEmptyMessage": "Customers appear automatically when orders are created.",
+  "customersLastOrder": "Last order: {when}",
+  "customerEditTitle": "Edit Customer",
+  "customerEditSaved": "Customer saved",
+  "customerEditPhoneLabel": "Phone (optional)",
   "@resetPasswordBody": {
     "placeholders": {
       "email": {
@@ -166,6 +242,72 @@
     "placeholders": {
       "max": {
         "type": "int"
+      }
+    }
+  },
+  "@commonDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@validationRange": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeAgoDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@servicesDeleteBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@serviceFormRegularPriceLabel": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@serviceFormExpressPriceLabel": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@customersLastOrder": {
+    "placeholders": {
+      "when": {
+        "type": "String"
       }
     }
   }

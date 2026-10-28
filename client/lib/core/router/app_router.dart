@@ -11,12 +11,20 @@ import '../../features/auth/presentation/reset_password_args.dart';
 import '../../features/auth/presentation/reset_password_screen.dart';
 import '../../features/auth/presentation/setup_status_provider.dart';
 import '../../features/auth/presentation/splash_screen.dart';
+import '../../features/catalog/presentation/service_form_screen.dart';
+import '../../features/catalog/presentation/services_screen.dart';
+import '../../features/customers/presentation/customer_edit_screen.dart';
+import '../../features/customers/presentation/customers_screen.dart';
 import '../../features/dashboard/presentation/dashboard_screen.dart';
 import '../../features/orders/presentation/orders_list_screen.dart';
+import '../../features/outlets/presentation/outlet_form_screen.dart';
+import '../../features/outlets/presentation/outlets_screen.dart';
 import '../../features/settings/presentation/change_password_screen.dart';
 import '../../features/settings/presentation/profile_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/shell/main_shell.dart';
+import '../../features/users/presentation/staff_form_screen.dart';
+import '../../features/users/presentation/staff_list_screen.dart';
 import 'app_routes.dart';
 import 'router_refresh_listenable.dart';
 
@@ -126,6 +134,90 @@ final appRouterProvider = Provider<GoRouter>((ref) {
                     path: 'change-password',
                     parentNavigatorKey: rootNavigatorKey,
                     builder: (context, state) => const ChangePasswordScreen(),
+                  ),
+                  // Owner screens. The redirect above keeps staff out
+                  // (AppRoutes.ownerOnlyPrefixes covers every path below).
+                  GoRoute(
+                    path: 'outlets',
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (context, state) => const OutletsScreen(),
+                    routes: [
+                      GoRoute(
+                        path: 'new',
+                        parentNavigatorKey: rootNavigatorKey,
+                        builder: (context, state) => const OutletFormScreen(),
+                      ),
+                      GoRoute(
+                        path: ':id',
+                        parentNavigatorKey: rootNavigatorKey,
+                        builder: (context, state) => OutletFormScreen(
+                          outletId: state.pathParameters['id'],
+                        ),
+                      ),
+                    ],
+                  ),
+                  GoRoute(
+                    path: 'services',
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (context, state) => const ServicesScreen(),
+                    routes: [
+                      GoRoute(
+                        path: 'new',
+                        parentNavigatorKey: rootNavigatorKey,
+                        // The outlet comes from the services screen.
+                        redirect: (context, state) =>
+                            state.uri.queryParameters['outletId'] == null
+                            ? AppRoutes.services
+                            : null,
+                        builder: (context, state) => ServiceFormScreen(
+                          outletId: state.uri.queryParameters['outletId']!,
+                        ),
+                      ),
+                      GoRoute(
+                        path: ':id',
+                        parentNavigatorKey: rootNavigatorKey,
+                        redirect: (context, state) =>
+                            state.uri.queryParameters['outletId'] == null
+                            ? AppRoutes.services
+                            : null,
+                        builder: (context, state) => ServiceFormScreen(
+                          outletId: state.uri.queryParameters['outletId']!,
+                          serviceId: state.pathParameters['id'],
+                        ),
+                      ),
+                    ],
+                  ),
+                  GoRoute(
+                    path: 'staff',
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (context, state) => const StaffListScreen(),
+                    routes: [
+                      GoRoute(
+                        path: 'new',
+                        parentNavigatorKey: rootNavigatorKey,
+                        builder: (context, state) => const StaffFormScreen(),
+                      ),
+                      GoRoute(
+                        path: ':id',
+                        parentNavigatorKey: rootNavigatorKey,
+                        builder: (context, state) =>
+                            StaffFormScreen(userId: state.pathParameters['id']),
+                      ),
+                    ],
+                  ),
+                  GoRoute(
+                    path: 'customers',
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (context, state) => const CustomersScreen(),
+                    routes: [
+                      GoRoute(
+                        path: ':id',
+                        parentNavigatorKey: rootNavigatorKey,
+                        builder: (context, state) => CustomerEditScreen(
+                          customerId: state.pathParameters['id']!,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

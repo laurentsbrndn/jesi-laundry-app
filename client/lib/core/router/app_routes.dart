@@ -9,6 +9,26 @@ abstract final class AppRoutes {
   static const String settings = '/settings';
   static const String settingsProfile = '/settings/profile';
   static const String settingsChangePassword = '/settings/change-password';
+  static const String outlets = '/settings/outlets';
+  static const String outletNew = '/settings/outlets/new';
+  static const String services = '/settings/services';
+  static const String serviceNew = '/settings/services/new';
+  static const String staff = '/settings/staff';
+  static const String staffNew = '/settings/staff/new';
+  static const String customers = '/settings/customers';
+
+  static String outletEdit(String id) => '$outlets/$id';
+  static String staffEdit(String id) => '$staff/$id';
+  static String customerEdit(String id) => '$customers/$id';
+
+  /// Add-unit-service screen; the outlet is passed as a query parameter.
+  static String serviceNewFor(String outletId) =>
+      Uri(path: serviceNew, queryParameters: {'outletId': outletId}).toString();
+
+  static String serviceEdit(String id, String outletId) => Uri(
+    path: '$services/$id',
+    queryParameters: {'outletId': outletId},
+  ).toString();
 
   /// Routes reachable only while signed out.
   static const Set<String> authRoutes = {

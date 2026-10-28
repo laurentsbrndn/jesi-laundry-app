@@ -854,12 +854,6 @@ abstract class AppLocalizations {
   /// **'Outlet'**
   String get settingsManageOutlets;
 
-  /// No description provided for @settingsComingSoon.
-  ///
-  /// In id, this message translates to:
-  /// **'Segera tersedia'**
-  String get settingsComingSoon;
-
   /// No description provided for @settingsLogout.
   ///
   /// In id, this message translates to:
@@ -943,6 +937,468 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Password berhasil diubah'**
   String get changePasswordSuccess;
+
+  /// No description provided for @commonSearch.
+  ///
+  /// In id, this message translates to:
+  /// **'Cari'**
+  String get commonSearch;
+
+  /// No description provided for @commonClear.
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus teks'**
+  String get commonClear;
+
+  /// No description provided for @commonActive.
+  ///
+  /// In id, this message translates to:
+  /// **'Aktif'**
+  String get commonActive;
+
+  /// No description provided for @commonInactive.
+  ///
+  /// In id, this message translates to:
+  /// **'Nonaktif'**
+  String get commonInactive;
+
+  /// No description provided for @commonSave.
+  ///
+  /// In id, this message translates to:
+  /// **'Simpan'**
+  String get commonSave;
+
+  /// No description provided for @commonDelete.
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus'**
+  String get commonDelete;
+
+  /// No description provided for @commonContinue.
+  ///
+  /// In id, this message translates to:
+  /// **'Lanjutkan'**
+  String get commonContinue;
+
+  /// No description provided for @commonDays.
+  ///
+  /// In id, this message translates to:
+  /// **'{days} hari'**
+  String commonDays(int days);
+
+  /// No description provided for @validationRange.
+  ///
+  /// In id, this message translates to:
+  /// **'Isi angka {min}–{max}'**
+  String validationRange(int min, int max);
+
+  /// No description provided for @timeAgoJustNow.
+  ///
+  /// In id, this message translates to:
+  /// **'Baru saja'**
+  String get timeAgoJustNow;
+
+  /// No description provided for @timeAgoMinutes.
+  ///
+  /// In id, this message translates to:
+  /// **'{minutes} menit lalu'**
+  String timeAgoMinutes(int minutes);
+
+  /// No description provided for @timeAgoHours.
+  ///
+  /// In id, this message translates to:
+  /// **'{hours} jam lalu'**
+  String timeAgoHours(int hours);
+
+  /// No description provided for @timeAgoDays.
+  ///
+  /// In id, this message translates to:
+  /// **'{days} hari lalu'**
+  String timeAgoDays(int days);
+
+  /// No description provided for @outletsTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet'**
+  String get outletsTitle;
+
+  /// No description provided for @outletsAdd.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah outlet'**
+  String get outletsAdd;
+
+  /// No description provided for @outletsEmpty.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum ada outlet'**
+  String get outletsEmpty;
+
+  /// No description provided for @outletFormAddTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Outlet'**
+  String get outletFormAddTitle;
+
+  /// No description provided for @outletFormEditTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Outlet'**
+  String get outletFormEditTitle;
+
+  /// No description provided for @outletFormAddressLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Alamat (opsional)'**
+  String get outletFormAddressLabel;
+
+  /// No description provided for @outletFormPhoneLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Telepon (opsional)'**
+  String get outletFormPhoneLabel;
+
+  /// No description provided for @outletFormCodeLocked.
+  ///
+  /// In id, this message translates to:
+  /// **'Kode tidak dapat diubah'**
+  String get outletFormCodeLocked;
+
+  /// No description provided for @outletFormCreated.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet dibuat. Katalog layanan default dibuat otomatis.'**
+  String get outletFormCreated;
+
+  /// No description provided for @outletFormSaved.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet disimpan'**
+  String get outletFormSaved;
+
+  /// No description provided for @outletDeactivateTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Nonaktifkan outlet?'**
+  String get outletDeactivateTitle;
+
+  /// No description provided for @outletDeactivateBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet nonaktif tidak dapat menerima order baru.'**
+  String get outletDeactivateBody;
+
+  /// No description provided for @outletDeactivateConfirm.
+  ///
+  /// In id, this message translates to:
+  /// **'Nonaktifkan'**
+  String get outletDeactivateConfirm;
+
+  /// No description provided for @outletFilterAll.
+  ///
+  /// In id, this message translates to:
+  /// **'Semua outlet'**
+  String get outletFilterAll;
+
+  /// No description provided for @outletFilterTooltip.
+  ///
+  /// In id, this message translates to:
+  /// **'Pilih outlet'**
+  String get outletFilterTooltip;
+
+  /// No description provided for @outletPickerLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Outlet'**
+  String get outletPickerLabel;
+
+  /// No description provided for @outletPickerTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Pilih outlet'**
+  String get outletPickerTitle;
+
+  /// No description provided for @servicesTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan & Harga'**
+  String get servicesTitle;
+
+  /// No description provided for @servicesAddUnit.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah satuan'**
+  String get servicesAddUnit;
+
+  /// No description provided for @servicesSectionKilo.
+  ///
+  /// In id, this message translates to:
+  /// **'Kiloan'**
+  String get servicesSectionKilo;
+
+  /// No description provided for @servicesSectionUnit.
+  ///
+  /// In id, this message translates to:
+  /// **'Satuan'**
+  String get servicesSectionUnit;
+
+  /// No description provided for @servicesUnitEmpty.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum ada layanan satuan'**
+  String get servicesUnitEmpty;
+
+  /// No description provided for @servicesBadgeSystem.
+  ///
+  /// In id, this message translates to:
+  /// **'Sistem'**
+  String get servicesBadgeSystem;
+
+  /// No description provided for @servicesDeleteTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus layanan?'**
+  String get servicesDeleteTitle;
+
+  /// No description provided for @servicesDeleteBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan \"{name}\" akan dihapus. Order lama tidak terpengaruh.'**
+  String servicesDeleteBody(String name);
+
+  /// No description provided for @servicesDeleted.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan dihapus'**
+  String get servicesDeleted;
+
+  /// No description provided for @serviceFormAddTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Layanan Satuan'**
+  String get serviceFormAddTitle;
+
+  /// No description provided for @serviceFormEditTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Layanan'**
+  String get serviceFormEditTitle;
+
+  /// No description provided for @serviceFormNameLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama layanan'**
+  String get serviceFormNameLabel;
+
+  /// No description provided for @serviceFormUnitLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Satuan'**
+  String get serviceFormUnitLabel;
+
+  /// No description provided for @serviceFormUnitLocked.
+  ///
+  /// In id, this message translates to:
+  /// **'Satuan tidak dapat diubah'**
+  String get serviceFormUnitLocked;
+
+  /// No description provided for @serviceFormRegularPriceLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Harga reguler (per {unit})'**
+  String serviceFormRegularPriceLabel(String unit);
+
+  /// No description provided for @serviceFormExpressPriceLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Harga express (per {unit})'**
+  String serviceFormExpressPriceLabel(String unit);
+
+  /// No description provided for @serviceFormRegularDaysLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Durasi reguler (hari)'**
+  String get serviceFormRegularDaysLabel;
+
+  /// No description provided for @serviceFormExpressDaysLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Durasi express (hari)'**
+  String get serviceFormExpressDaysLabel;
+
+  /// No description provided for @serviceFormMinQuantityLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Minimal kuantitas (kg)'**
+  String get serviceFormMinQuantityLabel;
+
+  /// No description provided for @serviceFormMinQuantityHelper.
+  ///
+  /// In id, this message translates to:
+  /// **'0 = tanpa minimum'**
+  String get serviceFormMinQuantityHelper;
+
+  /// No description provided for @serviceFormCreated.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan ditambahkan'**
+  String get serviceFormCreated;
+
+  /// No description provided for @serviceFormSaved.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan disimpan'**
+  String get serviceFormSaved;
+
+  /// No description provided for @serviceFormDeactivateKiloTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Nonaktifkan layanan?'**
+  String get serviceFormDeactivateKiloTitle;
+
+  /// No description provided for @serviceFormDeactivateKiloBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Layanan nonaktif tidak dapat dipilih saat membuat order baru.'**
+  String get serviceFormDeactivateKiloBody;
+
+  /// No description provided for @serviceFormDeactivateConfirm.
+  ///
+  /// In id, this message translates to:
+  /// **'Nonaktifkan'**
+  String get serviceFormDeactivateConfirm;
+
+  /// No description provided for @staffTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Staff'**
+  String get staffTitle;
+
+  /// No description provided for @staffAdd.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah staff'**
+  String get staffAdd;
+
+  /// No description provided for @staffSearchHint.
+  ///
+  /// In id, this message translates to:
+  /// **'Cari nama atau email'**
+  String get staffSearchHint;
+
+  /// No description provided for @staffEmpty.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum ada staff'**
+  String get staffEmpty;
+
+  /// No description provided for @staffFormAddTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Staff'**
+  String get staffFormAddTitle;
+
+  /// No description provided for @staffFormEditTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Staff'**
+  String get staffFormEditTitle;
+
+  /// No description provided for @staffFormCreated.
+  ///
+  /// In id, this message translates to:
+  /// **'Staff ditambahkan'**
+  String get staffFormCreated;
+
+  /// No description provided for @staffFormSaved.
+  ///
+  /// In id, this message translates to:
+  /// **'Staff disimpan'**
+  String get staffFormSaved;
+
+  /// No description provided for @staffSessionEndsTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Akhiri sesi staff?'**
+  String get staffSessionEndsTitle;
+
+  /// No description provided for @staffSessionEndsBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Sesi staff ini akan berakhir dan ia harus masuk lagi.'**
+  String get staffSessionEndsBody;
+
+  /// No description provided for @staffResetPassword.
+  ///
+  /// In id, this message translates to:
+  /// **'Reset password'**
+  String get staffResetPassword;
+
+  /// No description provided for @staffResetPasswordTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Reset password staff'**
+  String get staffResetPasswordTitle;
+
+  /// No description provided for @staffResetPasswordBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Masukkan password baru. Semua sesi staff ini akan berakhir.'**
+  String get staffResetPasswordBody;
+
+  /// No description provided for @staffResetPasswordDone.
+  ///
+  /// In id, this message translates to:
+  /// **'Password staff direset'**
+  String get staffResetPasswordDone;
+
+  /// No description provided for @customersTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Pelanggan'**
+  String get customersTitle;
+
+  /// No description provided for @customersSearchHint.
+  ///
+  /// In id, this message translates to:
+  /// **'Cari nama atau nomor HP'**
+  String get customersSearchHint;
+
+  /// No description provided for @customersEmptyTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum ada pelanggan'**
+  String get customersEmptyTitle;
+
+  /// No description provided for @customersEmptyMessage.
+  ///
+  /// In id, this message translates to:
+  /// **'Pelanggan muncul otomatis saat order dibuat.'**
+  String get customersEmptyMessage;
+
+  /// No description provided for @customersLastOrder.
+  ///
+  /// In id, this message translates to:
+  /// **'Order terakhir: {when}'**
+  String customersLastOrder(String when);
+
+  /// No description provided for @customerEditTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Pelanggan'**
+  String get customerEditTitle;
+
+  /// No description provided for @customerEditSaved.
+  ///
+  /// In id, this message translates to:
+  /// **'Pelanggan disimpan'**
+  String get customerEditSaved;
+
+  /// No description provided for @customerEditPhoneLabel.
+  ///
+  /// In id, this message translates to:
+  /// **'Nomor HP (opsional)'**
+  String get customerEditPhoneLabel;
 }
 
 class _AppLocalizationsDelegate
